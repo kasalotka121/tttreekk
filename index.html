@@ -6,68 +6,700 @@
 
 <title>Life Hub</title>
 
-<link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#0f0f1a">
-
 <style>
 
-body{
+*{
     margin:0;
-    font-family:-apple-system;
-    background: radial-gradient(circle at top,#4f7cff,#0f0f1a);
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    background:
+    radial-gradient(circle at top left,#4f7cff 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#8c52ff 0%,transparent 40%),
+    linear-gradient(135deg,#09090f,#12121b 70%);
     color:white;
+}
+
+/* Animated background */
+
+.bg-blur{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.35;
+    z-index:-1;
+    animation:float 14s infinite ease-in-out;
+}
+
+.bg1{
+    background:#4f7cff;
+    top:-120px;
+    left:-100px;
+}
+
+.bg2{
+    background:#9b5cff;
+    bottom:-150px;
+    right:-100px;
+    animation-delay:3s;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px) translateX(0px);}
+    50%{transform:translateY(30px) translateX(20px);}
+    100%{transform:translateY(0px) translateX(0px);}
+}
+
+/* App */
+
+.app{
+    padding:20px;
+    max-width:520px;
+    margin:auto;
+}
+
+/* Top Bar */
+
+.topbar{
     display:flex;
-    justify-content:center;
     align-items:center;
-    height:100vh;
-    text-align:center;
+    justify-content:space-between;
+    margin-bottom:30px;
 }
 
-/* glass card */
-.card{
-    width:90%;
-    max-width:420px;
-    padding:24px;
-    border-radius:28px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(25px);
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:0 10px 40px rgba(0,0,0,0.4);
-}
-
-button{
-    width:100%;
-    margin-top:12px;
-    padding:14px;
+.menu-btn{
+    width:48px;
+    height:48px;
     border:none;
     border-radius:18px;
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
     color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:.25s;
+    position:relative;
+    z-index:1001;
+}
+
+.menu-btn:active{
+    transform:scale(.95);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* Side Menu */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-300px;
+    width:270px;
+    height:100%;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(35px);
+    -webkit-backdrop-filter:blur(35px);
+    border-right:1px solid rgba(255,255,255,.12);
+    padding:30px;
+    transition:.4s cubic-bezier(.77,0,.18,1);
+    z-index:999;
+}
+
+.side-menu.active{
+    left:0;
+}
+
+.menu-item{
+    margin-top:25px;
+    padding:16px 18px;
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    cursor:pointer;
+    transition:.25s;
+}
+
+.menu-item:hover{
+    background:rgba(255,255,255,.1);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(8px);
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:998;
+}
+
+.overlay.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* Glass Card */
+
+.glass{
+    position:relative;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:32px;
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.15);
+    padding:24px;
+    margin-bottom:22px;
+}
+
+.glass::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+    120deg,
+    rgba(255,255,255,.22),
+    transparent 40%
+    );
+    pointer-events:none;
+}
+
+/* Home */
+
+.hero-title{
+    font-size:42px;
+    line-height:1.05;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.hero-sub{
+    opacity:.72;
+    line-height:1.6;
     font-size:16px;
+}
+
+/* Inputs */
+
+input,textarea{
+    width:100%;
+    margin-top:12px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    padding:16px;
+    font-size:15px;
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:rgba(255,255,255,.45);
+}
+
+/* Buttons */
+
+.btn{
+    margin-top:16px;
+    width:100%;
+    border:none;
+    cursor:pointer;
+    border-radius:20px;
+    padding:16px;
+    font-size:16px;
+    font-weight:700;
+    color:white;
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.15),
+    rgba(255,255,255,.06)
+    );
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    transition:.25s;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+/* Mood */
+
+.mood-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+}
+
+.mood-btn{
+    flex:1;
+    padding:16px;
+    border:none;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:22px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+/* Finance */
+
+.balance{
+    font-size:34px;
+    font-weight:800;
+    margin-top:8px;
+}
+
+/* Chat */
+
+.chat{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:15px;
+}
+
+.bubble{
+    max-width:80%;
+    padding:14px 18px;
+    border-radius:22px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.user{
+    align-self:flex-end;
+    background:rgba(79,124,255,.28);
+}
+
+.bot{
+    align-self:flex-start;
+    background:rgba(255,255,255,.08);
+}
+
+/* Sections */
+
+.section{
+    display:none;
+    animation:fade .35s ease;
+}
+
+.section.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.small{
+    opacity:.7;
+    font-size:14px;
+    margin-top:8px;
+}
+
+::-webkit-scrollbar{
+    width:0;
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="card">
+<div class="bg-blur bg1"></div>
+<div class="bg-blur bg2"></div>
 
-    <h1>Life Hub</h1>
-    <p>Твое приложение установлено как PWA 🚀</p>
+<div class="overlay" id="overlay"></div>
 
-    <button onclick="alert('Работает как приложение!')">
-        Тест кнопки
-    </button>
+<div class="side-menu" id="menu">
+
+    <div class="menu-item" onclick="openSection('home')">
+        🏠 Главная
+    </div>
+
+    <div class="menu-item" onclick="openSection('tracker')">
+        📊 Трекер жизни
+    </div>
+
+    <div class="menu-item" onclick="openSection('actions')">
+        ⚡ Что делать?
+    </div>
+
+    <div class="menu-item" onclick="openSection('finance')">
+        💶 Финансы
+    </div>
+
+    <div class="menu-item" onclick="openSection('mood')">
+        💬 Чат настроения
+    </div>
+
+</div>
+
+<div class="app">
+
+    <div class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <div class="logo">
+            Life Hub
+        </div>
+
+        <div style="width:48px"></div>
+
+    </div>
+
+    <!-- HOME -->
+
+    <div class="section active" id="home">
+
+        <div class="glass">
+
+            <div class="hero-title">
+                Привет 👋
+            </div>
+
+            <div class="hero-sub">
+                Добро пожаловать в твой личный Life Hub.
+                Выбери режим через меню и начни улучшать день.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TRACKER -->
+
+    <div class="section" id="tracker">
+
+        <div class="glass">
+
+            <h2>Трекер жизни</h2>
+
+            <div class="mood-row">
+                <button class="mood-btn" onclick="setMood('🙂')">🙂</button>
+                <button class="mood-btn" onclick="setMood('😐')">😐</button>
+                <button class="mood-btn" onclick="setMood('😢')">😢</button>
+            </div>
+
+            <input id="sleep" type="number" placeholder="Сон (часы)">
+
+            <input id="energy" type="number" placeholder="Энергия 1-10">
+
+            <textarea id="note" placeholder="Заметка дня"></textarea>
+
+            <button class="btn" onclick="saveTracker()">
+                Сохранить
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="section" id="actions">
+
+        <div class="glass">
+
+            <h2>Что делать сейчас?</h2>
+
+            <div
+            id="generatedAction"
+            class="balance"
+            style="font-size:24px;">
+                Нажми кнопку
+            </div>
+
+            <button class="btn" onclick="generateAction()">
+                Сгенерировать
+            </button>
+
+            <input
+            id="customAction"
+            placeholder="Добавить своё действие">
+
+            <button class="btn" onclick="addAction()">
+                Добавить
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FINANCE -->
+
+    <div class="section" id="finance">
+
+        <div class="glass">
+
+            <h2>Финансы</h2>
+
+            <div class="small">
+                Баланс дня
+            </div>
+
+            <div class="balance" id="balance">
+                0€
+            </div>
+
+            <input
+            id="expense"
+            type="number"
+            placeholder="-5">
+
+            <button class="btn" onclick="addExpense()">
+                Добавить расход
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MOOD -->
+
+    <div class="section" id="mood">
+
+        <div class="glass">
+
+            <h2>Чат настроения</h2>
+
+            <div class="chat" id="chat"></div>
+
+            <button class="btn" onclick="sendMood('мне грустно')">
+                мне грустно
+            </button>
+
+            <button class="btn" onclick="sendMood('мне скучно')">
+                мне скучно
+            </button>
+
+            <button class="btn" onclick="sendMood('я устал')">
+                я устал
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 <script>
-// SERVICE WORKER
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js");
+
+window.onload = function () {
+
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("overlay");
+    const menuBtn = document.getElementById("menuBtn");
+
+    menuBtn.addEventListener("click", () => {
+
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+
+};
+
+function openSection(id){
+
+    document.querySelectorAll(".section")
+    .forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(id)
+    .classList.add("active");
+
+    document.getElementById("menu")
+    .classList.remove("active");
+
+    document.getElementById("overlay")
+    .classList.remove("active");
 }
+
+let currentMood = "🙂";
+
+function setMood(mood){
+    currentMood = mood;
+}
+
+function saveTracker(){
+
+    const data = {
+
+        mood: currentMood,
+
+        sleep:
+        document.getElementById("sleep").value,
+
+        energy:
+        document.getElementById("energy").value,
+
+        note:
+        document.getElementById("note").value
+    };
+
+    localStorage.setItem(
+        "life_tracker",
+        JSON.stringify(data)
+    );
+
+    alert("Сохранено ✨");
+}
+
+let actions = [
+
+    "Погуляй 10 минут",
+    "Посмотри фильм",
+    "Сделай 10 отжиманий",
+    "Почитай 5 страниц",
+    "Послушай музыку",
+    "Выпей воды"
+];
+
+function generateAction(){
+
+    const random =
+    actions[Math.floor(
+        Math.random() * actions.length
+    )];
+
+    document.getElementById(
+        "generatedAction"
+    ).innerText = random;
+}
+
+function addAction(){
+
+    const input =
+    document.getElementById("customAction");
+
+    if(input.value.trim() !== ""){
+
+        actions.push(input.value);
+
+        input.value = "";
+
+        alert("Добавлено ⚡");
+    }
+}
+
+let balance =
+Number(localStorage.getItem("balance")) || 0;
+
+updateBalance();
+
+function addExpense(){
+
+    const value =
+    Number(document.getElementById("expense").value);
+
+    balance += value;
+
+    localStorage.setItem("balance", balance);
+
+    updateBalance();
+}
+
+function updateBalance(){
+
+    document.getElementById(
+        "balance"
+    ).innerText = balance + "€";
+}
+
+const replies = {
+
+    "мне грустно":[
+        "Ты справишься 💙",
+        "Иногда нужен отдых",
+        "Завтра будет лучше ☀️"
+    ],
+
+    "мне скучно":[
+        "Попробуй новую музыку 🎵",
+        "Сделай прогулку 🚶",
+        "Посмотри фильм 🍿"
+    ],
+
+    "я устал":[
+        "Тебе нужен отдых 😴",
+        "Выпей воды 💧",
+        "Закрой глаза на пару минут"
+    ]
+};
+
+function sendMood(text){
+
+    addMessage(text, true);
+
+    const arr = replies[text];
+
+    const reply =
+    arr[Math.floor(Math.random() * arr.length)];
+
+    setTimeout(() => {
+
+        addMessage(reply, false);
+
+    }, 500);
+}
+
+function addMessage(text, user){
+
+    const chat =
+    document.getElementById("chat");
+
+    const div =
+    document.createElement("div");
+
+    div.className =
+    "bubble " + (user ? "user" : "bot");
+
+    div.innerText = text;
+
+    chat.appendChild(div);
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
 </script>
 
 </body>
