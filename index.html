@@ -1,706 +1,1324 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Life Hub</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#000000">
+<title>LifeHub</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+:root {
+  --bg: #000000;
+  --bg2: #0a0a0a;
+  --surface: rgba(255,255,255,0.05);
+  --surface2: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.1);
+  --text: #ffffff;
+  --text2: rgba(255,255,255,0.6);
+  --accent: #7c6fff;
+  --accent2: #ff6fb4;
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.15);
+  --shadow: 0 8px 32px rgba(0,0,0,0.6);
+  --radius: 22px;
+  --nav-h: 72px;
+}
+.theme-light {
+  --bg: #f0f0f0;
+  --bg2: #e8e8e8;
+  --surface: rgba(255,255,255,0.7);
+  --surface2: rgba(255,255,255,0.9);
+  --border: rgba(0,0,0,0.08);
+  --text: #111111;
+  --text2: rgba(0,0,0,0.5);
+  --glass: rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.8);
+  --shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
-body{
-    min-height:100vh;
-    overflow-x:hidden;
-    background:
-    radial-gradient(circle at top left,#4f7cff 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#8c52ff 0%,transparent 40%),
-    linear-gradient(135deg,#09090f,#12121b 70%);
-    color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s}
 
-/* Animated background */
+/* BG wallpaper */
+#wallpaper{position:fixed;inset:0;z-index:0;background-size:cover;background-position:center;transition:opacity .5s}
+#wallpaper-overlay{position:fixed;inset:0;z-index:1;background:var(--bg);opacity:.72;transition:opacity .3s,background .3s}
 
-.bg-blur{
-    position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.35;
-    z-index:-1;
-    animation:float 14s infinite ease-in-out;
-}
-
-.bg1{
-    background:#4f7cff;
-    top:-120px;
-    left:-100px;
-}
-
-.bg2{
-    background:#9b5cff;
-    bottom:-150px;
-    right:-100px;
-    animation-delay:3s;
-}
-
-@keyframes float{
-    0%{transform:translateY(0px) translateX(0px);}
-    50%{transform:translateY(30px) translateX(20px);}
-    100%{transform:translateY(0px) translateX(0px);}
-}
-
-/* App */
-
-.app{
-    padding:20px;
-    max-width:520px;
-    margin:auto;
-}
-
-/* Top Bar */
-
-.topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:30px;
-}
-
-.menu-btn{
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:18px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.15);
-    color:white;
-    font-size:22px;
-    cursor:pointer;
-    transition:.25s;
-    position:relative;
-    z-index:1001;
-}
-
-.menu-btn:active{
-    transform:scale(.95);
-}
-
-.logo{
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:.5px;
-}
-
-/* Side Menu */
-
-.side-menu{
-    position:fixed;
-    top:0;
-    left:-300px;
-    width:270px;
-    height:100%;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(35px);
-    -webkit-backdrop-filter:blur(35px);
-    border-right:1px solid rgba(255,255,255,.12);
-    padding:30px;
-    transition:.4s cubic-bezier(.77,0,.18,1);
-    z-index:999;
-}
-
-.side-menu.active{
-    left:0;
-}
-
-.menu-item{
-    margin-top:25px;
-    padding:16px 18px;
-    border-radius:20px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
-    cursor:pointer;
-    transition:.25s;
-}
-
-.menu-item:hover{
-    background:rgba(255,255,255,.1);
-}
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.35);
-    backdrop-filter:blur(8px);
-    opacity:0;
-    pointer-events:none;
-    transition:.3s;
-    z-index:998;
-}
-
-.overlay.active{
-    opacity:1;
-    pointer-events:auto;
-}
-
-/* Glass Card */
-
+/* LIQUID GLASS */
 .glass{
-    position:relative;
-    overflow:hidden;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:32px;
-    backdrop-filter:blur(30px);
-    -webkit-backdrop-filter:blur(30px);
-    box-shadow:
-    0 10px 40px rgba(0,0,0,.35),
-    inset 0 1px 1px rgba(255,255,255,.15);
-    padding:24px;
-    margin-bottom:22px;
+  background:var(--glass);
+  backdrop-filter:blur(28px) saturate(180%);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.glass-deep{
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(40px) saturate(200%);
+  -webkit-backdrop-filter:blur(40px) saturate(200%);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius);
+  box-shadow:0 16px 48px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.theme-light .glass{background:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.8);box-shadow:0 8px 32px rgba(0,0,0,0.1),inset 0 1px 0 rgba(255,255,255,0.9)}
+.theme-light .glass-deep{background:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.7);box-shadow:0 16px 48px rgba(0,0,0,0.08),inset 0 1px 0 rgba(255,255,255,0.9)}
+
+/* APP CONTAINER */
+#app{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
+
+/* HEADER */
+#header{padding:16px 20px 8px;flex-shrink:0}
+#header h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+#header .sub{font-size:13px;color:var(--text2);font-weight:600;margin-top:2px}
+
+/* PAGES */
+#pages{flex:1;overflow:hidden;position:relative}
+.page{position:absolute;inset:0;overflow-y:auto;padding:12px 16px calc(var(--nav-h) + 20px);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s}
+.page.active{opacity:1;pointer-events:auto;transform:translateY(0)}
+.page::-webkit-scrollbar{display:none}
+
+/* NAV */
+#nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-around;
+  padding:0 8px 8px;
+  background:var(--glass);
+  backdrop-filter:blur(40px) saturate(180%);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);
+  border-top:1px solid var(--glass-border);
+}
+.nav-btn{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  flex:1;padding:8px 4px;border:none;background:none;
+  color:var(--text2);cursor:pointer;border-radius:16px;
+  transition:color .2s,background .2s,transform .15s;
+  font-family:'Nunito',sans-serif;font-size:10px;font-weight:700;
+}
+.nav-btn .icon{font-size:22px;line-height:1;transition:transform .2s}
+.nav-btn.active{color:var(--accent)}
+.nav-btn.active .icon{transform:scale(1.18)}
+.nav-btn:active{transform:scale(.92)}
+
+/* CARDS */
+.card{padding:18px;margin-bottom:14px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.06),transparent 60%);pointer-events:none;border-radius:var(--radius)}
+.card-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--text2);margin-bottom:12px}
+.card-big-text{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* HOME PAGE */
+.home-hero{
+  padding:28px 22px;
+  margin-bottom:14px;
+  text-align:center;
+  background:linear-gradient(135deg,rgba(124,111,255,0.15),rgba(255,111,180,0.1));
+}
+.home-hero .greeting{font-size:15px;font-weight:700;color:var(--text2);margin-bottom:8px}
+.home-hero .time-big{
+  font-family:'Playfair Display',serif;
+  font-size:72px;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-3px;
+}
+.theme-light .home-hero .time-big{background:linear-gradient(135deg,#111,#555);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.home-hero .date-str{font-size:17px;font-weight:700;color:var(--text2);margin-top:6px}
+.home-hero .mood-quick{margin-top:18px;font-size:13px;font-weight:700;color:var(--text2)}
+.home-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.stat-card{padding:18px 16px;text-align:center}
+.stat-card .num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-card .lbl{font-size:11px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+/* MOOD CHAT */
+.mood-tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:4px}
+.mood-tabs::-webkit-scrollbar{display:none}
+.mood-tab{
+  flex-shrink:0;padding:10px 18px;border-radius:50px;border:none;
+  font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;
+  cursor:pointer;transition:all .2s;
+  background:var(--surface);color:var(--text2);
+}
+.mood-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(124,111,255,0.4)}
+.chat-area{display:flex;flex-direction:column;gap:10px;min-height:300px}
+.msg{
+  max-width:82%;padding:13px 16px;line-height:1.5;
+  font-size:14px;font-weight:600;animation:msgIn .3s ease;
+}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.msg.bot{align-self:flex-start;border-bottom-left-radius:6px;background:var(--glass);border:1px solid var(--glass-border)}
+.msg.user{align-self:flex-end;border-bottom-right-radius:6px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none}
+.chat-input-row{display:flex;gap:8px;margin-top:14px}
+.chat-input-row input{
+  flex:1;padding:13px 16px;border-radius:50px;border:1px solid var(--glass-border);
+  background:var(--glass);color:var(--text);font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;
+  backdrop-filter:blur(20px);outline:none;
+}
+.chat-input-row button{
+  width:46px;height:46px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-size:18px;cursor:pointer;transition:transform .15s;
+  flex-shrink:0;
+}
+.chat-input-row button:active{transform:scale(.9)}
+
+/* FINANCES */
+.currency-bar{display:flex;gap:8px;margin-bottom:16px}
+.cur-btn{
+  flex:1;padding:10px;border-radius:14px;border:none;
+  font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;
+  cursor:pointer;transition:all .2s;background:var(--surface);color:var(--text2);
+}
+.cur-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 16px rgba(124,111,255,0.4)}
+.balance-display{text-align:center;padding:24px;margin-bottom:14px}
+.balance-display .bal-label{font-size:13px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:1.5px}
+.balance-display .bal-num{font-family:'Playfair Display',serif;font-size:58px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-top:4px}
+.balance-display .cur-sym{font-size:32px}
+.fin-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.fin-btn{
+  padding:16px;border-radius:18px;border:none;font-family:'Nunito',sans-serif;
+  font-size:14px;font-weight:800;cursor:pointer;transition:all .2s;
+}
+.fin-btn.income{background:linear-gradient(135deg,#00d4aa,#00a878);color:#fff}
+.fin-btn.expense{background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff}
+.fin-btn:active{transform:scale(.96)}
+.trans-list{display:flex;flex-direction:column;gap:8px}
+.trans-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 16px;border-radius:16px;
+  background:var(--surface);border:1px solid var(--border);
+}
+.trans-item .t-desc{font-size:14px;font-weight:700}
+.trans-item .t-date{font-size:11px;color:var(--text2);margin-top:2px;font-weight:600}
+.trans-item .t-amt{font-size:16px;font-weight:900;font-family:'Playfair Display',serif}
+.trans-item .t-amt.inc{color:#00d4aa}
+.trans-item .t-amt.exp{color:#ff6b6b}
+
+/* WHAT TODO */
+.todo-cards-wrap{display:flex;flex-direction:column;gap:12px}
+.todo-card-item{
+  padding:18px;border-radius:20px;
+  display:flex;align-items:center;gap:14px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  animation:msgIn .3s ease;
+}
+.todo-icon{font-size:32px;flex-shrink:0}
+.todo-text{font-size:15px;font-weight:700;line-height:1.4}
+.todo-cat{font-size:11px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+.todo-next-btn{
+  margin-top:16px;width:100%;padding:16px;border-radius:50px;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;
+  cursor:pointer;transition:all .2s;box-shadow:0 4px 20px rgba(124,111,255,0.35);
+}
+.todo-next-btn:active{transform:scale(.97)}
+
+/* LIFE TRACKER */
+.tracker-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:18px}
+.tracker-day{
+  aspect-ratio:1;border-radius:12px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;cursor:pointer;transition:all .2s;
+  background:var(--surface);position:relative;
+}
+.tracker-day .day-num{position:absolute;top:3px;left:5px;font-size:9px;font-weight:800;color:var(--text2);line-height:1}
+.tracker-day:hover{border-color:var(--accent);transform:scale(1.08)}
+.tracker-day.filled{border-color:var(--accent);background:rgba(124,111,255,0.15)}
+.emoji-picker{
+  position:fixed;bottom:calc(var(--nav-h) + 16px);left:16px;right:16px;
+  z-index:200;padding:18px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
+  display:none;
+}
+.emoji-picker.open{display:grid}
+.ep-emoji{
+  font-size:26px;padding:10px;border-radius:14px;border:none;
+  background:var(--surface);cursor:pointer;text-align:center;
+  transition:transform .15s,background .15s;
+}
+.ep-emoji:hover{transform:scale(1.2);background:var(--surface2)}
+.tracker-log{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.tracker-log-item{
+  display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;
+  background:var(--surface);border:1px solid var(--border);
+}
+.tracker-log-item .tl-emoji{font-size:24px}
+.tracker-log-item .tl-date{font-size:12px;font-weight:700;color:var(--text2)}
+.tracker-log-item .tl-note{font-size:13px;font-weight:700}
+.tracker-note-row{display:flex;gap:8px;margin-top:12px}
+.tracker-note-row input{
+  flex:1;padding:12px 16px;border-radius:50px;border:1px solid var(--glass-border);
+  background:var(--glass);color:var(--text);font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;
+  backdrop-filter:blur(20px);outline:none;
+}
+.tracker-note-row button{
+  padding:12px 20px;border-radius:50px;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;
 }
 
-.glass::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-    120deg,
-    rgba(255,255,255,.22),
-    transparent 40%
-    );
-    pointer-events:none;
+/* SETTINGS */
+.settings-section{margin-bottom:20px}
+.settings-section h3{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:var(--text2);margin-bottom:10px;padding:0 4px}
+.setting-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:15px 18px;margin-bottom:6px;border-radius:18px;
+  background:var(--surface);border:1px solid var(--border);
+}
+.setting-row .s-label{font-size:14px;font-weight:700}
+.setting-row .s-sub{font-size:11px;color:var(--text2);font-weight:600;margin-top:2px}
+.toggle{
+  width:50px;height:28px;border-radius:14px;border:none;cursor:pointer;
+  position:relative;transition:background .2s;background:var(--surface2);flex-shrink:0;
+}
+.toggle.on{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.toggle::after{
+  content:'';position:absolute;width:22px;height:22px;border-radius:50%;
+  background:#fff;top:3px;left:3px;transition:left .2s;box-shadow:0 2px 6px rgba(0,0,0,0.3);
+}
+.toggle.on::after{left:25px}
+.theme-btns{display:flex;gap:8px}
+.theme-btn{
+  flex:1;padding:10px 8px;border-radius:14px;border:2px solid transparent;
+  font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;
+  transition:all .2s;background:var(--surface);color:var(--text2);
+}
+.theme-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(124,111,255,0.1)}
+.wallpaper-btn{
+  width:100%;padding:14px;border-radius:18px;border:1px dashed var(--glass-border);
+  background:var(--glass);color:var(--text);font-family:'Nunito',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center;
+}
+.wallpaper-btn:hover{border-color:var(--accent)}
+.wallpaper-preview{width:100%;height:90px;border-radius:18px;object-fit:cover;margin-top:8px;display:none}
+.lang-select{
+  flex:1;padding:8px 12px;border-radius:12px;border:1px solid var(--glass-border);
+  background:var(--glass);color:var(--text);font-family:'Nunito',sans-serif;
+  font-size:13px;font-weight:700;outline:none;cursor:pointer;max-width:180px;
+  backdrop-filter:blur(20px);
 }
 
-/* Home */
-
-.hero-title{
-    font-size:42px;
-    line-height:1.05;
-    font-weight:800;
-    margin-bottom:14px;
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(8px);display:flex;align-items:flex-end;
+  opacity:0;pointer-events:none;transition:opacity .25s;
 }
-
-.hero-sub{
-    opacity:.72;
-    line-height:1.6;
-    font-size:16px;
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal{
+  width:100%;padding:24px 20px 36px;border-radius:28px 28px 0 0;
+  transform:translateY(100%);transition:transform .3s cubic-bezier(.34,1.56,.64,1);
 }
-
-/* Inputs */
-
-input,textarea{
-    width:100%;
-    margin-top:12px;
-    border:none;
-    outline:none;
-    border-radius:18px;
-    background:rgba(255,255,255,.08);
-    color:white;
-    padding:16px;
-    font-size:15px;
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal h3{font-size:18px;font-weight:900;margin-bottom:16px}
+.modal input{
+  width:100%;padding:14px 18px;border-radius:16px;border:1px solid var(--glass-border);
+  background:var(--glass);color:var(--text);font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;
+  backdrop-filter:blur(20px);outline:none;margin-bottom:10px;
 }
-
-input::placeholder,
-textarea::placeholder{
-    color:rgba(255,255,255,.45);
+.modal-btns{display:flex;gap:10px;margin-top:8px}
+.modal-btns button{
+  flex:1;padding:14px;border-radius:16px;border:none;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;transition:all .2s;
 }
+.modal-btns .confirm{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.modal-btns .cancel{background:var(--surface);color:var(--text)}
 
-/* Buttons */
+/* PILL BADGE */
+.pill{display:inline-block;padding:4px 10px;border-radius:50px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.pill-accent{background:rgba(124,111,255,0.2);color:var(--accent)}
+.pill-pink{background:rgba(255,111,180,0.2);color:var(--accent2)}
 
-.btn{
-    margin-top:16px;
-    width:100%;
-    border:none;
-    cursor:pointer;
-    border-radius:20px;
-    padding:16px;
-    font-size:16px;
-    font-weight:700;
-    color:white;
-    background:
-    linear-gradient(
-    135deg,
-    rgba(255,255,255,.15),
-    rgba(255,255,255,.06)
-    );
-    border:1px solid rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
-    transition:.25s;
-}
+/* scrollbar hide */
+.page::-webkit-scrollbar{display:none}
+*{scrollbar-width:none}
 
-.btn:active{
-    transform:scale(.97);
-}
+/* animate */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.card{animation:fadeUp .4s ease both}
+.card:nth-child(1){animation-delay:.05s}
+.card:nth-child(2){animation-delay:.1s}
+.card:nth-child(3){animation-delay:.15s}
+.card:nth-child(4){animation-delay:.2s}
 
-/* Mood */
-
-.mood-row{
-    display:flex;
-    gap:10px;
-    margin-top:16px;
-}
-
-.mood-btn{
-    flex:1;
-    padding:16px;
-    border:none;
-    border-radius:20px;
-    background:rgba(255,255,255,.08);
-    color:white;
-    font-size:22px;
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.1);
-}
-
-/* Finance */
-
-.balance{
-    font-size:34px;
-    font-weight:800;
-    margin-top:8px;
-}
-
-/* Chat */
-
-.chat{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-top:15px;
-}
-
-.bubble{
-    max-width:80%;
-    padding:14px 18px;
-    border-radius:22px;
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.user{
-    align-self:flex-end;
-    background:rgba(79,124,255,.28);
-}
-
-.bot{
-    align-self:flex-start;
-    background:rgba(255,255,255,.08);
-}
-
-/* Sections */
-
-.section{
-    display:none;
-    animation:fade .35s ease;
-}
-
-.section.active{
-    display:block;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.small{
-    opacity:.7;
-    font-size:14px;
-    margin-top:8px;
-}
-
-::-webkit-scrollbar{
-    width:0;
-}
-
+/* FIN input modal type select */
+.type-tabs{display:flex;gap:8px;margin-bottom:14px}
+.type-tab{flex:1;padding:10px;border-radius:14px;border:none;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;background:var(--surface);color:var(--text2);transition:all .2s}
+.type-tab.active-inc{background:linear-gradient(135deg,#00d4aa,#00a878);color:#fff}
+.type-tab.active-exp{background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff}
 </style>
 </head>
 <body>
-
-<div class="bg-blur bg1"></div>
-<div class="bg-blur bg2"></div>
-
-<div class="overlay" id="overlay"></div>
-
-<div class="side-menu" id="menu">
-
-    <div class="menu-item" onclick="openSection('home')">
-        🏠 Главная
-    </div>
-
-    <div class="menu-item" onclick="openSection('tracker')">
-        📊 Трекер жизни
-    </div>
-
-    <div class="menu-item" onclick="openSection('actions')">
-        ⚡ Что делать?
-    </div>
-
-    <div class="menu-item" onclick="openSection('finance')">
-        💶 Финансы
-    </div>
-
-    <div class="menu-item" onclick="openSection('mood')">
-        💬 Чат настроения
-    </div>
-
-</div>
-
-<div class="app">
-
-    <div class="topbar">
-
-        <button class="menu-btn" id="menuBtn">
-            ☰
-        </button>
-
-        <div class="logo">
-            Life Hub
-        </div>
-
-        <div style="width:48px"></div>
-
-    </div>
+<div id="wallpaper"></div>
+<div id="wallpaper-overlay"></div>
+<div id="app">
+  <div id="header">
+    <h1>LifeHub</h1>
+    <div class="sub" id="header-sub">Твой личный помощник</div>
+  </div>
+  <div id="pages">
 
     <!-- HOME -->
-
-    <div class="section active" id="home">
-
-        <div class="glass">
-
-            <div class="hero-title">
-                Привет 👋
-            </div>
-
-            <div class="hero-sub">
-                Добро пожаловать в твой личный Life Hub.
-                Выбери режим через меню и начни улучшать день.
-            </div>
-
+    <div class="page active" id="page-home">
+      <div class="glass home-hero card">
+        <div class="greeting" id="greeting-text">Добрый день</div>
+        <div class="time-big" id="clock">00:00</div>
+        <div class="date-str" id="date-str"></div>
+        <div class="mood-quick" id="mood-quick"></div>
+      </div>
+      <div class="home-stats">
+        <div class="glass stat-card card">
+          <div class="num" id="stat-bal">0</div>
+          <div class="lbl" id="stat-bal-lbl">Баланс</div>
         </div>
-
+        <div class="glass stat-card card">
+          <div class="num" id="stat-days">0</div>
+          <div class="lbl" id="stat-days-lbl">Дней в трекере</div>
+        </div>
+      </div>
+      <div class="glass card">
+        <div class="card-title" id="quote-label">Цитата дня</div>
+        <div id="daily-quote" style="font-size:15px;font-weight:700;line-height:1.6;color:var(--text)"></div>
+      </div>
     </div>
 
-    <!-- TRACKER -->
-
-    <div class="section" id="tracker">
-
-        <div class="glass">
-
-            <h2>Трекер жизни</h2>
-
-            <div class="mood-row">
-                <button class="mood-btn" onclick="setMood('🙂')">🙂</button>
-                <button class="mood-btn" onclick="setMood('😐')">😐</button>
-                <button class="mood-btn" onclick="setMood('😢')">😢</button>
-            </div>
-
-            <input id="sleep" type="number" placeholder="Сон (часы)">
-
-            <input id="energy" type="number" placeholder="Энергия 1-10">
-
-            <textarea id="note" placeholder="Заметка дня"></textarea>
-
-            <button class="btn" onclick="saveTracker()">
-                Сохранить
-            </button>
-
+    <!-- MOOD CHAT -->
+    <div class="page" id="page-mood">
+      <div class="mood-tabs">
+        <button class="mood-tab active" onclick="switchMood('sad')" id="tab-sad">😢 Грустно</button>
+        <button class="mood-tab" onclick="switchMood('bored')" id="tab-bored">😑 Скучно</button>
+        <button class="mood-tab" onclick="switchMood('tired')" id="tab-tired">😴 Устал</button>
+      </div>
+      <div class="glass card" style="padding:16px">
+        <div class="chat-area" id="chat-area"></div>
+        <div class="chat-input-row">
+          <input type="text" id="chat-input" placeholder="Напиши как ты себя чувствуешь...">
+          <button onclick="sendChatMsg()">➤</button>
         </div>
-
+      </div>
     </div>
 
-    <!-- ACTIONS -->
-
-    <div class="section" id="actions">
-
-        <div class="glass">
-
-            <h2>Что делать сейчас?</h2>
-
-            <div
-            id="generatedAction"
-            class="balance"
-            style="font-size:24px;">
-                Нажми кнопку
-            </div>
-
-            <button class="btn" onclick="generateAction()">
-                Сгенерировать
-            </button>
-
-            <input
-            id="customAction"
-            placeholder="Добавить своё действие">
-
-            <button class="btn" onclick="addAction()">
-                Добавить
-            </button>
-
-        </div>
-
+    <!-- FINANCES -->
+    <div class="page" id="page-fin">
+      <div class="currency-bar">
+        <button class="cur-btn active" onclick="setCurrency('₽')" id="cur-rub">₽</button>
+        <button class="cur-btn" onclick="setCurrency('$')" id="cur-usd">$</button>
+        <button class="cur-btn" onclick="setCurrency('€')" id="cur-eur">€</button>
+      </div>
+      <div class="glass balance-display card">
+        <div class="bal-label" id="fin-bal-label">Баланс</div>
+        <div class="bal-num"><span id="fin-cur-sym">₽</span><span id="fin-balance">0</span></div>
+      </div>
+      <div class="fin-btns">
+        <button class="fin-btn income" onclick="openFinModal('income')" id="btn-income">+ Доход</button>
+        <button class="fin-btn expense" onclick="openFinModal('expense')" id="btn-expense">− Расход</button>
+      </div>
+      <div class="glass card">
+        <div class="card-title" id="fin-hist-label">История</div>
+        <div class="trans-list" id="trans-list"></div>
+      </div>
     </div>
 
-    <!-- FINANCE -->
-
-    <div class="section" id="finance">
-
-        <div class="glass">
-
-            <h2>Финансы</h2>
-
-            <div class="small">
-                Баланс дня
-            </div>
-
-            <div class="balance" id="balance">
-                0€
-            </div>
-
-            <input
-            id="expense"
-            type="number"
-            placeholder="-5">
-
-            <button class="btn" onclick="addExpense()">
-                Добавить расход
-            </button>
-
-        </div>
-
+    <!-- WHAT TO DO -->
+    <div class="page" id="page-todo">
+      <div class="glass card" style="padding:16px;margin-bottom:14px">
+        <div class="card-title" id="todo-title-label">Чем заняться?</div>
+        <div style="font-size:13px;color:var(--text2);font-weight:600" id="todo-desc-label">Получи 5 случайных идей</div>
+      </div>
+      <div class="todo-cards-wrap" id="todo-cards"></div>
+      <button class="todo-next-btn" onclick="showTodoCards()" id="todo-next-btn">🎲 Ещё идеи</button>
     </div>
 
-    <!-- MOOD -->
-
-    <div class="section" id="mood">
-
-        <div class="glass">
-
-            <h2>Чат настроения</h2>
-
-            <div class="chat" id="chat"></div>
-
-            <button class="btn" onclick="sendMood('мне грустно')">
-                мне грустно
-            </button>
-
-            <button class="btn" onclick="sendMood('мне скучно')">
-                мне скучно
-            </button>
-
-            <button class="btn" onclick="sendMood('я устал')">
-                я устал
-            </button>
-
+    <!-- LIFE TRACKER -->
+    <div class="page" id="page-tracker">
+      <div class="glass card">
+        <div class="card-title" id="tracker-month-label">Май 2025</div>
+        <div class="tracker-grid" id="tracker-grid"></div>
+        <div class="tracker-note-row">
+          <input type="text" id="tracker-note" placeholder="Заметка для этого дня...">
+          <button onclick="saveTrackerDay()" id="tracker-save-btn">Сохранить</button>
         </div>
-
+      </div>
+      <div class="glass card">
+        <div class="card-title" id="tracker-log-label">История настроения</div>
+        <div class="tracker-log" id="tracker-log"></div>
+      </div>
     </div>
 
+    <!-- SETTINGS -->
+    <div class="page" id="page-settings">
+      <div class="settings-section">
+        <h3 id="set-theme-label">Тема</h3>
+        <div class="setting-row glass">
+          <div><div class="s-label" id="set-theme-name">Тема оформления</div></div>
+          <div class="theme-btns">
+            <button class="theme-btn active" id="theme-dark-btn" onclick="setTheme('dark')">🌑 Dark</button>
+            <button class="theme-btn" id="theme-light-btn" onclick="setTheme('light')">☀️ Light</button>
+          </div>
+        </div>
+        <div class="setting-row glass" style="margin-top:8px">
+          <div><div class="s-label" id="set-wall-label">Обои</div><div class="s-sub" id="set-wall-sub">Выбрать из галереи</div></div>
+          <button class="cur-btn" style="max-width:100px" onclick="document.getElementById('wall-input').click()" id="wall-choose-btn">Выбрать</button>
+        </div>
+        <input type="file" id="wall-input" accept="image/*" style="display:none" onchange="setWallpaper(this)">
+        <img id="wall-preview" class="wallpaper-preview">
+        <div class="setting-row glass" style="margin-top:8px">
+          <div><div class="s-label" id="set-wall-remove">Убрать обои</div></div>
+          <button class="cur-btn" style="max-width:100px" onclick="removeWallpaper()" id="wall-remove-btn">Убрать</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <h3 id="set-lang-label">Язык</h3>
+        <div class="setting-row glass">
+          <div><div class="s-label" id="set-lang-name">Язык интерфейса</div></div>
+          <select class="lang-select" id="lang-select" onchange="setLang(this.value)"></select>
+        </div>
+      </div>
+      <div class="settings-section">
+        <h3 id="set-about-label">О приложении</h3>
+        <div class="setting-row glass">
+          <div><div class="s-label">LifeHub</div><div class="s-sub">v2.0 · Liquid Glass Edition</div></div>
+          <span class="pill pill-accent">PWA</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pages -->
+
+  <nav id="nav">
+    <button class="nav-btn active" onclick="goPage('home',this)" id="nav-home">
+      <span class="icon">🏠</span><span class="nav-lbl" data-key="nav_home">Главная</span>
+    </button>
+    <button class="nav-btn" onclick="goPage('mood',this)" id="nav-mood">
+      <span class="icon">💬</span><span class="nav-lbl" data-key="nav_mood">Настроение</span>
+    </button>
+    <button class="nav-btn" onclick="goPage('fin',this)" id="nav-fin">
+      <span class="icon">💰</span><span class="nav-lbl" data-key="nav_fin">Финансы</span>
+    </button>
+    <button class="nav-btn" onclick="goPage('todo',this)" id="nav-todo">
+      <span class="icon">✨</span><span class="nav-lbl" data-key="nav_todo">Что делать</span>
+    </button>
+    <button class="nav-btn" onclick="goPage('tracker',this)" id="nav-tracker">
+      <span class="icon">📅</span><span class="nav-lbl" data-key="nav_tracker">Трекер</span>
+    </button>
+    <button class="nav-btn" onclick="goPage('settings',this)" id="nav-settings">
+      <span class="icon">⚙️</span><span class="nav-lbl" data-key="nav_settings">Настройки</span>
+    </button>
+  </nav>
+</div>
+
+<!-- FINANCE MODAL -->
+<div class="modal-overlay" id="fin-modal">
+  <div class="modal glass">
+    <h3 id="fin-modal-title">Добавить</h3>
+    <div class="type-tabs">
+      <button class="type-tab active-inc" id="ftype-inc" onclick="setFinType('income')">+ Доход</button>
+      <button class="type-tab" id="ftype-exp" onclick="setFinType('expense')">− Расход</button>
+    </div>
+    <input type="number" id="fin-amount" placeholder="Сумма">
+    <input type="text" id="fin-desc" placeholder="Описание">
+    <div class="modal-btns">
+      <button class="cancel" onclick="closeFinModal()">Отмена</button>
+      <button class="confirm" onclick="addTransaction()">Добавить</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMOJI PICKER -->
+<div class="emoji-picker glass-deep" id="emoji-picker">
+  <!-- filled by JS -->
 </div>
 
 <script>
-
-window.onload = function () {
-
-    const menu = document.getElementById("menu");
-    const overlay = document.getElementById("overlay");
-    const menuBtn = document.getElementById("menuBtn");
-
-    menuBtn.addEventListener("click", () => {
-
-        menu.classList.toggle("active");
-        overlay.classList.toggle("active");
-    });
-
-    overlay.addEventListener("click", () => {
-
-        menu.classList.remove("active");
-        overlay.classList.remove("active");
-    });
-
+// ============================================================
+// DATA & STATE
+// ============================================================
+const EMOJIS = ['😊','😎','🥰','😂','😢','😴','😡','🤩','😌','🥳','😰','🤗','😇','🤔','😏','😤','🙃','🥹','😩','😔','💪','🌟','✨','🔥','💯'];
+const MONTHS_RU = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+let state = {
+  theme: 'dark',
+  lang: 'ru',
+  currency: '₽',
+  balance: 0,
+  transactions: [],
+  trackerData: {},
+  selectedEmoji: '😊',
+  selectedDay: null,
+  finType: 'income',
+  wallpaper: null,
+  todoIndex: 0,
 };
 
-function openSection(id){
+// ============================================================
+// TRANSLATIONS
+// ============================================================
+const T = {
+  ru: {
+    greeting_morning:'Доброе утро ☀️', greeting_day:'Добрый день 🌤', greeting_evening:'Добрый вечер 🌙', greeting_night:'Доброй ночи 🌚',
+    nav_home:'Главная', nav_mood:'Настроение', nav_fin:'Финансы', nav_todo:'Что делать', nav_tracker:'Трекер', nav_settings:'Настройки',
+    bal:'Баланс', days:'Дней в трекере', quote_label:'Цитата дня',
+    set_theme:'Тема', set_theme_name:'Тема оформления', set_wall:'Обои', set_wall_sub:'Выбрать из галереи', set_wall_choose:'Выбрать', set_wall_remove:'Убрать обои', set_wall_remove_btn:'Убрать',
+    set_lang:'Язык', set_lang_name:'Язык интерфейса', set_about:'О приложении',
+    tab_sad:'😢 Грустно', tab_bored:'😑 Скучно', tab_tired:'😴 Устал',
+    fin_bal:'Баланс', fin_hist:'История', btn_income:'+ Доход', btn_expense:'− Расход',
+    todo_title:'Чем заняться?', todo_desc:'Получи 5 случайных идей', todo_next:'🎲 Ещё идеи',
+    tracker_save:'Сохранить', tracker_log:'История настроения',
+    fin_modal_title:'Добавить', fin_amount:'Сумма', fin_desc_ph:'Описание',
+    tracker_note_ph:'Заметка для этого дня...',
+    mood_input_ph:'Напиши как ты себя чувствуешь...',
+    header_sub:'Твой личный помощник',
+  },
+  en: {
+    greeting_morning:'Good morning ☀️', greeting_day:'Good afternoon 🌤', greeting_evening:'Good evening 🌙', greeting_night:'Good night 🌚',
+    nav_home:'Home', nav_mood:'Mood', nav_fin:'Finance', nav_todo:'What to do', nav_tracker:'Tracker', nav_settings:'Settings',
+    bal:'Balance', days:'Days tracked', quote_label:'Quote of the day',
+    set_theme:'Theme', set_theme_name:'App theme', set_wall:'Wallpaper', set_wall_sub:'Choose from gallery', set_wall_choose:'Choose', set_wall_remove:'Remove wallpaper', set_wall_remove_btn:'Remove',
+    set_lang:'Language', set_lang_name:'Interface language', set_about:'About',
+    tab_sad:'😢 Sad', tab_bored:'😑 Bored', tab_tired:'😴 Tired',
+    fin_bal:'Balance', fin_hist:'History', btn_income:'+ Income', btn_expense:'− Expense',
+    todo_title:'What to do?', todo_desc:'Get 5 random ideas', todo_next:'🎲 More ideas',
+    tracker_save:'Save', tracker_log:'Mood history',
+    fin_modal_title:'Add', fin_amount:'Amount', fin_desc_ph:'Description',
+    tracker_note_ph:'Note for this day...',
+    mood_input_ph:'How are you feeling...',
+    header_sub:'Your personal assistant',
+  },
+  de: {
+    greeting_morning:'Guten Morgen ☀️', greeting_day:'Guten Tag 🌤', greeting_evening:'Guten Abend 🌙', greeting_night:'Gute Nacht 🌚',
+    nav_home:'Start', nav_mood:'Stimmung', nav_fin:'Finanzen', nav_todo:'Was tun', nav_tracker:'Tracker', nav_settings:'Einstellungen',
+    bal:'Kontostand', days:'Tage getrackt', quote_label:'Zitat des Tages',
+    set_theme:'Thema', set_theme_name:'App-Thema', set_wall:'Hintergrundbild', set_wall_sub:'Aus Galerie wählen', set_wall_choose:'Wählen', set_wall_remove:'Bild entfernen', set_wall_remove_btn:'Entfernen',
+    set_lang:'Sprache', set_lang_name:'Oberflächensprache', set_about:'Über',
+    tab_sad:'😢 Traurig', tab_bored:'😑 Gelangweilt', tab_tired:'😴 Müde',
+    fin_bal:'Kontostand', fin_hist:'Verlauf', btn_income:'+ Einnahme', btn_expense:'− Ausgabe',
+    todo_title:'Was tun?', todo_desc:'5 zufällige Ideen', todo_next:'🎲 Mehr Ideen',
+    tracker_save:'Speichern', tracker_log:'Stimmungsverlauf',
+    fin_modal_title:'Hinzufügen', fin_amount:'Betrag', fin_desc_ph:'Beschreibung',
+    tracker_note_ph:'Notiz für diesen Tag...',
+    mood_input_ph:'Wie fühlst du dich...',
+    header_sub:'Dein persönlicher Assistent',
+  },
+  fr: {
+    greeting_morning:'Bonjour ☀️', greeting_day:'Bon après-midi 🌤', greeting_evening:'Bonsoir 🌙', greeting_night:'Bonne nuit 🌚',
+    nav_home:'Accueil', nav_mood:'Humeur', nav_fin:'Finances', nav_todo:'Quoi faire', nav_tracker:'Suivi', nav_settings:'Paramètres',
+    bal:'Solde', days:'Jours suivis', quote_label:"Citation du jour",
+    set_theme:'Thème', set_theme_name:"Thème de l'app", set_wall:'Fond d\'écran', set_wall_sub:'Choisir de la galerie', set_wall_choose:'Choisir', set_wall_remove:"Supprimer le fond", set_wall_remove_btn:'Supprimer',
+    set_lang:'Langue', set_lang_name:"Langue de l'interface", set_about:'À propos',
+    tab_sad:'😢 Triste', tab_bored:'😑 Ennuyé', tab_tired:'😴 Fatigué',
+    fin_bal:'Solde', fin_hist:'Historique', btn_income:'+ Revenu', btn_expense:'− Dépense',
+    todo_title:'Quoi faire ?', todo_desc:'5 idées aléatoires', todo_next:'🎲 Plus d\'idées',
+    tracker_save:'Enregistrer', tracker_log:"Historique d'humeur",
+    fin_modal_title:'Ajouter', fin_amount:'Montant', fin_desc_ph:'Description',
+    tracker_note_ph:'Note pour ce jour...',
+    mood_input_ph:'Comment tu te sens...',
+    header_sub:'Ton assistant personnel',
+  },
+  es: {
+    greeting_morning:'Buenos días ☀️', greeting_day:'Buenas tardes 🌤', greeting_evening:'Buenas noches 🌙', greeting_night:'Buenas noches 🌚',
+    nav_home:'Inicio', nav_mood:'Ánimo', nav_fin:'Finanzas', nav_todo:'Qué hacer', nav_tracker:'Tracker', nav_settings:'Ajustes',
+    bal:'Saldo', days:'Días registrados', quote_label:'Cita del día',
+    set_theme:'Tema', set_theme_name:'Tema de la app', set_wall:'Fondo', set_wall_sub:'Elegir de galería', set_wall_choose:'Elegir', set_wall_remove:'Quitar fondo', set_wall_remove_btn:'Quitar',
+    set_lang:'Idioma', set_lang_name:'Idioma de la interfaz', set_about:'Acerca de',
+    tab_sad:'😢 Triste', tab_bored:'😑 Aburrido', tab_tired:'😴 Cansado',
+    fin_bal:'Saldo', fin_hist:'Historial', btn_income:'+ Ingreso', btn_expense:'− Gasto',
+    todo_title:'¿Qué hacer?', todo_desc:'Obtén 5 ideas aleatorias', todo_next:'🎲 Más ideas',
+    tracker_save:'Guardar', tracker_log:'Historial de ánimo',
+    fin_modal_title:'Agregar', fin_amount:'Cantidad', fin_desc_ph:'Descripción',
+    tracker_note_ph:'Nota para este día...',
+    mood_input_ph:'Cómo te sientes...',
+    header_sub:'Tu asistente personal',
+  },
+  zh: {
+    greeting_morning:'早上好 ☀️', greeting_day:'下午好 🌤', greeting_evening:'晚上好 🌙', greeting_night:'晚安 🌚',
+    nav_home:'主页', nav_mood:'心情', nav_fin:'财务', nav_todo:'做什么', nav_tracker:'追踪', nav_settings:'设置',
+    bal:'余额', days:'记录天数', quote_label:'每日名言',
+    set_theme:'主题', set_theme_name:'应用主题', set_wall:'壁纸', set_wall_sub:'从图库选择', set_wall_choose:'选择', set_wall_remove:'移除壁纸', set_wall_remove_btn:'移除',
+    set_lang:'语言', set_lang_name:'界面语言', set_about:'关于',
+    tab_sad:'😢 伤心', tab_bored:'😑 无聊', tab_tired:'😴 疲惫',
+    fin_bal:'余额', fin_hist:'历史记录', btn_income:'+ 收入', btn_expense:'− 支出',
+    todo_title:'做什么？', todo_desc:'获取5个随机想法', todo_next:'🎲 更多想法',
+    tracker_save:'保存', tracker_log:'心情历史',
+    fin_modal_title:'添加', fin_amount:'金额', fin_desc_ph:'描述',
+    tracker_note_ph:'今日备注...',
+    mood_input_ph:'你感觉怎么样...',
+    header_sub:'你的个人助手',
+  },
+  ja: {
+    greeting_morning:'おはようございます ☀️', greeting_day:'こんにちは 🌤', greeting_evening:'こんばんは 🌙', greeting_night:'おやすみ 🌚',
+    nav_home:'ホーム', nav_mood:'気分', nav_fin:'財務', nav_todo:'することは', nav_tracker:'トラッカー', nav_settings:'設定',
+    bal:'残高', days:'記録日数', quote_label:'今日の名言',
+    set_theme:'テーマ', set_theme_name:'アプリテーマ', set_wall:'壁紙', set_wall_sub:'ギャラリーから選択', set_wall_choose:'選択', set_wall_remove:'壁紙を削除', set_wall_remove_btn:'削除',
+    set_lang:'言語', set_lang_name:'インターフェース言語', set_about:'について',
+    tab_sad:'😢 悲しい', tab_bored:'😑 退屈', tab_tired:'😴 疲れた',
+    fin_bal:'残高', fin_hist:'履歴', btn_income:'+ 収入', btn_expense:'− 支出',
+    todo_title:'何をする？', todo_desc:'5つのランダムなアイデア', todo_next:'🎲 もっとアイデア',
+    tracker_save:'保存', tracker_log:'気分履歴',
+    fin_modal_title:'追加', fin_amount:'金額', fin_desc_ph:'説明',
+    tracker_note_ph:'今日のメモ...',
+    mood_input_ph:'気分はどうですか...',
+    header_sub:'あなたの個人アシスタント',
+  },
+  ko:{greeting_morning:'좋은 아침 ☀️',greeting_day:'안녕하세요 🌤',greeting_evening:'안녕하세요 🌙',greeting_night:'잘 자요 🌚',nav_home:'홈',nav_mood:'기분',nav_fin:'재정',nav_todo:'할 일',nav_tracker:'트래커',nav_settings:'설정',bal:'잔액',days:'기록 일수',quote_label:'오늘의 명언',set_theme:'테마',set_theme_name:'앱 테마',set_wall:'배경화면',set_wall_sub:'갤러리에서 선택',set_wall_choose:'선택',set_wall_remove:'배경화면 제거',set_wall_remove_btn:'제거',set_lang:'언어',set_lang_name:'인터페이스 언어',set_about:'정보',tab_sad:'😢 슬픔',tab_bored:'😑 지루함',tab_tired:'😴 피곤함',fin_bal:'잔액',fin_hist:'내역',btn_income:'+ 수입',btn_expense:'− 지출',todo_title:'무엇을 할까?',todo_desc:'5가지 랜덤 아이디어',todo_next:'🎲 더 많은 아이디어',tracker_save:'저장',tracker_log:'기분 내역',fin_modal_title:'추가',fin_amount:'금액',fin_desc_ph:'설명',tracker_note_ph:'오늘의 메모...',mood_input_ph:'기분이 어때요...',header_sub:'당신의 개인 도우미'},
+  pt:{greeting_morning:'Bom dia ☀️',greeting_day:'Boa tarde 🌤',greeting_evening:'Boa tarde 🌙',greeting_night:'Boa noite 🌚',nav_home:'Início',nav_mood:'Humor',nav_fin:'Finanças',nav_todo:'O que fazer',nav_tracker:'Tracker',nav_settings:'Configurações',bal:'Saldo',days:'Dias registrados',quote_label:'Citação do dia',set_theme:'Tema',set_theme_name:'Tema do app',set_wall:'Papel de parede',set_wall_sub:'Escolher da galeria',set_wall_choose:'Escolher',set_wall_remove:'Remover fundo',set_wall_remove_btn:'Remover',set_lang:'Idioma',set_lang_name:'Idioma da interface',set_about:'Sobre',tab_sad:'😢 Triste',tab_bored:'😑 Entediado',tab_tired:'😴 Cansado',fin_bal:'Saldo',fin_hist:'Histórico',btn_income:'+ Renda',btn_expense:'− Despesa',todo_title:'O que fazer?',todo_desc:'5 ideias aleatórias',todo_next:'🎲 Mais ideias',tracker_save:'Salvar',tracker_log:'Histórico de humor',fin_modal_title:'Adicionar',fin_amount:'Valor',fin_desc_ph:'Descrição',tracker_note_ph:'Nota para este dia...',mood_input_ph:'Como você está se sentindo...',header_sub:'Seu assistente pessoal'},
+  ar:{greeting_morning:'صباح الخير ☀️',greeting_day:'مساء الخير 🌤',greeting_evening:'مساء النور 🌙',greeting_night:'تصبح على خير 🌚',nav_home:'الرئيسية',nav_mood:'المزاج',nav_fin:'المالية',nav_todo:'ماذا أفعل',nav_tracker:'التتبع',nav_settings:'الإعدادات',bal:'الرصيد',days:'الأيام المسجلة',quote_label:'اقتباس اليوم',set_theme:'السمة',set_theme_name:'سمة التطبيق',set_wall:'خلفية',set_wall_sub:'اختر من المعرض',set_wall_choose:'اختر',set_wall_remove:'إزالة الخلفية',set_wall_remove_btn:'إزالة',set_lang:'اللغة',set_lang_name:'لغة الواجهة',set_about:'حول',tab_sad:'😢 حزين',tab_bored:'😑 ممل',tab_tired:'😴 تعبان',fin_bal:'الرصيد',fin_hist:'السجل',btn_income:'+ دخل',btn_expense:'− مصروف',todo_title:'ماذا تفعل؟',todo_desc:'احصل على 5 أفكار عشوائية',todo_next:'🎲 أفكار أكثر',tracker_save:'حفظ',tracker_log:'سجل المزاج',fin_modal_title:'إضافة',fin_amount:'المبلغ',fin_desc_ph:'الوصف',tracker_note_ph:'ملاحظة لهذا اليوم...',mood_input_ph:'كيف تشعر...',header_sub:'مساعدك الشخصي'},
+  it:{greeting_morning:'Buongiorno ☀️',greeting_day:'Buon pomeriggio 🌤',greeting_evening:'Buonasera 🌙',greeting_night:'Buonanotte 🌚',nav_home:'Home',nav_mood:'Umore',nav_fin:'Finanze',nav_todo:'Cosa fare',nav_tracker:'Tracker',nav_settings:'Impostazioni',bal:'Saldo',days:'Giorni registrati',quote_label:'Citazione del giorno',set_theme:'Tema',set_theme_name:"Tema dell'app",set_wall:'Sfondo',set_wall_sub:'Scegli dalla galleria',set_wall_choose:'Scegli',set_wall_remove:'Rimuovi sfondo',set_wall_remove_btn:'Rimuovi',set_lang:'Lingua',set_lang_name:"Lingua dell'interfaccia",set_about:'Informazioni',tab_sad:'😢 Triste',tab_bored:'😑 Annoiato',tab_tired:'😴 Stanco',fin_bal:'Saldo',fin_hist:'Storico',btn_income:'+ Entrata',btn_expense:'− Uscita',todo_title:'Cosa fare?',todo_desc:'Ottieni 5 idee casuali',todo_next:'🎲 Altre idee',tracker_save:'Salva',tracker_log:"Storico dell'umore",fin_modal_title:'Aggiungi',fin_amount:'Importo',fin_desc_ph:'Descrizione',tracker_note_ph:'Nota per questo giorno...',mood_input_ph:'Come ti senti...',header_sub:'Il tuo assistente personale'},
+};
 
-    document.querySelectorAll(".section")
-    .forEach(section => {
-        section.classList.remove("active");
-    });
-
-    document.getElementById(id)
-    .classList.add("active");
-
-    document.getElementById("menu")
-    .classList.remove("active");
-
-    document.getElementById("overlay")
-    .classList.remove("active");
-}
-
-let currentMood = "🙂";
-
-function setMood(mood){
-    currentMood = mood;
-}
-
-function saveTracker(){
-
-    const data = {
-
-        mood: currentMood,
-
-        sleep:
-        document.getElementById("sleep").value,
-
-        energy:
-        document.getElementById("energy").value,
-
-        note:
-        document.getElementById("note").value
-    };
-
-    localStorage.setItem(
-        "life_tracker",
-        JSON.stringify(data)
-    );
-
-    alert("Сохранено ✨");
-}
-
-let actions = [
-
-    "Погуляй 10 минут",
-    "Посмотри фильм",
-    "Сделай 10 отжиманий",
-    "Почитай 5 страниц",
-    "Послушай музыку",
-    "Выпей воды"
+const LANGS = [
+  {code:'ru',name:'Русский'},
+  {code:'en',name:'English'},
+  {code:'de',name:'Deutsch'},
+  {code:'fr',name:'Français'},
+  {code:'es',name:'Español'},
+  {code:'zh',name:'中文'},
+  {code:'ja',name:'日本語'},
+  {code:'ko',name:'한국어'},
+  {code:'pt',name:'Português'},
+  {code:'ar',name:'العربية'},
+  {code:'it',name:'Italiano'},
+  {code:'tr',name:'Türkçe'},
+  {code:'pl',name:'Polski'},
+  {code:'nl',name:'Nederlands'},
+  {code:'uk',name:'Українська'},
+  {code:'cs',name:'Čeština'},
+  {code:'sv',name:'Svenska'},
+  {code:'fi',name:'Suomi'},
+  {code:'no',name:'Norsk'},
+  {code:'da',name:'Dansk'},
+  {code:'hi',name:'हिन्दी'},
+  {code:'bn',name:'বাংলা'},
+  {code:'id',name:'Bahasa Indonesia'},
+  {code:'ms',name:'Bahasa Melayu'},
+  {code:'th',name:'ภาษาไทย'},
+  {code:'vi',name:'Tiếng Việt'},
+  {code:'ro',name:'Română'},
+  {code:'hu',name:'Magyar'},
+  {code:'el',name:'Ελληνικά'},
+  {code:'he',name:'עברית'},
+  {code:'fa',name:'فارسی'},
+  {code:'az',name:'Azərbaycan'},
+  {code:'ka',name:'ქართული'},
+  {code:'kk',name:'Қазақша'},
+  {code:'uz',name:'O\'zbekcha'},
+  {code:'be',name:'Беларуская'},
+  {code:'sk',name:'Slovenčina'},
+  {code:'hr',name:'Hrvatski'},
+  {code:'sr',name:'Српски'},
+  {code:'bg',name:'Български'},
+  {code:'lt',name:'Lietuvių'},
+  {code:'lv',name:'Latviešu'},
+  {code:'et',name:'Eesti'},
+  {code:'sl',name:'Slovenščina'},
+  {code:'mk',name:'Македонски'},
+  {code:'sq',name:'Shqip'},
+  {code:'sw',name:'Kiswahili'},
+  {code:'am',name:'አማርኛ'},
 ];
 
-function generateAction(){
-
-    const random =
-    actions[Math.floor(
-        Math.random() * actions.length
-    )];
-
-    document.getElementById(
-        "generatedAction"
-    ).innerText = random;
+// fallback for missing langs
+function t(key) {
+  const L = T[state.lang] || T['ru'];
+  return L[key] || T['ru'][key] || key;
 }
 
-function addAction(){
-
-    const input =
-    document.getElementById("customAction");
-
-    if(input.value.trim() !== ""){
-
-        actions.push(input.value);
-
-        input.value = "";
-
-        alert("Добавлено ⚡");
-    }
-}
-
-let balance =
-Number(localStorage.getItem("balance")) || 0;
-
-updateBalance();
-
-function addExpense(){
-
-    const value =
-    Number(document.getElementById("expense").value);
-
-    balance += value;
-
-    localStorage.setItem("balance", balance);
-
-    updateBalance();
-}
-
-function updateBalance(){
-
-    document.getElementById(
-        "balance"
-    ).innerText = balance + "€";
-}
-
-const replies = {
-
-    "мне грустно":[
-        "Ты справишься 💙",
-        "Иногда нужен отдых",
-        "Завтра будет лучше ☀️"
-    ],
-
-    "мне скучно":[
-        "Попробуй новую музыку 🎵",
-        "Сделай прогулку 🚶",
-        "Посмотри фильм 🍿"
-    ],
-
-    "я устал":[
-        "Тебе нужен отдых 😴",
-        "Выпей воды 💧",
-        "Закрой глаза на пару минут"
-    ]
+// ============================================================
+// MOOD MESSAGES (15+ each)
+// ============================================================
+const MOOD_INIT = {
+  sad: [
+    "Привет 💙 Я здесь рядом с тобой. Расскажи, что случилось?",
+    "Это нормально — грустить. Твои чувства важны.",
+    "Иногда нам нужно просто побыть в своих эмоциях. Я слушаю.",
+    "Ты не одинок. Я здесь, готов выслушать.",
+    "Грусть — это тоже часть жизни. Можешь рассказать мне больше?",
+    "Обними себя покрепче. Ты справляешься.",
+    "Всё проходит — и это тоже пройдёт. Держись 💙",
+    "Я рад, что ты написал. Иногда просто выговориться — это уже помощь.",
+    "Скажи мне, что тебя беспокоит больше всего прямо сейчас?",
+    "Иногда грусть — это сигнал, что нам нужно что-то изменить. Ты думал об этом?",
+    "Помни: ты сильнее, чем думаешь. 💪",
+    "Какая-то конкретная ситуация тебя расстроила?",
+    "Разреши себе погрустить. Это честно по отношению к себе.",
+    "Ты молодец, что не держишь всё внутри.",
+    "Если хочешь — можем вместе придумать что-нибудь приятное для тебя?",
+    "Даже в самый тёмный день есть что-то, за что можно зацепиться 🌱",
+  ],
+  bored: [
+    "О, скука — враг творчества! Давай это исправим 🎨",
+    "Когда скучно — значит мозг ищет новые впечатления. Давай найдём их!",
+    "Скука — это возможность открыть что-то новое. Попробуем?",
+    "Я знаю миллион способов развеяться 😄 Что тебе по душе?",
+    "Может, самое время попробовать что-то, до чего руки не доходили?",
+    "Скука — это luxury проблема! Значит у тебя есть свободное время 🎉",
+    "Загляни в раздел «Что делать» — там куча идей!",
+    "Расскажи, что ты вообще любишь делать? Придумаем что-нибудь!",
+    "А что если позвонить кому-нибудь, с кем давно не общался?",
+    "Может быть, хороший фильм или сериал — самое оно сейчас?",
+    "Попробуй нарисовать что-нибудь — даже если не умеешь! Это весело 🖌",
+    "Скука — признак умного человека. Серьёзно, это наука!",
+    "А что если начать учить что-то новое прямо сегодня?",
+    "Иди на прогулку — мир за окном интереснее, чем кажется 🌿",
+    "Напиши список своих мечтаний. Да прямо сейчас!",
+    "Поиграй в слова, посмотри стендап, испеки что-нибудь 🍪",
+  ],
+  tired: [
+    "Слышу тебя. Усталость — это серьёзно. Как ты сейчас? 💤",
+    "Ты работал(а) много? Твоё тело просит отдыха.",
+    "Иногда самое важное — это просто остановиться и подышать.",
+    "Разреши себе отдохнуть. Это не слабость — это необходимость.",
+    "Когда ты в последний раз нормально спал(а)?",
+    "Стакан воды, тёплый плед и тишина — иногда этого достаточно ☕",
+    "Ты не машина. Отдыхать — это нормально и важно.",
+    "Может, сделать маленький перерыв прямо сейчас?",
+    "Усталость накапливается. Что ты сегодня сделал(а) для себя?",
+    "Иди ляг, закрой глаза хотя бы на 15 минут. Это многое меняет.",
+    "Что сейчас забирает у тебя больше всего энергии?",
+    "Может, пора делегировать что-то или отказаться от лишнего?",
+    "Твои силы — это твой главный ресурс. Береги их 🌿",
+    "Лёгкая растяжка может снять напряжение. Попробуй!",
+    "Напомни себе: ты уже сделал(а) достаточно на сегодня.",
+    "Ты умница. Забота о себе — тоже достижение.",
+  ],
 };
 
-function sendMood(text){
+const MOOD_REPLIES = {
+  sad: [
+    "Это звучит тяжело. Ты справляешься лучше, чем думаешь 💙",
+    "Я понимаю. Иногда слова не нужны, просто знай — я рядом.",
+    "Это пройдёт. Не торопи себя.",
+    "Ты молодец, что говоришь об этом. Держи это в себе тяжелее.",
+    "Хочешь, придумаем что-нибудь приятное для тебя прямо сейчас?",
+    "Позволь себе побыть в этом. Грусть — не слабость.",
+  ],
+  bored: [
+    "Звучит! А что ты ещё любишь? Придумаем что-нибудь интересное 🎯",
+    "О, это отличный момент попробовать что-то новое!",
+    "Загляни в раздел «Что делать» — там точно найдёшь идею ✨",
+    "Что последний раз тебя по-настоящему увлекало?",
+    "Можно устроить себе мини-приключение даже дома!",
+    "Я слышу. Давай вместе что-нибудь придумаем 🎨",
+  ],
+  tired: [
+    "Главное — не игнорировать усталость. Отдохни 🌙",
+    "Дай себе право быть усталым. Это человечно.",
+    "Когда отдохнёшь — всё будет яснее. Обещаю.",
+    "Ты сделал(а) всё что мог(ла). Этого достаточно на сегодня.",
+    "Тело умнее нас. Если оно просит отдыха — слушай его.",
+    "Восстановление — это тоже продуктивность 💤",
+  ],
+};
 
-    addMessage(text, true);
+// ============================================================
+// WHAT TO DO — 50+ ideas
+// ============================================================
+const TODO_IDEAS = [
+  {icon:'🎨',text:'Нарисуй что-нибудь — не важно как, просто для удовольствия',cat:'Творчество'},
+  {icon:'📚',text:'Открой книгу, которую давно хотел прочитать',cat:'Саморазвитие'},
+  {icon:'🎵',text:'Сделай плейлист из любимых песен для разных настроений',cat:'Музыка'},
+  {icon:'🌿',text:'Выйди на прогулку без телефона на 20 минут',cat:'Природа'},
+  {icon:'🧘',text:'Помедитируй 10 минут — просто дыши',cat:'Здоровье'},
+  {icon:'✍️',text:'Напиши письмо себе через год — что ты хочешь увидеть?',cat:'Рефлексия'},
+  {icon:'🍳',text:'Приготовь что-то новое — найди рецепт и попробуй',cat:'Кулинария'},
+  {icon:'📷',text:'Сфотографируй 10 красивых вещей вокруг тебя прямо сейчас',cat:'Творчество'},
+  {icon:'🎮',text:'Поиграй в любимую игру без чувства вины',cat:'Отдых'},
+  {icon:'💌',text:'Напиши сообщение другу, с которым давно не общался',cat:'Общение'},
+  {icon:'🧩',text:'Реши головоломку или кроссворд',cat:'Мозговая зарядка'},
+  {icon:'🎬',text:'Посмотри фильм, который давно откладывал',cat:'Развлечения'},
+  {icon:'🌱',text:'Полей цветы или посади что-нибудь',cat:'Природа'},
+  {icon:'🏃',text:'Сделай 30-минутную тренировку дома',cat:'Здоровье'},
+  {icon:'📝',text:'Запиши 5 вещей, за которые ты благодарен сегодня',cat:'Рефлексия'},
+  {icon:'🎲',text:'Сыграй в настольную игру с кем-нибудь',cat:'Общение'},
+  {icon:'🧹',text:'Убери один маленький угол — это даст энергию',cat:'Дом'},
+  {icon:'🎤',text:'Пой любимые песни вслух как можно громче',cat:'Веселье'},
+  {icon:'📖',text:'Прочитай 20 страниц любой книги',cat:'Саморазвитие'},
+  {icon:'🌅',text:'Встань пораньше и встреть рассвет',cat:'Природа'},
+  {icon:'🧁',text:'Испеки печенье или кекс — порадуй себя',cat:'Кулинария'},
+  {icon:'💃',text:'Потанцуй дома под любимую музыку 5 минут',cat:'Веселье'},
+  {icon:'🎯',text:'Выучи новое слово на иностранном языке',cat:'Саморазвитие'},
+  {icon:'🛁',text:'Прими ванну с пеной и расслабься',cat:'Здоровье'},
+  {icon:'🌍',text:'Исследуй новое место на Google Maps',cat:'Путешествия'},
+  {icon:'✏️',text:'Начни вести дневник — даже одна запись в день меняет многое',cat:'Рефлексия'},
+  {icon:'🏊',text:'Займись плаванием или хотя бы контрастным душем',cat:'Здоровье'},
+  {icon:'🎧',text:'Послушай подкаст о чём-то совершенно новом для тебя',cat:'Саморазвитие'},
+  {icon:'🖼️',text:'Посети онлайн-музей или виртуальную галерею',cat:'Культура'},
+  {icon:'📱',text:'Удали с телефона приложения, которые тебя утомляют',cat:'Цифровой детокс'},
+  {icon:'🌻',text:'Выйди на улицу и найди что-то прекрасное в природе',cat:'Природа'},
+  {icon:'🤸',text:'Растянись — 10 минут стретчинга изменят твой день',cat:'Здоровье'},
+  {icon:'🍵',text:'Завари чай и выпей его медленно, без спешки',cat:'Отдых'},
+  {icon:'🧪',text:'Попробуй новый вид спорта или активности',cat:'Приключения'},
+  {icon:'📰',text:'Прочитай статью на интересную тебе тему',cat:'Знания'},
+  {icon:'🌙',text:'Устрой ранний вечер — свечи, тишина, книга',cat:'Отдых'},
+  {icon:'🤝',text:'Сделай что-то доброе для незнакомца',cat:'Добрые дела'},
+  {icon:'🎸',text:'Изучи 3 аккорда на гитаре или любом инструменте',cat:'Музыка'},
+  {icon:'📦',text:'Разбери старые вещи и отдай ненужное',cat:'Дом'},
+  {icon:'🌠',text:'Выйди ночью и посмотри на звёзды',cat:'Природа'},
+  {icon:'🧠',text:'Пройди онлайн-курс по чему-нибудь интересному',cat:'Саморазвитие'},
+  {icon:'🐶',text:'Поиграй с питомцем или прогуляйся с ним',cat:'Животные'},
+  {icon:'🖊️',text:'Напиши короткое стихотворение о своём дне',cat:'Творчество'},
+  {icon:'🌊',text:'Послушай звуки природы и просто подышать',cat:'Медитация'},
+  {icon:'🎪',text:'Сходи на мероприятие в своём городе',cat:'Культура'},
+  {icon:'🧘‍♀️',text:'Попробуй йогу по видео — даже 15 минут помогут',cat:'Здоровье'},
+  {icon:'📜',text:'Изучи историю своего города или страны',cat:'Знания'},
+  {icon:'🎁',text:'Сделай подарок кому-нибудь просто так, без повода',cat:'Добрые дела'},
+  {icon:'🚴',text:'Прокатись на велосипеде или самокате',cat:'Активность'},
+  {icon:'🌈',text:'Собери коллаж из вырезок или картинок с телефона',cat:'Творчество'},
+  {icon:'📊',text:'Составь план на следующую неделю',cat:'Продуктивность'},
+  {icon:'🔭',text:'Посмотри на небо — найди знакомые созвездия',cat:'Природа'},
+  {icon:'🎭',text:'Посмотри короткий стендап — смех лечит',cat:'Веселье'},
+];
 
-    const arr = replies[text];
+// ============================================================
+// QUOTES
+// ============================================================
+const QUOTES = [
+  "Жизнь — это то, что происходит, пока ты строишь другие планы. — Джон Леннон",
+  "Лучший способ предсказать будущее — создать его. — Питер Друкер",
+  "Будь тем изменением, которое хочешь видеть в мире. — Махатма Ганди",
+  "Тот, кто знает зачем жить, может вынести почти любое как. — Ницше",
+  "Начни где ты есть. Используй что имеешь. Делай что можешь.",
+  "Каждый день — это новая возможность начать. Не упускай её.",
+  "Маленькие шаги каждый день ведут к большим результатам.",
+  "Счастье — это не место назначения, а способ путешествия.",
+  "Верь в себя и всё станет возможным.",
+  "Самый тёмный час перед рассветом. Держись.",
+];
 
-    const reply =
-    arr[Math.floor(Math.random() * arr.length)];
-
-    setTimeout(() => {
-
-        addMessage(reply, false);
-
-    }, 500);
+// ============================================================
+// SAVE / LOAD
+// ============================================================
+function save() {
+  const sv = {...state};
+  if(sv.wallpaper && sv.wallpaper.length > 100000) sv.wallpaper = sv.wallpaper; // keep
+  try{ localStorage.setItem('lifehub2',JSON.stringify(sv)); }catch(e){}
+}
+function load() {
+  try{
+    const d = localStorage.getItem('lifehub2');
+    if(d){ const p=JSON.parse(d); Object.assign(state,p); }
+  }catch(e){}
 }
 
-function addMessage(text, user){
-
-    const chat =
-    document.getElementById("chat");
-
-    const div =
-    document.createElement("div");
-
-    div.className =
-    "bubble " + (user ? "user" : "bot");
-
-    div.innerText = text;
-
-    chat.appendChild(div);
-
-    chat.scrollTop = chat.scrollHeight;
+// ============================================================
+// CLOCK
+// ============================================================
+function updateClock(){
+  const now=new Date();
+  const h=String(now.getHours()).padStart(2,'0');
+  const m=String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('clock').textContent=h+':'+m;
+  const days=['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+  const months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  document.getElementById('date-str').textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()];
+  const hr=now.getHours();
+  let gkey='greeting_day';
+  if(hr>=5&&hr<12)gkey='greeting_morning';
+  else if(hr>=12&&hr<18)gkey='greeting_day';
+  else if(hr>=18&&hr<23)gkey='greeting_evening';
+  else gkey='greeting_night';
+  document.getElementById('greeting-text').textContent=t(gkey);
 }
 
+// ============================================================
+// NAVIGATION
+// ============================================================
+function goPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  else {
+    const nb=document.getElementById('nav-'+id);
+    if(nb) nb.classList.add('active');
+  }
+  // refresh stats on home
+  if(id==='home') refreshHomeStats();
+}
+
+// ============================================================
+// THEME
+// ============================================================
+function setTheme(t){
+  state.theme=t;
+  document.body.classList.toggle('theme-light',t==='light');
+  document.getElementById('theme-dark-btn').classList.toggle('active',t==='dark');
+  document.getElementById('theme-light-btn').classList.toggle('active',t==='light');
+  save();
+}
+
+// ============================================================
+// WALLPAPER
+// ============================================================
+function setWallpaper(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    const data=e.target.result;
+    state.wallpaper=data;
+    applyWallpaper();
+    save();
+    const prev=document.getElementById('wall-preview');
+    prev.src=data;prev.style.display='block';
+  };
+  reader.readAsDataURL(file);
+}
+function applyWallpaper(){
+  const wp=document.getElementById('wallpaper');
+  const ov=document.getElementById('wallpaper-overlay');
+  if(state.wallpaper){
+    wp.style.backgroundImage='url('+state.wallpaper+')';
+    ov.style.opacity='0.65';
+  } else {
+    wp.style.backgroundImage='none';
+    ov.style.opacity='0';
+  }
+}
+function removeWallpaper(){
+  state.wallpaper=null;
+  applyWallpaper();
+  const prev=document.getElementById('wall-preview');
+  prev.src='';prev.style.display='none';
+  document.getElementById('wall-input').value='';
+  save();
+}
+
+// ============================================================
+// LANGUAGE
+// ============================================================
+function buildLangSelect(){
+  const sel=document.getElementById('lang-select');
+  sel.innerHTML='';
+  LANGS.forEach(l=>{
+    const op=document.createElement('option');
+    op.value=l.code;op.textContent=l.name;
+    if(l.code===state.lang)op.selected=true;
+    sel.appendChild(op);
+  });
+}
+function setLang(code){
+  state.lang=code;
+  applyLang();
+  save();
+}
+function applyLang(){
+  // Nav labels
+  document.querySelectorAll('.nav-lbl[data-key]').forEach(el=>{
+    el.textContent=t(el.dataset.key);
+  });
+  // specific elements
+  const map={
+    'header-sub':'header_sub',
+    'tab-sad':'tab_sad','tab-bored':'tab_bored','tab-tired':'tab_tired',
+    'fin-bal-label':'fin_bal','fin-hist-label':'fin_hist',
+    'btn-income':'btn_income','btn-expense':'btn_expense',
+    'todo-title-label':'todo_title','todo-desc-label':'todo_desc',
+    'todo-next-btn':'todo_next',
+    'tracker-save-btn':'tracker_save','tracker-log-label':'tracker_log',
+    'set-theme-label':'set_theme','set-theme-name':'set_theme_name',
+    'set-wall-label':'set_wall','set-wall-sub':'set_wall_sub',
+    'wall-choose-btn':'set_wall_choose','set-wall-remove':'set_wall_remove',
+    'wall-remove-btn':'set_wall_remove_btn',
+    'set-lang-label':'set_lang','set-lang-name':'set_lang_name',
+    'set-about-label':'set_about',
+    'stat-bal-lbl':'bal','stat-days-lbl':'days',
+    'quote-label':'quote_label',
+  };
+  for(const[id,key] of Object.entries(map)){
+    const el=document.getElementById(id);
+    if(el)el.textContent=t(key);
+  }
+  // placeholders
+  const chatInput=document.getElementById('chat-input');
+  if(chatInput)chatInput.placeholder=t('mood_input_ph');
+  const tnote=document.getElementById('tracker-note');
+  if(tnote)tnote.placeholder=t('tracker_note_ph');
+  // fin modal
+  document.getElementById('fin-modal-title').textContent=t('fin_modal_title');
+  document.getElementById('fin-amount').placeholder=t('fin_amount');
+  document.getElementById('fin-desc').placeholder=t('fin_desc_ph');
+  // update lang select
+  buildLangSelect();
+}
+
+// ============================================================
+// CURRENCY
+// ============================================================
+function setCurrency(c){
+  state.currency=c;
+  document.getElementById('cur-rub').classList.toggle('active',c==='₽');
+  document.getElementById('cur-usd').classList.toggle('active',c==='$');
+  document.getElementById('cur-eur').classList.toggle('active',c==='€');
+  document.getElementById('fin-cur-sym').textContent=c;
+  renderTransactions();
+  refreshHomeStats();
+  save();
+}
+
+// ============================================================
+// FINANCES
+// ============================================================
+let curFinType='income';
+function openFinModal(type){
+  curFinType=type;
+  setFinType(type);
+  document.getElementById('fin-modal').classList.add('open');
+  document.getElementById('fin-amount').value='';
+  document.getElementById('fin-desc').value='';
+  setTimeout(()=>document.getElementById('fin-amount').focus(),300);
+}
+function closeFinModal(){
+  document.getElementById('fin-modal').classList.remove('open');
+}
+function setFinType(type){
+  curFinType=type;
+  document.getElementById('ftype-inc').className='type-tab'+(type==='income'?' active-inc':'');
+  document.getElementById('ftype-exp').className='type-tab'+(type==='expense'?' active-exp':'');
+}
+function addTransaction(){
+  const amt=parseFloat(document.getElementById('fin-amount').value);
+  const desc=document.getElementById('fin-desc').value||'Транзакция';
+  if(!amt||isNaN(amt))return;
+  const tr={
+    id:Date.now(),
+    type:curFinType,
+    amount:amt,
+    desc,
+    currency:state.currency,
+    date:new Date().toLocaleDateString('ru-RU'),
+  };
+  state.transactions.unshift(tr);
+  state.balance+=(curFinType==='income'?amt:-amt);
+  renderTransactions();
+  refreshHomeStats();
+  closeFinModal();
+  save();
+}
+function renderTransactions(){
+  const list=document.getElementById('trans-list');
+  document.getElementById('fin-balance').textContent=Math.abs(state.balance).toLocaleString();
+  document.getElementById('fin-cur-sym').textContent=state.currency;
+  list.innerHTML='';
+  if(!state.transactions.length){
+    list.innerHTML='<div style="text-align:center;color:var(--text2);padding:20px;font-weight:700">Нет транзакций</div>';
+    return;
+  }
+  state.transactions.slice(0,20).forEach(tr=>{
+    const d=document.createElement('div');
+    d.className='trans-item';
+    d.innerHTML=`<div><div class="t-desc">${tr.desc}</div><div class="t-date">${tr.date}</div></div>
+    <div class="t-amt ${tr.type==='income'?'inc':'exp'}">${tr.type==='income'?'+':'-'}${tr.currency||state.currency}${tr.amount.toLocaleString()}</div>`;
+    list.appendChild(d);
+  });
+}
+
+// ============================================================
+// WHAT TO DO
+// ============================================================
+function shuffleArray(arr){
+  const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;
+}
+let shuffled=[];let todoIdx=0;
+function showTodoCards(){
+  if(todoIdx===0||todoIdx>=shuffled.length) {shuffled=shuffleArray(TODO_IDEAS);todoIdx=0;}
+  const cards=document.getElementById('todo-cards');
+  cards.innerHTML='';
+  const batch=shuffled.slice(todoIdx,todoIdx+5);
+  todoIdx+=5;
+  batch.forEach((item,i)=>{
+    const d=document.createElement('div');
+    d.className='todo-card-item glass';
+    d.style.animationDelay=(i*0.07)+'s';
+    d.innerHTML=`<div class="todo-icon">${item.icon}</div>
+    <div><div class="todo-text">${item.text}</div><div class="todo-cat">${item.cat}</div></div>`;
+    cards.appendChild(d);
+  });
+}
+
+// ============================================================
+// MOOD CHAT
+// ============================================================
+let currentMood='sad';
+function switchMood(mood){
+  currentMood=mood;
+  ['sad','bored','tired'].forEach(m=>{
+    document.getElementById('tab-'+m).classList.toggle('active',m===mood);
+  });
+  renderMoodChat();
+}
+function renderMoodChat(){
+  const area=document.getElementById('chat-area');
+  area.innerHTML='';
+  const msgs=MOOD_INIT[currentMood];
+  // show first 3 as bot messages with delay
+  msgs.slice(0,3).forEach((msg,i)=>{
+    setTimeout(()=>{
+      const d=document.createElement('div');
+      d.className='msg bot glass';
+      d.textContent=msg;
+      area.appendChild(d);
+      area.scrollTop=area.scrollHeight;
+    },i*400);
+  });
+}
+function sendChatMsg(){
+  const inp=document.getElementById('chat-input');
+  const val=inp.value.trim();if(!val)return;
+  const area=document.getElementById('chat-area');
+  const ud=document.createElement('div');
+  ud.className='msg user';ud.textContent=val;
+  area.appendChild(ud);
+  inp.value='';
+  area.scrollTop=area.scrollHeight;
+  // bot reply
+  setTimeout(()=>{
+    const replies=MOOD_REPLIES[currentMood];
+    const reply=replies[Math.floor(Math.random()*replies.length)];
+    const bd=document.createElement('div');
+    bd.className='msg bot glass';bd.textContent=reply;
+    area.appendChild(bd);
+    area.scrollTop=area.scrollHeight;
+    // optionally add another from init pool
+    const pool=MOOD_INIT[currentMood];
+    const extra=pool[Math.floor(Math.random()*pool.length)];
+    setTimeout(()=>{
+      const bd2=document.createElement('div');
+      bd2.className='msg bot glass';bd2.textContent=extra;
+      area.appendChild(bd2);
+      area.scrollTop=area.scrollHeight;
+    },1200);
+  },800);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const inp=document.getElementById('chat-input');
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMsg();});
+});
+
+// ============================================================
+// LIFE TRACKER
+// ============================================================
+function buildTrackerGrid(){
+  const grid=document.getElementById('tracker-grid');
+  grid.innerHTML='';
+  const now=new Date();
+  const year=now.getFullYear();
+  const month=now.getMonth();
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  const label=document.getElementById('tracker-month-label');
+  label.textContent=MONTHS_RU[month]+' '+year;
+  for(let d=1;d<=daysInMonth;d++){
+    const key=`${year}-${month+1}-${d}`;
+    const data=state.trackerData[key];
+    const el=document.createElement('div');
+    el.className='tracker-day'+(data?' filled':'');
+    el.innerHTML=`<span class="day-num">${d}</span>${data?data.emoji:''}`;
+    el.onclick=()=>openEmojiPicker(key,d,el);
+    grid.appendChild(el);
+  }
+}
+function renderTrackerLog(){
+  const log=document.getElementById('tracker-log');
+  log.innerHTML='';
+  const entries=Object.entries(state.trackerData).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,30);
+  if(!entries.length){
+    log.innerHTML='<div style="text-align:center;color:var(--text2);padding:20px;font-weight:700">Нет записей</div>';
+    return;
+  }
+  entries.forEach(([key,val])=>{
+    const d=document.createElement('div');
+    d.className='tracker-log-item';
+    d.innerHTML=`<div class="tl-emoji">${val.emoji}</div>
+    <div><div class="tl-date">${key}</div><div class="tl-note">${val.note||''}</div></div>`;
+    log.appendChild(d);
+  });
+}
+
+let pendingDay=null;
+function openEmojiPicker(key,dayNum,el){
+  pendingDay=key;
+  const picker=document.getElementById('emoji-picker');
+  picker.innerHTML='';
+  EMOJIS.forEach(em=>{
+    const btn=document.createElement('button');
+    btn.className='ep-emoji';btn.textContent=em;
+    btn.onclick=()=>{
+      state.selectedEmoji=em;
+      selectEmojiForDay(key,em,el);
+      picker.classList.remove('open');
+    };
+    picker.appendChild(btn);
+  });
+  picker.classList.add('open');
+  // read existing note
+  const existing=state.trackerData[key];
+  document.getElementById('tracker-note').value=existing?existing.note:'';
+}
+function selectEmojiForDay(key,emoji,el){
+  if(!state.trackerData[key]) state.trackerData[key]={emoji,note:''};
+  else state.trackerData[key].emoji=emoji;
+  el.innerHTML=`<span class="day-num">${key.split('-')[2]}</span>${emoji}`;
+  el.classList.add('filled');
+}
+function saveTrackerDay(){
+  if(!pendingDay){
+    // save today
+    const now=new Date();
+    pendingDay=`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+  }
+  const note=document.getElementById('tracker-note').value;
+  if(!state.trackerData[pendingDay]) state.trackerData[pendingDay]={emoji:state.selectedEmoji,note};
+  else state.trackerData[pendingDay].note=note;
+  renderTrackerLog();
+  buildTrackerGrid();
+  document.getElementById('tracker-note').value='';
+  pendingDay=null;
+  save();
+}
+// close emoji picker on outside click
+document.addEventListener('click',e=>{
+  const picker=document.getElementById('emoji-picker');
+  if(picker.classList.contains('open')&&!picker.contains(e.target)&&!e.target.classList.contains('tracker-day')&&!e.target.closest('.tracker-day')){
+    picker.classList.remove('open');
+  }
+});
+
+// ============================================================
+// HOME STATS
+// ============================================================
+function refreshHomeStats(){
+  document.getElementById('stat-bal').textContent=state.currency+Math.abs(state.balance).toLocaleString();
+  document.getElementById('stat-days').textContent=Object.keys(state.trackerData).length;
+  // daily quote
+  const q=QUOTES[new Date().getDate()%QUOTES.length];
+  document.getElementById('daily-quote').textContent=q;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+function init(){
+  load();
+  buildLangSelect();
+  applyLang();
+  setTheme(state.theme);
+  setCurrency(state.currency);
+  applyWallpaper();
+  updateClock();
+  setInterval(updateClock,1000);
+  renderMoodChat();
+  renderTransactions();
+  showTodoCards();
+  buildTrackerGrid();
+  renderTrackerLog();
+  refreshHomeStats();
+  if(state.wallpaper){
+    const prev=document.getElementById('wall-preview');
+    prev.src=state.wallpaper;prev.style.display='block';
+  }
+  // register sw
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  }
+}
+init();
 </script>
-
 </body>
 </html>
