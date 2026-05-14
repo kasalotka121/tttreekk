@@ -35,7 +35,7 @@
 html,body{height:100%;overflow:hidden;font-family:var(--font-ui);background:var(--bg);color:var(--text);transition:background .4s,color .4s;font-weight:700}
 #wp-img{position:fixed;inset:0;z-index:0;background-size:cover;background-position:center}
 #wp-ov{position:fixed;inset:0;z-index:1;background:var(--bg);opacity:.76;transition:opacity .4s,background .4s}
-.glass{background:var(--glass-bg);backdrop-filter:blur(34px) saturate(200%);-webkit-backdrop-filter:blur(34px) saturate(200%);border:1px solid var(--glass-bd);border-radius:var(--radius);box-shadow:var(--glass-shadow),inset 0 1.5px 0 var(--glass-shine);position:relative;overflow:hidden;}
+.glass{background:var(--glass-bg);backdrop-filter:blur(34px) saturate(200%);-webkit-backdrop-filter:blur(34px) saturate(200%);border:1px solid var(--glass-bd);border-radius:var(--radius);box-shadow:var(--glass-shadow),inset 0 1.5px 0 var(--glass-shine);position:relative;overflow:hidden}
 .glass::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--glass-shine) 0%,transparent 50%);pointer-events:none;border-radius:inherit}
 #app{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
 #header{padding:16px 20px 4px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between}
@@ -48,7 +48,7 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-ui);background:var(
 .page.active{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity var(--pt) cubic-bezier(.4,0,.2,1),transform var(--pt) cubic-bezier(.4,0,.2,1),visibility 0s linear 0s}
 .page::-webkit-scrollbar{display:none}
 *{scrollbar-width:none}
-#nav{position:fixed;bottom:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-around;padding:0 2px 10px;background:rgba(10,10,18,0.91);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border-top:1px solid rgba(255,255,255,0.12);box-shadow:0 -4px 28px rgba(0,0,0,.45);overflow-x:auto}
+#nav{position:fixed;bottom:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-around;padding:0 2px 10px;background:rgba(10,10,18,0.91);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border-top:1px solid rgba(255,255,255,0.12);box-shadow:0 -4px 28px rgba(0,0,0,.45)}
 .theme-light #nav{background:rgba(232,236,252,0.93);border-top:1px solid rgba(255,255,255,.75);box-shadow:0 -4px 24px rgba(0,0,0,.1)}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;padding:6px 1px;border:none;background:none;color:var(--text2);cursor:pointer;border-radius:14px;transition:color .22s,transform .15s;font-family:var(--font-ui);font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;min-width:0;white-space:nowrap}
 .nav-btn .icon{font-size:19px;line-height:1;transition:transform .22s}
@@ -75,7 +75,7 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-ui);background:var(
 .hcard-num{font-family:var(--font-display);font-size:32px;font-weight:900;line-height:1;margin-bottom:4px}
 .hcard-lbl{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1.2px;color:var(--text2)}
 .home-grid4{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:13px}
-.quick-tile{padding:14px;border-radius:18px;cursor:pointer;transition:transform .18s,box-shadow .18s;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;gap:11px}
+.quick-tile{padding:14px;border-radius:18px;cursor:pointer;transition:transform .18s;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;gap:11px}
 .quick-tile:active{transform:scale(.94)}
 .qt-icon{font-size:26px;flex-shrink:0}
 .qt-title{font-size:13px;font-weight:900}
@@ -112,7 +112,7 @@ svg.ring{transform:rotate(-90deg)}
 .affirm-card{flex-shrink:0;width:200px;padding:16px;border-radius:18px;background:linear-gradient(135deg,rgba(129,140,248,.15),rgba(244,114,182,.1));border:1px solid rgba(129,140,248,.2)}
 .affirm-emoji{font-size:24px;margin-bottom:8px}
 .affirm-text{font-size:13px;font-weight:800;line-height:1.5;color:var(--text)}
-.breath-btn{width:100%;padding:18px;border-radius:50px;border:none;background:linear-gradient(135deg,rgba(129,140,248,.2),rgba(52,211,153,.15));border:1px solid rgba(129,140,248,.25);color:var(--text);font-family:var(--font-ui);font-size:15px;font-weight:900;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.breath-btn{width:100%;padding:18px;border-radius:50px;border:none;background:linear-gradient(135deg,rgba(129,140,248,.2),rgba(52,211,153,.15));border:1px solid rgba(129,140,248,.25);color:var(--text);font-family:var(--font-ui);font-size:15px;font-weight:900;cursor:pointer;transition:all .3s}
 .breath-btn.breathing{animation:breathAnim 4s ease-in-out infinite;background:linear-gradient(135deg,rgba(129,140,248,.35),rgba(52,211,153,.25))}
 @keyframes breathAnim{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 .breath-status{text-align:center;font-size:12px;font-weight:900;color:var(--text2);margin-top:8px;text-transform:uppercase;letter-spacing:1.5px;height:16px}
@@ -150,8 +150,7 @@ svg.ring{transform:rotate(-90deg)}
 .todo-filter::-webkit-scrollbar{display:none}
 .tf-btn{flex-shrink:0;padding:7px 14px;border-radius:50px;border:1px solid var(--border);font-family:var(--font-ui);font-size:11.5px;font-weight:900;cursor:pointer;background:var(--surface);color:var(--text2);transition:all .2s}
 .tf-btn.active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:transparent}
-.todo-cards-wrap{display:flex;flex-direction:column;gap:10px;margin-bottom:13px}
-.todo-item{padding:15px 15px;border-radius:17px;display:flex;align-items:center;gap:13px;background:var(--glass-bg);border:1px solid var(--glass-bd);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:var(--glass-shadow);animation:fadeUp .33s ease both;cursor:pointer;transition:transform .18s}
+.todo-item{padding:15px;border-radius:17px;display:flex;align-items:center;gap:13px;background:var(--glass-bg);border:1px solid var(--glass-bd);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);animation:fadeUp .33s ease both;cursor:pointer;transition:transform .18s;margin-bottom:10px}
 .todo-item:active{transform:scale(.96)}
 .todo-item.done{opacity:.45}
 .todo-item.done .todo-text{text-decoration:line-through}
@@ -160,7 +159,7 @@ svg.ring{transform:rotate(-90deg)}
 .todo-cat{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1.2px;margin-top:3px;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .todo-check{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s}
 .todo-item.done .todo-check{background:linear-gradient(135deg,var(--a1),var(--a2));border-color:transparent;color:#fff}
-.todo-next-btn{width:100%;padding:16px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:15px;font-weight:900;cursor:pointer;transition:all .2s;box-shadow:0 4px 22px rgba(129,140,248,.38);letter-spacing:.3px}
+.todo-next-btn{width:100%;padding:16px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:15px;font-weight:900;cursor:pointer;transition:all .2s;box-shadow:0 4px 22px rgba(129,140,248,.38)}
 .todo-next-btn:active{transform:scale(.96)}
 .timer-wrap{text-align:center;padding:18px}
 .timer-display{font-family:var(--font-display);font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1}
@@ -213,7 +212,7 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .toggle-sw::after{content:'';position:absolute;width:20px;height:20px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .2s;box-shadow:0 2px 6px rgba(0,0,0,.3)}
 .toggle-sw.on::after{left:22px}
 
-/* ââââââââââââââ CALORIES ââââââââââââââ */
+/* CALORIES */
 .cal-search-wrap{position:relative;margin-bottom:13px}
 .cal-search-wrap input{width:100%;padding:13px 16px;border-radius:50px;border:1px solid var(--glass-bd);background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:var(--text);font-family:var(--font-ui);font-size:14px;font-weight:700;outline:none;transition:border-color .2s}
 .cal-search-wrap input:focus{border-color:var(--a1)}
@@ -248,16 +247,15 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .cal-log-kcal{font-size:15px;font-weight:900}
 .cal-log-weight{font-size:10px;font-weight:700;color:var(--text2)}
 .cal-del-btn{width:28px;height:28px;border-radius:50%;border:none;background:rgba(248,113,113,.15);color:#f87171;font-size:14px;cursor:pointer;margin-left:8px;flex-shrink:0}
-/* Add food modal pieces */
 .gram-row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
 .gram-row input{flex:1;padding:11px 14px;border-radius:13px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:15px;font-weight:700;outline:none}
 .gram-row span{font-size:13px;font-weight:800;color:var(--text2);white-space:nowrap}
 .food-preview{padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(129,140,248,.12),rgba(244,114,182,.08));border:1px solid rgba(129,140,248,.2);margin-bottom:12px;font-size:13px;font-weight:800;display:none}
 
-/* ââââââââââââââ NOTES ââââââââââââââ */
+/* NOTES */
 .notes-toolbar{display:flex;gap:7px;margin-bottom:13px;flex-wrap:wrap}
 .notes-toolbar button{padding:8px 14px;border-radius:50px;border:1px solid var(--border);font-family:var(--font-ui);font-size:11px;font-weight:900;cursor:pointer;background:var(--surface);color:var(--text2);transition:all .2s;white-space:nowrap}
-.notes-toolbar button.active,.notes-toolbar button:active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:transparent}
+.notes-toolbar button.active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:transparent}
 .note-card{padding:16px;border-radius:18px;background:var(--surface);border:1px solid var(--border);margin-bottom:10px;cursor:pointer;transition:all .2s;animation:fadeUp .3s ease both;position:relative}
 .note-card:active{transform:scale(.98)}
 .note-card.pinned{border-color:var(--a1);background:rgba(129,140,248,.08)}
@@ -268,7 +266,8 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .note-card-tag{font-size:9px;font-weight:900;padding:3px 9px;border-radius:50px;text-transform:uppercase;letter-spacing:.8px}
 .note-card-actions{display:flex;gap:6px;position:absolute;top:12px;right:12px}
 .nca-btn{width:28px;height:28px;border-radius:50%;border:none;background:rgba(255,255,255,.07);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
-/* Note editor */
+
+/* NOTE EDITOR */
 #note-editor{position:fixed;inset:0;z-index:400;background:var(--bg);display:none;flex-direction:column}
 #note-editor.open{display:flex}
 .ne-header{padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);background:var(--glass-bg);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);flex-shrink:0}
@@ -278,29 +277,25 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .ne-save-btn{padding:9px 18px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;flex-shrink:0}
 .ne-toolbar{padding:8px 14px;display:flex;gap:6px;border-bottom:1px solid var(--border);flex-wrap:wrap;flex-shrink:0;background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .ne-tool{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-family:var(--font-ui);font-size:11px;font-weight:900;cursor:pointer;transition:all .2s;white-space:nowrap}
-.ne-tool:active,.ne-tool.active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:transparent}
+.ne-tool:active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:transparent}
 .ne-meta{padding:8px 16px;display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap}
 .ne-tag-sel{padding:7px 12px;border-radius:50px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:12px;font-weight:800;outline:none;cursor:pointer}
 .ne-body{flex:1;padding:16px;overflow-y:auto}
 .ne-body textarea{width:100%;height:100%;background:none;border:none;color:var(--text);font-family:var(--font-ui);font-size:15px;font-weight:700;outline:none;resize:none;line-height:1.7}
 .ne-body textarea::placeholder{color:var(--text3)}
-/* Checklist within notes */
-.ne-checklist-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
-.ne-cb{width:22px;height:22px;border-radius:6px;border:2px solid var(--border);background:none;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .2s}
-.ne-cb.checked{background:linear-gradient(135deg,var(--a1),var(--a2));border-color:transparent;color:#fff}
 
-/* ââââââââââââââ DIARY ââââââââââââââ */
+/* DIARY */
 .diary-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
 .diary-new-btn{padding:10px 18px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;box-shadow:0 4px 18px rgba(129,140,248,.35)}
 .diary-entry-card{padding:18px;border-radius:20px;margin-bottom:12px;cursor:pointer;transition:all .2s;animation:fadeUp .35s ease both;border:1.5px solid var(--border);position:relative;overflow:hidden}
 .diary-entry-card:active{transform:scale(.98)}
-.diary-entry-card::before{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit}
 .dec-date{font-size:11px;font-weight:900;color:var(--text2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
 .dec-title{font-size:16px;font-weight:900;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .dec-preview{font-size:12px;font-weight:700;color:var(--text2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .dec-metas{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}
 .dec-meta-pill{font-size:10px;font-weight:900;padding:4px 10px;border-radius:50px;border:1px solid var(--border);color:var(--text2);text-transform:uppercase;letter-spacing:.8px}
-/* Diary editor */
+
+/* DIARY EDITOR */
 #diary-editor{position:fixed;inset:0;z-index:400;background:var(--bg);display:none;flex-direction:column}
 #diary-editor.open{display:flex}
 .diar-header{padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);background:var(--glass-bg);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);flex-shrink:0}
@@ -309,7 +304,7 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .diar-save{padding:9px 18px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;flex-shrink:0}
 .diar-theme-row{padding:10px 14px;display:flex;gap:8px;border-bottom:1px solid var(--border);overflow-x:auto;flex-shrink:0}
 .diar-theme-row::-webkit-scrollbar{display:none}
-.diar-theme-btn{flex-shrink:0;width:36px;height:36px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .2s;position:relative}
+.diar-theme-btn{flex-shrink:0;width:36px;height:36px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .2s}
 .diar-theme-btn.active{border-color:var(--text);transform:scale(1.18)}
 .diar-fields{flex:1;overflow-y:auto;padding:14px 16px 80px}
 .diar-section{margin-bottom:16px}
@@ -326,13 +321,6 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .diar-food-row button{padding:10px 16px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:12px;font-weight:900;cursor:pointer;white-space:nowrap}
 .diar-food-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .diar-food-chip{padding:5px 11px;border-radius:50px;font-size:12px;font-weight:800;background:var(--surface);border:1px solid var(--border);color:var(--text);cursor:pointer}
-/* diary themes applied to editor */
-.diar-t-default{}
-.diar-t-cherry .diar-inp,.diar-t-cherry .diar-textarea{background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.2)}
-.diar-t-ocean .diar-inp,.diar-t-ocean .diar-textarea{background:rgba(6,182,212,.08);border-color:rgba(6,182,212,.2)}
-.diar-t-forest .diar-inp,.diar-t-forest .diar-textarea{background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.2)}
-.diar-t-sunset .diar-inp,.diar-t-sunset .diar-textarea{background:rgba(249,115,22,.08);border-color:rgba(249,115,22,.2)}
-.diar-t-purple .diar-inp,.diar-t-purple .diar-textarea{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.2)}
 
 /* MODALS */
 .modal-ov{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
@@ -342,6 +330,7 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 .modal h3{font-family:var(--font-display);font-size:17px;font-weight:900;margin-bottom:16px;color:var(--text)}
 .modal input,.modal select{width:100%;padding:12px 16px;border-radius:13px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:15px;font-weight:700;outline:none;margin-bottom:10px;transition:border-color .2s}
 .modal input:focus{border-color:var(--a1)}
+.modal select option{background:var(--bg2)}
 .type-tabs{display:flex;gap:8px;margin-bottom:12px}
 .type-tab{flex:1;padding:10px;border-radius:12px;border:none;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;background:var(--surface);color:var(--text2);transition:all .2s}
 .type-tab.ti{background:linear-gradient(135deg,#00d4aa,#00a878);color:#fff}
@@ -360,7 +349,6 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 #focus-mode.open{display:flex}
 .fm-time{font-family:var(--font-display);font-size:80px;font-weight:900;letter-spacing:-5px;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .fm-label{font-size:14px;font-weight:900;color:var(--text2);text-transform:uppercase;letter-spacing:2px}
-.fm-task{font-size:18px;font-weight:800;color:var(--text);text-align:center;max-width:280px;line-height:1.4;padding:0 20px}
 .fm-close{padding:13px 32px;border-radius:50px;border:none;background:rgba(255,255,255,.1);color:var(--text);font-family:var(--font-ui);font-size:14px;font-weight:900;cursor:pointer;margin-top:10px}
 </style>
 </head>
@@ -368,97 +356,98 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 <div id="wp-img"></div>
 <div id="wp-ov"></div>
 <div id="toast"></div>
+
 <div id="focus-mode">
-  <div class="fm-label" id="fm-type">Ð¤Ð¾ÐºÑÑ</div>
+  <div class="fm-label">Режим фокуса</div>
   <div class="fm-time" id="fm-time">25:00</div>
-  <div class="fm-task" id="fm-task"></div>
-  <div class="fm-close" onclick="closeFocus()">â ÐÐ°Ð²ÐµÑÑÐ¸ÑÑ</div>
+  <div style="font-size:16px;font-weight:800;color:var(--text2);text-align:center;max-width:260px;line-height:1.4">Сосредоточься на одной задаче</div>
+  <div class="fm-close" onclick="closeFocus()">Завершить</div>
 </div>
 
-<!-- NOTE EDITOR -->
+<!-- Редактор заметок -->
 <div id="note-editor">
   <div class="ne-header">
-    <button class="ne-back" onclick="closeNoteEditor()">â</button>
-    <input class="ne-title-inp" id="ne-title" placeholder="ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð°Ð¼ÐµÑÐºÐ¸...">
-    <button class="ne-save-btn" onclick="saveNote()">Ð¡Ð¾ÑÑÐ°Ð½Ð¸ÑÑ</button>
+    <button class="ne-back" onclick="closeNoteEditor()">&#8592;</button>
+    <input class="ne-title-inp" id="ne-title" placeholder="Название заметки...">
+    <button class="ne-save-btn" onclick="saveNote()">Сохранить</button>
   </div>
   <div class="ne-toolbar">
-    <button class="ne-tool" onclick="insertNoteText('â ')">â Ð§ÐµÐº</button>
-    <button class="ne-tool" onclick="insertNoteText('â¢ ')">â¢ Ð¡Ð¿Ð¸ÑÐ¾Ðº</button>
-    <button class="ne-tool" onclick="insertNoteText('ð Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð¾ÐºÑÐ¿Ð¾Ðº:\nâ¢ ')">ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸</button>
-    <button class="ne-tool" onclick="insertNoteText('ð ÐÐµÐ»Ð°:\n1. ')">ð ÐÐµÐ»Ð°</button>
-    <button class="ne-tool" onclick="insertNoteText('ð¡ ÐÐ´ÐµÑ: ')">ð¡ ÐÐ´ÐµÑ</button>
-    <button class="ne-tool" onclick="insertNoteText('â­ ÐÐ°Ð¶Ð½Ð¾: ')">â­ ÐÐ°Ð¶Ð½Ð¾</button>
+    <button class="ne-tool" onclick="insertNoteText('&#10003; ')">Чек</button>
+    <button class="ne-tool" onclick="insertNoteText('&#8226; ')">Список</button>
+    <button class="ne-tool" onclick="insertNoteText('&#128722; Список покупок:\n&#8226; ')">Покупки</button>
+    <button class="ne-tool" onclick="insertNoteText('&#128203; Дела:\n1. ')">Дела</button>
+    <button class="ne-tool" onclick="insertNoteText('&#128161; Идея: ')">Идея</button>
+    <button class="ne-tool" onclick="insertNoteText('&#11088; Важно: ')">Важно</button>
   </div>
   <div class="ne-meta">
     <select class="ne-tag-sel" id="ne-tag">
-      <option value="general">ð ÐÐ±ÑÐµÐµ</option>
-      <option value="shopping">ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸</option>
-      <option value="tasks">â ÐÐ°Ð´Ð°ÑÐ¸</option>
-      <option value="ideas">ð¡ ÐÐ´ÐµÐ¸</option>
-      <option value="work">ð¼ Ð Ð°Ð±Ð¾ÑÐ°</option>
-      <option value="health">â¤ï¸ ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ</option>
+      <option value="general">Общее</option>
+      <option value="shopping">Покупки</option>
+      <option value="tasks">Задачи</option>
+      <option value="ideas">Идеи</option>
+      <option value="work">Работа</option>
+      <option value="health">Здоровье</option>
     </select>
     <label style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:900;color:var(--text2);cursor:pointer">
-      <input type="checkbox" id="ne-pin" style="width:16px;height:16px;cursor:pointer"> ð ÐÐ°ÐºÑÐµÐ¿Ð¸ÑÑ
+      <input type="checkbox" id="ne-pin" style="width:16px;height:16px;cursor:pointer"> Закрепить
     </label>
   </div>
   <div class="ne-body">
-    <textarea id="ne-body" placeholder="ÐÐ°ÑÐ½Ð¸ Ð¿Ð¸ÑÐ°ÑÑ... ÐÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Ð²Ð²ÐµÑÑÑ Ð´Ð»Ñ Ð±ÑÑÑÑÐ¾Ð¹ Ð²ÑÑÐ°Ð²ÐºÐ¸ ÑÐ°Ð±Ð»Ð¾Ð½Ð¾Ð²."></textarea>
+    <textarea id="ne-body" placeholder="Начни писать... Используй кнопки выше для быстрой вставки шаблонов."></textarea>
   </div>
 </div>
 
-<!-- DIARY EDITOR -->
+<!-- Редактор дневника -->
 <div id="diary-editor">
   <div class="diar-header">
-    <button class="diar-back" onclick="closeDiaryEditor()">â</button>
-    <div class="diar-date-lbl" id="diar-date-label">Ð¡ÐµÐ³Ð¾Ð´Ð½Ñ</div>
-    <button class="diar-save" onclick="saveDiaryEntry()">Ð¡Ð¾ÑÑÐ°Ð½Ð¸ÑÑ</button>
+    <button class="diar-back" onclick="closeDiaryEditor()">&#8592;</button>
+    <div class="diar-date-lbl" id="diar-date-label">Сегодня</div>
+    <button class="diar-save" onclick="saveDiaryEntry()">Сохранить</button>
   </div>
   <div class="diar-theme-row" id="diar-theme-row"></div>
   <div class="diar-fields" id="diar-fields">
     <div class="diar-section">
-      <div class="diar-section-label">ÐÐ°Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº</div>
-      <input class="diar-inp" id="diar-title" placeholder="Ð§ÐµÐ¼ Ð·Ð°Ð¿Ð¾Ð¼Ð½Ð¸ÑÑÑ ÑÑÐ¾Ñ Ð´ÐµÐ½Ñ?">
+      <div class="diar-section-label">Заголовок</div>
+      <input class="diar-inp" id="diar-title" placeholder="Чем запомнится этот день?">
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">ÐÐ°ÑÑÑÐ¾ÐµÐ½Ð¸Ðµ</div>
-      <div class="diar-mood-row" id="diar-mood-row">
-        <button class="diar-mood-btn" data-mood="ð" onclick="selectDiarMood(this)">ð</button>
-        <button class="diar-mood-btn" data-mood="ð" onclick="selectDiarMood(this)">ð</button>
-        <button class="diar-mood-btn" data-mood="ð" onclick="selectDiarMood(this)">ð</button>
-        <button class="diar-mood-btn" data-mood="ð´" onclick="selectDiarMood(this)">ð´</button>
-        <button class="diar-mood-btn" data-mood="ð¥" onclick="selectDiarMood(this)">ð¥</button>
-        <button class="diar-mood-btn" data-mood="ð°" onclick="selectDiarMood(this)">ð°</button>
-        <button class="diar-mood-btn" data-mood="ð¤©" onclick="selectDiarMood(this)">ð¤©</button>
+      <div class="diar-section-label">Настроение</div>
+      <div class="diar-mood-row">
+        <button class="diar-mood-btn" data-mood="&#128522;" onclick="selectDiarMood(this)">&#128522;</button>
+        <button class="diar-mood-btn" data-mood="&#128526;" onclick="selectDiarMood(this)">&#128526;</button>
+        <button class="diar-mood-btn" data-mood="&#128532;" onclick="selectDiarMood(this)">&#128532;</button>
+        <button class="diar-mood-btn" data-mood="&#128564;" onclick="selectDiarMood(this)">&#128564;</button>
+        <button class="diar-mood-btn" data-mood="&#128293;" onclick="selectDiarMood(this)">&#128293;</button>
+        <button class="diar-mood-btn" data-mood="&#128560;" onclick="selectDiarMood(this)">&#128560;</button>
+        <button class="diar-mood-btn" data-mood="&#129321;" onclick="selectDiarMood(this)">&#129321;</button>
       </div>
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">Ð§ÑÐ¾ Ð¿ÑÐ¾Ð¸Ð·Ð¾ÑÐ»Ð¾ ÑÐµÐ³Ð¾Ð´Ð½Ñ</div>
-      <textarea class="diar-textarea" id="diar-events" rows="4" placeholder="ÐÐ¿Ð¸ÑÐ¸ ÑÐ²Ð¾Ð¹ Ð´ÐµÐ½Ñ Ð¿Ð¾Ð´ÑÐ¾Ð±Ð½Ð¾..."></textarea>
+      <div class="diar-section-label">Что произошло сегодня</div>
+      <textarea class="diar-textarea" id="diar-events" rows="4" placeholder="Опиши свой день подробно..."></textarea>
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">Ð§ÑÐ¾ ÐµÐ»</div>
+      <div class="diar-section-label">Что ел</div>
       <div class="diar-food-row">
-        <input id="diar-food-inp" placeholder="ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ Ð±Ð»ÑÐ´Ð¾...">
-        <button onclick="addDiarFood()">+ ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ</button>
+        <input id="diar-food-inp" placeholder="Добавить блюдо...">
+        <button onclick="addDiarFood()">+ Добавить</button>
       </div>
       <div class="diar-food-list" id="diar-food-list"></div>
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">ÐÑÑÐ»Ð¸ Ð¸ ÑÑÐ²ÑÑÐ²Ð°</div>
-      <textarea class="diar-textarea" id="diar-thoughts" rows="3" placeholder="Ð ÑÑÐ¼ Ð´ÑÐ¼Ð°Ð», ÑÑÐ¾ ÑÑÐ²ÑÑÐ²Ð¾Ð²Ð°Ð»..."></textarea>
+      <div class="diar-section-label">Мысли и чувства</div>
+      <textarea class="diar-textarea" id="diar-thoughts" rows="3" placeholder="О чём думал, что чувствовал..."></textarea>
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">ÐÑÐ¾Ð³ Ð´Ð½Ñ â Ð½Ð° 10 Ð±Ð°Ð»Ð»Ð¾Ð²?</div>
+      <div class="diar-section-label">Итог дня — на 10 баллов?</div>
       <div style="display:flex;gap:7px">
         <input type="range" id="diar-score" min="1" max="10" step="1" value="7" oninput="document.getElementById('diar-score-val').textContent=this.value+'/10'" style="flex:1;--pct:66%">
         <span id="diar-score-val" style="font-size:16px;font-weight:900;color:var(--a1);min-width:36px;text-align:right">7/10</span>
       </div>
     </div>
     <div class="diar-section">
-      <div class="diar-section-label">ÐÐ»Ð°Ð³Ð¾Ð´Ð°ÑÐ½Ð¾ÑÑÑ</div>
-      <textarea class="diar-textarea" id="diar-grat" rows="2" placeholder="ÐÐ° ÑÑÐ¾ Ñ Ð±Ð»Ð°Ð³Ð¾Ð´Ð°ÑÐµÐ½ ÑÐµÐ³Ð¾Ð´Ð½Ñ..."></textarea>
+      <div class="diar-section-label">Благодарность</div>
+      <textarea class="diar-textarea" id="diar-grat" rows="2" placeholder="За что я благодарен сегодня..."></textarea>
     </div>
   </div>
 </div>
@@ -467,335 +456,362 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
   <div id="header">
     <div>
       <div class="logo">ZENFLOW</div>
-      <div class="logo-sub" id="hdr-sub">ÐÐ¸Ð²Ð¸ Ð¾ÑÐ¾Ð·Ð½Ð°Ð½Ð½Ð¾</div>
+      <div class="logo-sub">Живи осознанно</div>
     </div>
     <div id="header-streak">
-      <span>ð¥</span>
+      <span>&#128293;</span>
       <span id="streak-count">0</span>
-      <span style="font-size:10px;font-weight:900;color:var(--text2)">Ð´Ð½ÐµÐ¹</span>
+      <span style="font-size:10px;font-weight:900;color:var(--text2)">дней</span>
     </div>
   </div>
 
   <div id="pages">
-    <!-- HOME -->
+
+    <!-- ГЛАВНАЯ -->
     <div class="page active" id="page-home">
       <div class="glass home-hero card">
-        <div class="hero-greet" id="greeting">ÐÐ¾Ð±ÑÐ¾Ðµ ÑÑÑÐ¾</div>
+        <div class="hero-greet" id="greeting">Доброе утро</div>
         <div class="hero-time g-text" id="clock">00:00</div>
         <div class="hero-date" id="date-str"></div>
         <div class="hero-quote" id="home-quote"></div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÐ°Ðº ÑÑ ÑÐµÐ¹ÑÐ°Ñ?</div>
+        <div class="card-title">Как ты сейчас?</div>
         <div class="mood-quick-bar">
-          <button class="mq-btn" onclick="quickMood(0,this)"><span class="mq-emoji">ð</span>ÐÑÐ»Ð¸ÑÐ½Ð¾</button>
-          <button class="mq-btn" onclick="quickMood(1,this)"><span class="mq-emoji">ð</span>ÐÐ¾ÑÐ¼Ð°Ð»ÑÐ½Ð¾</button>
-          <button class="mq-btn" onclick="quickMood(2,this)"><span class="mq-emoji">ð</span>ÐÐ»Ð¾ÑÐ¾</button>
-          <button class="mq-btn" onclick="quickMood(3,this)"><span class="mq-emoji">ð¥</span>Ð­Ð½ÐµÑÐ³Ð¸Ñ</button>
-          <button class="mq-btn" onclick="quickMood(4,this)"><span class="mq-emoji">ð´</span>Ð£ÑÑÐ°Ð»</button>
+          <button class="mq-btn" onclick="quickMood(0,this)"><span class="mq-emoji">&#128522;</span>Отлично</button>
+          <button class="mq-btn" onclick="quickMood(1,this)"><span class="mq-emoji">&#128528;</span>Нормально</button>
+          <button class="mq-btn" onclick="quickMood(2,this)"><span class="mq-emoji">&#128532;</span>Плохо</button>
+          <button class="mq-btn" onclick="quickMood(3,this)"><span class="mq-emoji">&#128293;</span>Энергия</button>
+          <button class="mq-btn" onclick="quickMood(4,this)"><span class="mq-emoji">&#128564;</span>Устал</button>
         </div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÐ¾Ð»ÑÑÐ° Ð¿ÑÐ¸Ð²ÑÑÐµÐº</div>
-        <div class="habit-rings" id="habit-rings">
-          <div class="ring-wrap"><svg class="ring" width="70" height="70" viewBox="0 0 70 70"><circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/><circle class="ring-fg" id="ring-move" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g1)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#f472b6"/></linearGradient></defs></svg><div class="ring-lbl">ÐÐ²Ð¸Ð¶ÐµÐ½Ð¸Ðµ</div></div>
-          <div class="ring-wrap"><svg class="ring" width="70" height="70" viewBox="0 0 70 70"><circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/><circle class="ring-fg" id="ring-water" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g2)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs></svg><div class="ring-lbl">ÐÐ¾Ð´Ð°</div></div>
-          <div class="ring-wrap"><svg class="ring" width="70" height="70" viewBox="0 0 70 70"><circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/><circle class="ring-fg" id="ring-read" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g3)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/><defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs></svg><div class="ring-lbl">Ð§ÑÐµÐ½Ð¸Ðµ</div></div>
-          <div class="ring-wrap"><svg class="ring" width="70" height="70" viewBox="0 0 70 70"><circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/><circle class="ring-fg" id="ring-sleep" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g4)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/><defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#818cf8"/></linearGradient></defs></svg><div class="ring-lbl">Ð¡Ð¾Ð½</div></div>
+        <div class="card-title">Кольца привычек</div>
+        <div class="habit-rings">
+          <div class="ring-wrap">
+            <svg class="ring" width="70" height="70" viewBox="0 0 70 70">
+              <circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/>
+              <circle class="ring-fg" id="ring-move" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g1)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/>
+              <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#f472b6"/></linearGradient></defs>
+            </svg>
+            <div class="ring-lbl">Движение</div>
+          </div>
+          <div class="ring-wrap">
+            <svg class="ring" width="70" height="70" viewBox="0 0 70 70">
+              <circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/>
+              <circle class="ring-fg" id="ring-water" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g2)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/>
+              <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+            <div class="ring-lbl">Вода</div>
+          </div>
+          <div class="ring-wrap">
+            <svg class="ring" width="70" height="70" viewBox="0 0 70 70">
+              <circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/>
+              <circle class="ring-fg" id="ring-read" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g3)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/>
+              <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs>
+            </svg>
+            <div class="ring-lbl">Чтение</div>
+          </div>
+          <div class="ring-wrap">
+            <svg class="ring" width="70" height="70" viewBox="0 0 70 70">
+              <circle class="ring-bg" cx="35" cy="35" r="28" stroke-width="6"/>
+              <circle class="ring-fg" id="ring-sleep" cx="35" cy="35" r="28" stroke-width="6" stroke="url(#g4)" stroke-dasharray="175.9" stroke-dashoffset="175.9"/>
+              <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#818cf8"/></linearGradient></defs>
+            </svg>
+            <div class="ring-lbl">Сон</div>
+          </div>
         </div>
         <div style="display:flex;gap:10px;margin-top:12px">
-          <button onclick="addRing('move')" class="fin-btn income" style="flex:1;padding:11px;font-size:12px">+ÐÐ²Ð¸Ð¶ÐµÐ½Ð¸Ðµ</button>
-          <button onclick="addRing('water')" class="fin-btn" style="flex:1;padding:11px;font-size:12px;background:linear-gradient(135deg,#34d399,#06b6d4)">+ÐÐ¾Ð´Ð°</button>
-          <button onclick="addRing('read')" class="fin-btn expense" style="flex:1;padding:11px;font-size:12px">+Ð§ÑÐµÐ½Ð¸Ðµ</button>
+          <button onclick="addRing('move')" style="flex:1;padding:11px;font-size:12px;border-radius:16px;border:none;background:linear-gradient(135deg,#00d4aa,#00a878);color:#fff;font-family:var(--font-ui);font-weight:900;cursor:pointer">+Движение</button>
+          <button onclick="addRing('water')" style="flex:1;padding:11px;font-size:12px;border-radius:16px;border:none;background:linear-gradient(135deg,#34d399,#06b6d4);color:#fff;font-family:var(--font-ui);font-weight:900;cursor:pointer">+Вода</button>
+          <button onclick="addRing('read')" style="flex:1;padding:11px;font-size:12px;border-radius:16px;border:none;background:linear-gradient(135deg,#f87171,#ef4444);color:#fff;font-family:var(--font-ui);font-weight:900;cursor:pointer">+Чтение</button>
         </div>
       </div>
       <div class="home-grid">
-        <div class="glass hcard card"><div class="hcard-num g-text" id="stat-bal">â½0</div><div class="hcard-lbl">ÐÐ°Ð»Ð°Ð½Ñ</div></div>
-        <div class="glass hcard card"><div class="hcard-num g-text-alt" id="stat-days">0</div><div class="hcard-lbl">ÐÐ½ÐµÐ¹ Ð² ÑÑÐµÐºÐµÑÐµ</div></div>
-        <div class="glass hcard card"><div class="hcard-num g-text-3" id="stat-todo">0</div><div class="hcard-lbl">Ð¡Ð´ÐµÐ»Ð°Ð½Ð¾ Ð·Ð°Ð´Ð°Ñ</div></div>
-        <div class="glass hcard card"><div class="hcard-num g-text" id="stat-cal">0</div><div class="hcard-lbl">ÐÐºÐ°Ð» ÑÐµÐ³Ð¾Ð´Ð½Ñ</div></div>
+        <div class="glass hcard card"><div class="hcard-num g-text" id="stat-bal">0</div><div class="hcard-lbl">Баланс</div></div>
+        <div class="glass hcard card"><div class="hcard-num g-text-alt" id="stat-days">0</div><div class="hcard-lbl">Дней в трекере</div></div>
+        <div class="glass hcard card"><div class="hcard-num g-text-3" id="stat-todo">0</div><div class="hcard-lbl">Сделано задач</div></div>
+        <div class="glass hcard card"><div class="hcard-num g-text" id="stat-cal">0</div><div class="hcard-lbl">Ккал сегодня</div></div>
       </div>
       <div class="home-grid4">
-        <div class="quick-tile glass" onclick="goPage('cal',null)"><span class="qt-icon">ð¥</span><div><div class="qt-title">ÐÐ°Ð»Ð¾ÑÐ¸Ð¸</div><div class="qt-sub">ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ ÐµÐ´Ñ</div></div></div>
-        <div class="quick-tile glass" onclick="startFocus(null)"><span class="qt-icon">ð¯</span><div><div class="qt-title">Ð¤Ð¾ÐºÑÑ</div><div class="qt-sub">Pomodoro ÑÐ°Ð¹Ð¼ÐµÑ</div></div></div>
-        <div class="quick-tile glass" onclick="goPage('notes',null)"><span class="qt-icon">ð</span><div><div class="qt-title">ÐÐ°Ð¼ÐµÑÐºÐ¸</div><div class="qt-sub">Ð¡Ð¿Ð¸ÑÐºÐ¸ Ð¸ Ð¸Ð´ÐµÐ¸</div></div></div>
-        <div class="quick-tile glass" onclick="goPage('diary',null)"><span class="qt-icon">ð</span><div><div class="qt-title">ÐÐ½ÐµÐ²Ð½Ð¸Ðº</div><div class="qt-sub">ÐÐ°Ð¿Ð¸ÑÐ¸ Ð´Ð½Ñ</div></div></div>
+        <div class="quick-tile glass" onclick="goPage('cal',null)"><span class="qt-icon">&#127829;</span><div><div class="qt-title">Калории</div><div class="qt-sub">Добавить еду</div></div></div>
+        <div class="quick-tile glass" onclick="startFocus()"><span class="qt-icon">&#127919;</span><div><div class="qt-title">Фокус</div><div class="qt-sub">Pomodoro таймер</div></div></div>
+        <div class="quick-tile glass" onclick="goPage('notes',null)"><span class="qt-icon">&#128221;</span><div><div class="qt-title">Заметки</div><div class="qt-sub">Списки и идеи</div></div></div>
+        <div class="quick-tile glass" onclick="goPage('diary',null)"><span class="qt-icon">&#128211;</span><div><div class="qt-title">Дневник</div><div class="qt-sub">Записи дня</div></div></div>
       </div>
       <div style="height:8px"></div>
     </div>
 
-    <!-- MOOD -->
+    <!-- НАСТРОЕНИЕ -->
     <div class="page" id="page-mood">
       <div class="mood-tabs">
-        <button class="mood-tab active" onclick="switchMood('sad')">ð¢ ÐÑÑÑÑÐ½Ð¾</button>
-        <button class="mood-tab" onclick="switchMood('bored')">ð Ð¡ÐºÑÑÐ½Ð¾</button>
-        <button class="mood-tab" onclick="switchMood('tired')">ð´ Ð£ÑÑÐ°Ð»</button>
-        <button class="mood-tab" onclick="switchMood('anxious')">ð° Ð¢ÑÐµÐ²Ð¾Ð³Ð°</button>
-        <button class="mood-tab" onclick="switchMood('angry')">ð¤ ÐÐ»Ð¾ÑÑÑ</button>
-        <button class="mood-tab" onclick="switchMood('happy')">ð¥³ ÐÐ°Ð¹Ñ</button>
+        <button class="mood-tab active" onclick="switchMood('sad',this)">&#128546; Грустно</button>
+        <button class="mood-tab" onclick="switchMood('bored',this)">&#128529; Скучно</button>
+        <button class="mood-tab" onclick="switchMood('tired',this)">&#128564; Устал</button>
+        <button class="mood-tab" onclick="switchMood('anxious',this)">&#128560; Тревога</button>
+        <button class="mood-tab" onclick="switchMood('angry',this)">&#128548; Злость</button>
+        <button class="mood-tab" onclick="switchMood('happy',this)">&#129395; Радость</button>
       </div>
       <div class="glass card" style="padding:16px">
         <div class="chat-area" id="chat-area"></div>
         <div class="chat-row">
-          <input type="text" id="chat-inp" placeholder="ÐÐ°Ð¿Ð¸ÑÐ¸ ÑÑÐ¾ ÑÑÐ²ÑÑÐ²ÑÐµÑÑ...">
-          <button onclick="sendMsg()">â¤</button>
+          <input type="text" id="chat-inp" placeholder="Напиши что чувствуешь...">
+          <button onclick="sendMsg()">&#10148;</button>
         </div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÑÑÐ¸ÑÐ¼Ð°ÑÐ¸Ð¸ Ð´Ð½Ñ</div>
+        <div class="card-title">Аффирмации дня</div>
         <div class="affirm-scroll" id="affirm-scroll"></div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÑÑÐ°ÑÐµÐ»ÑÐ½Ð°Ñ Ð¿ÑÐ°ÐºÑÐ¸ÐºÐ°</div>
-        <button class="breath-btn" id="breath-btn" onclick="toggleBreath()">ð« ÐÐ°ÑÐ°ÑÑ Ð´ÑÑÐ°Ð½Ð¸Ðµ 4-7-8</button>
+        <div class="card-title">Дыхательная практика</div>
+        <button class="breath-btn" id="breath-btn" onclick="toggleBreath()">Начать дыхание 4-7-8</button>
         <div class="breath-status" id="breath-status"></div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÐ»Ð°Ð³Ð¾Ð´Ð°ÑÐ½Ð¾ÑÑÑ Ð´Ð½Ñ</div>
-        <input type="text" id="grat-inp" style="width:100%;padding:11px 14px;border-radius:13px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:14px;font-weight:700;outline:none;margin-bottom:9px" placeholder="Ð¯ Ð±Ð»Ð°Ð³Ð¾Ð´Ð°ÑÐµÐ½ Ð·Ð°...">
-        <button onclick="saveGrat()" style="width:100%;padding:12px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:14px;font-weight:900;cursor:pointer">ÐÐ°Ð¿Ð¸ÑÐ°ÑÑ â¨</button>
+        <div class="card-title">Благодарность дня</div>
+        <input type="text" id="grat-inp" style="width:100%;padding:11px 14px;border-radius:13px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:14px;font-weight:700;outline:none;margin-bottom:9px" placeholder="Я благодарен за...">
+        <button onclick="saveGrat()" style="width:100%;padding:12px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:14px;font-weight:900;cursor:pointer">Записать</button>
         <div id="grat-list" style="margin-top:12px;display:flex;flex-direction:column;gap:7px"></div>
       </div>
     </div>
 
-    <!-- CALORIES -->
+    <!-- КАЛОРИИ -->
     <div class="page" id="page-cal">
       <div class="cal-summary glass card">
-        <div class="cal-total-lbl">ÐÐ°Ð»Ð¾ÑÐ¸Ð¸ ÑÐµÐ³Ð¾Ð´Ð½Ñ</div>
+        <div class="cal-total-lbl">Калории сегодня</div>
         <div class="cal-total-num g-text" id="cal-total">0</div>
         <div class="cal-macros">
-          <div class="cal-macro"><div class="cal-macro-val g-text" id="cal-prot">0Ð³</div><div class="cal-macro-lbl">ÐÐµÐ»ÐºÐ¸</div></div>
-          <div class="cal-macro"><div class="cal-macro-val g-text-alt" id="cal-fat">0Ð³</div><div class="cal-macro-lbl">ÐÐ¸ÑÑ</div></div>
-          <div class="cal-macro"><div class="cal-macro-val g-text-3" id="cal-carb">0Ð³</div><div class="cal-macro-lbl">Ð£Ð³Ð»ÐµÐ²Ð¾Ð´Ñ</div></div>
+          <div class="cal-macro"><div class="cal-macro-val g-text" id="cal-prot">0г</div><div class="cal-macro-lbl">Белки</div></div>
+          <div class="cal-macro"><div class="cal-macro-val g-text-alt" id="cal-fat">0г</div><div class="cal-macro-lbl">Жиры</div></div>
+          <div class="cal-macro"><div class="cal-macro-val g-text-3" id="cal-carb">0г</div><div class="cal-macro-lbl">Углеводы</div></div>
         </div>
         <div class="cal-progress-bar"><div class="cal-progress-fill" id="cal-progress" style="width:0%"></div></div>
-        <div class="cal-goal-row"><span id="cal-goal-lbl">0 / 2000 ÐºÐºÐ°Ð»</span><span id="cal-goal-pct">0%</span></div>
+        <div class="cal-goal-row"><span id="cal-goal-lbl">0 / 2000 ккал</span><span id="cal-goal-pct">0%</span></div>
       </div>
-      <!-- Category filter -->
       <div class="cal-cats-scroll" id="cal-cats-scroll"></div>
-      <!-- Search -->
       <div class="cal-search-wrap">
-        <input type="text" id="cal-search" placeholder="ð ÐÐ¾Ð¸ÑÐº Ð¿ÑÐ¾Ð´ÑÐºÑÐ° (ÑÑÑÐºÑÑ, Ð·Ð»Ð°ÐºÐ¸...)" oninput="calSearch(this.value)">
+        <input type="text" id="cal-search" placeholder="Поиск продукта (яблоко, гречка, курица...)" oninput="calSearch(this.value)">
         <div class="cal-suggestions" id="cal-suggestions" style="display:none"></div>
       </div>
-      <!-- Log -->
       <div class="glass card" style="padding:16px">
         <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:13px">
-          <span>Ð¡ÑÐµÐ´ÐµÐ½Ð¾ ÑÐµÐ³Ð¾Ð´Ð½Ñ</span>
-          <button onclick="clearCalToday()" style="font-size:10px;padding:5px 10px;border-radius:50px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.1);color:#f87171;font-family:var(--font-ui);font-weight:900;cursor:pointer">ÐÑÐ¸ÑÑÐ¸ÑÑ</button>
+          <span>Съедено сегодня</span>
+          <button onclick="clearCalToday()" style="font-size:10px;padding:5px 10px;border-radius:50px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.1);color:#f87171;font-family:var(--font-ui);font-weight:900;cursor:pointer">Очистить</button>
         </div>
         <div class="cal-log-list" id="cal-log-list"></div>
       </div>
     </div>
 
-    <!-- FINANCE -->
+    <!-- ФИНАНСЫ -->
     <div class="page" id="page-fin">
       <div class="cur-bar">
-        <button class="cur-btn active" onclick="setCur('â½')" id="cur-r">â½</button>
+        <button class="cur-btn active" onclick="setCur('руб')" id="cur-r">&#8381;</button>
         <button class="cur-btn" onclick="setCur('$')" id="cur-d">$</button>
-        <button class="cur-btn" onclick="setCur('â¬')" id="cur-e">â¬</button>
-        <button class="cur-btn" onclick="setCur('â¸')" id="cur-t">â¸</button>
+        <button class="cur-btn" onclick="setCur('€')" id="cur-e">&#8364;</button>
+        <button class="cur-btn" onclick="setCur('₸')" id="cur-t">&#8376;</button>
       </div>
       <div class="glass bal-display card">
-        <div class="bal-label">ÐÐ°Ð»Ð°Ð½Ñ</div>
-        <div class="bal-num g-text"><span id="fin-cur">â½</span><span id="fin-bal">0</span></div>
+        <div class="bal-label">Баланс</div>
+        <div class="bal-num g-text"><span id="fin-cur">&#8381;</span><span id="fin-bal">0</span></div>
       </div>
       <div class="fin-btns">
-        <button class="fin-btn income" onclick="openFin('income')">+ ÐÐ¾ÑÐ¾Ð´</button>
-        <button class="fin-btn expense" onclick="openFin('expense')">â Ð Ð°ÑÑÐ¾Ð´</button>
+        <button class="fin-btn income" onclick="openFin('income')">+ Доход</button>
+        <button class="fin-btn expense" onclick="openFin('expense')">- Расход</button>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÐ°ÑÐµÐ³Ð¾ÑÐ¸Ð¸ ÑÐ°ÑÑÐ¾Ð´Ð¾Ð²</div>
+        <div class="card-title">Категории расходов</div>
         <div class="budget-cats" id="budget-cats"></div>
       </div>
-      <div class="fin-tip glass" id="fin-tip"><span style="font-size:22px">ð¡</span><div class="fin-tip-text" id="fin-tip-text"></div></div>
+      <div class="fin-tip glass" id="fin-tip"><span style="font-size:22px">&#128161;</span><div class="fin-tip-text" id="fin-tip-text"></div></div>
       <div class="glass card">
-        <div class="card-title">ÐÑÑÐ¾ÑÐ¸Ñ</div>
+        <div class="card-title">История транзакций</div>
         <div class="trans-list" id="trans-list"></div>
       </div>
     </div>
 
-    <!-- TODO -->
+    <!-- ЧТО ДЕЛАТЬ -->
     <div class="page" id="page-todo">
-      <div class="todo-filter" id="todo-filter">
-        <button class="tf-btn active" onclick="filterTodo('all',this)">ÐÑÐµ</button>
-        <button class="tf-btn" onclick="filterTodo('ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ',this)">ð ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ</button>
-        <button class="tf-btn" onclick="filterTodo('Ð¢Ð²Ð¾ÑÑÐµÑÑÐ²Ð¾',this)">ð¨ Ð¢Ð²Ð¾ÑÑÐµÑÑÐ²Ð¾</button>
-        <button class="tf-btn" onclick="filterTodo('Ð¡Ð°Ð¼Ð¾ÑÐ°Ð·Ð²Ð¸ÑÐ¸Ðµ',this)">ð Ð Ð°Ð·Ð²Ð¸ÑÐ¸Ðµ</button>
-        <button class="tf-btn" onclick="filterTodo('ÐÑÐ´ÑÑ',this)">ð¿ ÐÑÐ´ÑÑ</button>
-        <button class="tf-btn" onclick="filterTodo('ÐÐ±ÑÐµÐ½Ð¸Ðµ',this)">ð¬ ÐÐ±ÑÐµÐ½Ð¸Ðµ</button>
-        <button class="tf-btn" onclick="filterTodo('ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ',this)">ð³ ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ</button>
+      <div class="todo-filter">
+        <button class="tf-btn active" onclick="filterTodo('all',this)">Все</button>
+        <button class="tf-btn" onclick="filterTodo('Активность',this)">Активность</button>
+        <button class="tf-btn" onclick="filterTodo('Творчество',this)">Творчество</button>
+        <button class="tf-btn" onclick="filterTodo('Саморазвитие',this)">Развитие</button>
+        <button class="tf-btn" onclick="filterTodo('Отдых',this)">Отдых</button>
+        <button class="tf-btn" onclick="filterTodo('Общение',this)">Общение</button>
+        <button class="tf-btn" onclick="filterTodo('Кулинария',this)">Кулинария</button>
       </div>
       <div class="glass card" style="padding:14px">
-        <div class="card-title">Pomodoro ÑÐ°Ð¹Ð¼ÐµÑ</div>
+        <div class="card-title">Pomodoro таймер</div>
         <div class="timer-wrap" style="padding:10px">
           <div class="timer-display g-text" id="timer-disp">25:00</div>
           <div class="timer-btns">
-            <button class="timer-btn start" id="timer-start-btn" onclick="toggleTimer()">â¶ Ð¡ÑÐ°ÑÑ</button>
-            <button class="timer-btn reset" onclick="resetTimer()">âº Ð¡Ð±ÑÐ¾Ñ</button>
-            <button class="timer-btn reset" onclick="startFocus(null)">ð¯ Ð¤Ð¾ÐºÑÑ</button>
+            <button class="timer-btn start" id="timer-start-btn" onclick="toggleTimer()">Старт</button>
+            <button class="timer-btn reset" onclick="resetTimer()">Сброс</button>
+            <button class="timer-btn reset" onclick="startFocus()">Фокус</button>
           </div>
         </div>
       </div>
-      <div class="todo-cards-wrap" id="todo-cards"></div>
-      <button class="todo-next-btn" onclick="showTodo()">ð² ÐÐ¾Ð²Ð°Ñ Ð¿Ð¾ÑÑÐ¸Ñ Ð¸Ð´ÐµÐ¹</button>
+      <div id="todo-cards"></div>
+      <button class="todo-next-btn" onclick="showTodo()">Новая порция идей</button>
       <div style="height:8px"></div>
     </div>
 
-    <!-- NOTES -->
+    <!-- ЗАМЕТКИ -->
     <div class="page" id="page-notes">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px">
-        <div style="font-family:var(--font-display);font-size:20px;font-weight:900;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">ÐÐ°Ð¼ÐµÑÐºÐ¸</div>
-        <button onclick="openNoteEditor(null)" style="padding:10px 18px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;box-shadow:0 4px 18px rgba(129,140,248,.35)">+ ÐÐ¾Ð²Ð°Ñ</button>
+        <div style="font-family:var(--font-display);font-size:20px;font-weight:900;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Заметки</div>
+        <button onclick="openNoteEditor(null)" style="padding:10px 18px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:13px;font-weight:900;cursor:pointer;box-shadow:0 4px 18px rgba(129,140,248,.35)">+ Новая</button>
       </div>
       <div class="notes-toolbar" id="notes-filter">
-        <button class="active" onclick="filterNotes('all',this)">ÐÑÐµ</button>
-        <button onclick="filterNotes('shopping',this)">ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸</button>
-        <button onclick="filterNotes('tasks',this)">â ÐÐ°Ð´Ð°ÑÐ¸</button>
-        <button onclick="filterNotes('ideas',this)">ð¡ ÐÐ´ÐµÐ¸</button>
-        <button onclick="filterNotes('work',this)">ð¼ Ð Ð°Ð±Ð¾ÑÐ°</button>
-        <button onclick="filterNotes('health',this)">â¤ï¸ ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ</button>
+        <button class="active" onclick="filterNotes('all',this)">Все</button>
+        <button onclick="filterNotes('shopping',this)">Покупки</button>
+        <button onclick="filterNotes('tasks',this)">Задачи</button>
+        <button onclick="filterNotes('ideas',this)">Идеи</button>
+        <button onclick="filterNotes('work',this)">Работа</button>
+        <button onclick="filterNotes('health',this)">Здоровье</button>
       </div>
       <div id="notes-list"></div>
       <div style="height:8px"></div>
     </div>
 
-    <!-- DIARY -->
+    <!-- ДНЕВНИК -->
     <div class="page" id="page-diary">
       <div class="diary-header">
-        <div style="font-family:var(--font-display);font-size:20px;font-weight:900;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">ÐÐ½ÐµÐ²Ð½Ð¸Ðº</div>
-        <button class="diary-new-btn" onclick="openDiaryEditor(null)">+ ÐÐ°Ð¿Ð¸ÑÑ</button>
+        <div style="font-family:var(--font-display);font-size:20px;font-weight:900;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Дневник</div>
+        <button class="diary-new-btn" onclick="openDiaryEditor(null)">+ Запись</button>
       </div>
       <div id="diary-list"></div>
       <div style="height:8px"></div>
     </div>
 
-    <!-- TRACKER -->
+    <!-- ТРЕКЕР -->
     <div class="page" id="page-tracker">
       <div class="glass card">
-        <div class="card-title" id="tr-month">ÐÐµÑÑÑ</div>
+        <div class="card-title" id="tr-month">Месяц</div>
         <div class="tracker-grid" id="tr-grid"></div>
         <div class="note-row">
-          <input type="text" id="tr-note" placeholder="ÐÐ°Ð¼ÐµÑÐºÐ° Ð´Ð»Ñ ÑÑÐ¾Ð³Ð¾ Ð´Ð½Ñ...">
-          <button onclick="saveDay()">Ð¡Ð¾ÑÑÐ°Ð½Ð¸ÑÑ</button>
+          <input type="text" id="tr-note" placeholder="Заметка для этого дня...">
+          <button onclick="saveDay()">Сохранить</button>
         </div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÐ°Ð½Ð½ÑÐµ Ð´Ð½Ñ</div>
+        <div class="card-title">Данные дня</div>
         <div class="slider-wrap">
-          <div class="slider-label"><span class="slider-lbl-text">ð´ Ð¡Ð¾Ð½</span><span class="slider-val g-text" id="sleep-val">7 Ñ</span></div>
-          <input type="range" id="sleep-slider" min="0" max="12" step="0.5" value="7" oninput="updateSlider(this,'sleep-val',' Ñ')" style="--pct:58%">
+          <div class="slider-label"><span class="slider-lbl-text">Сон</span><span class="slider-val g-text" id="sleep-val">7 ч</span></div>
+          <input type="range" id="sleep-slider" min="0" max="12" step="0.5" value="7" oninput="updateSlider(this,'sleep-val',' ч')" style="--pct:58%">
         </div>
         <div class="slider-wrap">
-          <div class="slider-label"><span class="slider-lbl-text">â¡ Ð­Ð½ÐµÑÐ³Ð¸Ñ</span><span class="slider-val g-text-alt" id="energy-val">7/10</span></div>
+          <div class="slider-label"><span class="slider-lbl-text">Энергия</span><span class="slider-val g-text-alt" id="energy-val">7/10</span></div>
           <input type="range" id="energy-slider" min="1" max="10" step="1" value="7" oninput="updateSlider(this,'energy-val','/10')" style="--pct:66%">
         </div>
         <div class="slider-wrap">
-          <div class="slider-label"><span class="slider-lbl-text">ð§ ÐÐ¾Ð´Ð° (ÑÑÐ°ÐºÐ°Ð½Ð¾Ð²)</span><span class="slider-val g-text-3" id="water-val">4 ÑÑ</span></div>
-          <input type="range" id="water-slider" min="0" max="12" step="1" value="4" oninput="updateSlider(this,'water-val',' ÑÑ')" style="--pct:33%">
+          <div class="slider-label"><span class="slider-lbl-text">Вода (стаканов)</span><span class="slider-val g-text-3" id="water-val">4 ст</span></div>
+          <input type="range" id="water-slider" min="0" max="12" step="1" value="4" oninput="updateSlider(this,'water-val',' ст')" style="--pct:33%">
         </div>
-        <button onclick="saveDayData()" style="margin-top:12px;width:100%;padding:13px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:14px;font-weight:900;cursor:pointer">Ð¡Ð¾ÑÑÐ°Ð½Ð¸ÑÑ Ð´Ð°Ð½Ð½ÑÐµ Ð´Ð½Ñ</button>
+        <button onclick="saveDayData()" style="margin-top:12px;width:100%;padding:13px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-family:var(--font-ui);font-size:14px;font-weight:900;cursor:pointer">Сохранить данные дня</button>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">Ð¡ÐµÑÐ¸Ñ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ñ 7 Ð´Ð½ÐµÐ¹</div>
+        <div class="card-title">Серия последних 7 дней</div>
         <div class="streak-bar" id="streak-bar"></div>
       </div>
       <div class="glass card" style="padding:16px">
-        <div class="card-title">ÐÑÑÐ¾ÑÐ¸Ñ Ð½Ð°ÑÑÑÐ¾ÐµÐ½Ð¸Ñ</div>
+        <div class="card-title">История настроения</div>
         <div class="tracker-log" id="tr-log"></div>
       </div>
     </div>
 
-    <!-- SETTINGS -->
+    <!-- НАСТРОЙКИ -->
     <div class="page" id="page-settings">
       <div class="set-section">
-        <h3>Ð¢ÐµÐ¼Ð°</h3>
-        <div class="set-row glass"><div><div class="s-label">ÐÑÐ¾ÑÐ¼Ð»ÐµÐ½Ð¸Ðµ</div></div><div class="theme-btns"><button class="theme-btn active" id="tb-dark" onclick="setTheme('dark')">ð Ð¢ÑÐ¼Ð½Ð°Ñ</button><button class="theme-btn" id="tb-light" onclick="setTheme('light')">âï¸ Ð¡Ð²ÐµÑÐ»Ð°Ñ</button></div></div>
+        <h3>Тема</h3>
+        <div class="set-row glass"><div><div class="s-label">Оформление</div></div><div class="theme-btns"><button class="theme-btn active" id="tb-dark" onclick="setTheme('dark')">Тёмная</button><button class="theme-btn" id="tb-light" onclick="setTheme('light')">Светлая</button></div></div>
       </div>
       <div class="set-section">
-        <h3>ÐÐºÑÐµÐ½ÑÐ½ÑÐ¹ ÑÐ²ÐµÑ</h3>
+        <h3>Акцентный цвет</h3>
         <div class="glass card"><div class="accent-grid" id="accent-grid"></div></div>
       </div>
       <div class="set-section">
-        <h3>ÐÐ±Ð¾Ð¸</h3>
-        <div class="set-row glass"><div><div class="s-label">Ð¤Ð¾ÑÐ¾ Ð¸Ð· Ð³Ð°Ð»ÐµÑÐµÐ¸</div><div class="s-sub">ÐÐ±Ð¾Ð¸ Ð·Ð° ÑÑÐµÐºÐ»Ð¾Ð¼</div></div><button class="cur-btn active" style="max-width:90px;font-family:var(--font-ui);font-size:13px" onclick="document.getElementById('wp-inp').click()">ÐÑÐ±ÑÐ°ÑÑ</button></div>
+        <h3>Обои</h3>
+        <div class="set-row glass"><div><div class="s-label">Фото из галереи</div><div class="s-sub">Обои за стеклом</div></div><button class="cur-btn active" style="max-width:90px;font-family:var(--font-ui);font-size:13px" onclick="document.getElementById('wp-inp').click()">Выбрать</button></div>
         <input type="file" id="wp-inp" accept="image/*" style="display:none" onchange="setWall(this)">
         <img id="wall-prev" class="wall-prev">
-        <div class="set-row glass" style="margin-top:7px"><div><div class="s-label">Ð£Ð±ÑÐ°ÑÑ Ð¾Ð±Ð¾Ð¸</div></div><button class="cur-btn" style="max-width:90px;font-family:var(--font-ui);font-size:13px" onclick="removeWall()">Ð£Ð±ÑÐ°ÑÑ</button></div>
+        <div class="set-row glass" style="margin-top:7px"><div><div class="s-label">Убрать обои</div></div><button class="cur-btn" style="max-width:90px;font-family:var(--font-ui);font-size:13px" onclick="removeWall()">Убрать</button></div>
       </div>
       <div class="set-section">
-        <h3>Ð¦ÐµÐ»Ñ ÐºÐ°Ð»Ð¾ÑÐ¸Ð¹</h3>
+        <h3>Цель калорий</h3>
         <div class="set-row glass">
-          <div><div class="s-label">ÐÐ½ÐµÐ²Ð½Ð°Ñ ÑÐµÐ»Ñ</div><div class="s-sub" id="cal-goal-display">2000 ÐºÐºÐ°Ð»</div></div>
+          <div><div class="s-label">Дневная цель</div><div class="s-sub" id="cal-goal-display">2000 ккал</div></div>
           <input type="number" id="cal-goal-inp" value="2000" min="500" max="5000" style="width:90px;padding:9px 12px;border-radius:12px;border:1px solid var(--glass-bd);background:var(--surface);color:var(--text);font-family:var(--font-ui);font-size:14px;font-weight:900;outline:none;text-align:center" onchange="setCalGoal(this.value)">
         </div>
       </div>
       <div class="set-section">
-        <h3>Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ñ</h3>
-        <div class="set-row glass"><div><div class="s-label">ÐÐ°Ð¿Ð¾Ð¼Ð¸Ð½Ð°Ð½Ð¸Ðµ Ð¾ Ð²Ð¾Ð´Ðµ</div><div class="s-sub">ÐÐ°Ð¶Ð´ÑÐµ 2 ÑÐ°ÑÐ°</div></div><div class="toggle-sw" id="notif-water" onclick="toggleNotif('water')"></div></div>
-        <div class="set-row glass"><div><div class="s-label">ÐÐµÑÐµÑÐ½Ð¸Ð¹ ÑÑÐµÐºÐµÑ</div><div class="s-sub">ÐÐ°Ð¿Ð¾Ð¼Ð½Ð¸ÑÑ Ð² 21:00</div></div><div class="toggle-sw" id="notif-eve" onclick="toggleNotif('eve')"></div></div>
+        <h3>Язык интерфейса</h3>
+        <div class="set-row glass"><div><div class="s-label">Язык</div></div><select class="lang-sel" id="lang-sel" onchange="setLang(this.value)"></select></div>
       </div>
       <div class="set-section">
-        <h3>Ð¯Ð·ÑÐº</h3>
-        <div class="set-row glass"><div><div class="s-label">Ð¯Ð·ÑÐº Ð¸Ð½ÑÐµÑÑÐµÐ¹ÑÐ°</div></div><select class="lang-sel" id="lang-sel" onchange="setLang(this.value)"></select></div>
-      </div>
-      <div class="set-section">
-        <h3>Ð Ð¿ÑÐ¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ð¸</h3>
-        <div class="set-row glass"><div><div class="s-label">ZENFLOW</div><div class="s-sub">v4.0 Â· Full Edition</div></div><span class="pill">PWA</span></div>
-        <div class="set-row glass" style="margin-top:6px"><div><div class="s-label">Ð¡Ð±ÑÐ¾ÑÐ¸ÑÑ Ð²ÑÑ</div><div class="s-sub">Ð£Ð´Ð°Ð»Ð¸ÑÑ Ð²ÑÐµ Ð´Ð°Ð½Ð½ÑÐµ</div></div><button class="cur-btn" style="max-width:90px;font-family:var(--font-ui);font-size:12px;color:#f87171;border-color:#f87171" onclick="resetAll()">Ð¡Ð±ÑÐ¾Ñ</button></div>
+        <h3>О приложении</h3>
+        <div class="set-row glass"><div><div class="s-label">ZENFLOW</div><div class="s-sub">v4.0 — Полная версия</div></div><span class="pill">PWA</span></div>
+        <div class="set-row glass" style="margin-top:6px"><div><div class="s-label">Сбросить все данные</div><div class="s-sub">Это действие нельзя отменить</div></div><button class="cur-btn" style="max-width:90px;font-family:var(--font-ui);font-size:12px;color:#f87171;border-color:#f87171" onclick="resetAll()">Сброс</button></div>
       </div>
       <div style="height:8px"></div>
     </div>
+
   </div>
 
   <nav id="nav">
-    <button class="nav-btn active" onclick="goPage('home',this)"><span class="icon">ð </span><span>ÐÐ¾Ð¼</span></button>
-    <button class="nav-btn" onclick="goPage('mood',this)"><span class="icon">ð¬</span><span>ÐÐ°ÑÑÑ.</span></button>
-    <button class="nav-btn" onclick="goPage('cal',this)"><span class="icon">ð¥</span><span>ÐÐ°Ð»Ð¾ÑÐ¸Ð¸</span></button>
-    <button class="nav-btn" onclick="goPage('fin',this)"><span class="icon">ð°</span><span>Ð¤Ð¸Ð½Ð°Ð½ÑÑ</span></button>
-    <button class="nav-btn" onclick="goPage('notes',this)"><span class="icon">ð</span><span>ÐÐ°Ð¼ÐµÑÐºÐ¸</span></button>
-    <button class="nav-btn" onclick="goPage('diary',this)"><span class="icon">ð</span><span>ÐÐ½ÐµÐ²Ð½Ð¸Ðº</span></button>
-    <button class="nav-btn" onclick="goPage('tracker',this)"><span class="icon">ð</span><span>Ð¢ÑÐµÐºÐµÑ</span></button>
-    <button class="nav-btn" onclick="goPage('settings',this)"><span class="icon">âï¸</span><span>ÐÐ°ÑÑÑ.</span></button>
+    <button class="nav-btn active" onclick="goPage('home',this)"><span class="icon">&#127968;</span><span>Дом</span></button>
+    <button class="nav-btn" onclick="goPage('mood',this)"><span class="icon">&#128172;</span><span>Настр.</span></button>
+    <button class="nav-btn" onclick="goPage('cal',this)"><span class="icon">&#127829;</span><span>Ккал</span></button>
+    <button class="nav-btn" onclick="goPage('fin',this)"><span class="icon">&#128176;</span><span>Финансы</span></button>
+    <button class="nav-btn" onclick="goPage('notes',this)"><span class="icon">&#128221;</span><span>Заметки</span></button>
+    <button class="nav-btn" onclick="goPage('diary',this)"><span class="icon">&#128211;</span><span>Дневник</span></button>
+    <button class="nav-btn" onclick="goPage('tracker',this)"><span class="icon">&#128197;</span><span>Трекер</span></button>
+    <button class="nav-btn" onclick="goPage('settings',this)"><span class="icon">&#9881;</span><span>Настройки</span></button>
   </nav>
 </div>
 
-<!-- Finance Modal -->
+<!-- Модал финансы -->
 <div class="modal-ov" id="fin-modal">
   <div class="modal">
-    <h3>ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ ÑÑÐ°Ð½Ð·Ð°ÐºÑÐ¸Ñ</h3>
+    <h3>Добавить транзакцию</h3>
     <div class="type-tabs">
-      <button class="type-tab ti" id="ftype-i" onclick="setFinType('income')">+ ÐÐ¾ÑÐ¾Ð´</button>
-      <button class="type-tab" id="ftype-e" onclick="setFinType('expense')">â Ð Ð°ÑÑÐ¾Ð´</button>
+      <button class="type-tab ti" id="ftype-i" onclick="setFinType('income')">+ Доход</button>
+      <button class="type-tab" id="ftype-e" onclick="setFinType('expense')">- Расход</button>
     </div>
-    <input type="number" id="fin-amt" placeholder="Ð¡ÑÐ¼Ð¼Ð°">
+    <input type="number" id="fin-amt" placeholder="Сумма">
     <select id="fin-cat" style="margin-bottom:10px">
-      <option value="ð ÐÐ´Ð°">ð ÐÐ´Ð°</option><option value="ð Ð¢ÑÐ°Ð½ÑÐ¿Ð¾ÑÑ">ð Ð¢ÑÐ°Ð½ÑÐ¿Ð¾ÑÑ</option>
-      <option value="ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸">ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸</option><option value="ð® Ð Ð°Ð·Ð²Ð»ÐµÑÐµÐ½Ð¸Ñ">ð® Ð Ð°Ð·Ð²Ð»ÐµÑÐµÐ½Ð¸Ñ</option>
-      <option value="ð¥ ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ">ð¥ ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ</option><option value="ð± ÐÐ¾Ð´Ð¿Ð¸ÑÐºÐ¸">ð± ÐÐ¾Ð´Ð¿Ð¸ÑÐºÐ¸</option>
-      <option value="ð  ÐÐ¸Ð»ÑÑ">ð  ÐÐ¸Ð»ÑÑ</option><option value="ð¼ ÐÐ°ÑÐ¿Ð»Ð°ÑÐ°">ð¼ ÐÐ°ÑÐ¿Ð»Ð°ÑÐ°</option>
-      <option value="ð ÐÐ¾Ð´Ð°ÑÐ¾Ðº">ð ÐÐ¾Ð´Ð°ÑÐ¾Ðº</option><option value="ð¦ ÐÑÑÐ³Ð¾Ðµ">ð¦ ÐÑÑÐ³Ð¾Ðµ</option>
+      <option value="Еда">Еда</option>
+      <option value="Транспорт">Транспорт</option>
+      <option value="Покупки">Покупки</option>
+      <option value="Развлечения">Развлечения</option>
+      <option value="Здоровье">Здоровье</option>
+      <option value="Подписки">Подписки</option>
+      <option value="Жильё">Жильё</option>
+      <option value="Зарплата">Зарплата</option>
+      <option value="Подарок">Подарок</option>
+      <option value="Другое">Другое</option>
     </select>
-    <input type="text" id="fin-dsc" placeholder="ÐÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ (Ð½ÐµÐ¾Ð±ÑÐ·Ð°ÑÐµÐ»ÑÐ½Ð¾)">
+    <input type="text" id="fin-dsc" placeholder="Описание (необязательно)">
     <div class="modal-btns">
-      <button class="mb-cancel" onclick="closeFin()">ÐÑÐ¼ÐµÐ½Ð°</button>
-      <button class="mb-confirm" onclick="addTrans()">ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ</button>
+      <button class="mb-cancel" onclick="closeFin()">Отмена</button>
+      <button class="mb-confirm" onclick="addTrans()">Добавить</button>
     </div>
   </div>
 </div>
 
-<!-- Add food modal -->
+<!-- Модал добавления еды -->
 <div class="modal-ov" id="cal-modal">
   <div class="modal">
-    <h3 id="cal-modal-title">ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ Ð¿ÑÐ¾Ð´ÑÐºÑ</h3>
+    <h3 id="cal-modal-title">Добавить продукт</h3>
     <div class="food-preview" id="food-preview"></div>
     <div class="gram-row">
       <input type="number" id="cal-grams" placeholder="100" min="1" max="2000" value="100" oninput="updateFoodPreview()">
-      <span>Ð³ÑÐ°Ð¼Ð¼</span>
+      <span>грамм</span>
     </div>
     <div class="modal-btns">
-      <button class="mb-cancel" onclick="closeCalModal()">ÐÑÐ¼ÐµÐ½Ð°</button>
-      <button class="mb-confirm" onclick="addFoodToLog()">ÐÐ¾Ð±Ð°Ð²Ð¸ÑÑ</button>
+      <button class="mb-cancel" onclick="closeCalModal()">Отмена</button>
+      <button class="mb-confirm" onclick="addFoodToLog()">Добавить</button>
     </div>
   </div>
 </div>
@@ -803,275 +819,329 @@ input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;
 <div class="ep-wrap glass" id="ep-wrap"></div>
 
 <script>
-/* ââ ACCENTS ââ */
+/* ===== АКЦЕНТЫ ===== */
 const ACCENTS=[
-  {n:'Cosmic',  a1:'#818cf8',a2:'#f472b6',a3:'#34d399'},
-  {n:'Ocean',   a1:'#06b6d4',a2:'#3b82f6',a3:'#8b5cf6'},
-  {n:'Forest',  a1:'#22c55e',a2:'#06b6d4',a3:'#84cc16'},
-  {n:'Sunset',  a1:'#f97316',a2:'#ef4444',a3:'#eab308'},
-  {n:'Gold',    a1:'#f59e0b',a2:'#f97316',a3:'#fbbf24'},
-  {n:'Neon',    a1:'#a3e635',a2:'#22d3ee',a3:'#f0abfc'},
-  {n:'Rose',    a1:'#fb7185',a2:'#f43f5e',a3:'#fda4af'},
-  {n:'Aurora',  a1:'#a78bfa',a2:'#34d399',a3:'#60a5fa'},
-  {n:'Candy',   a1:'#e879f9',a2:'#f472b6',a3:'#c084fc'},
-  {n:'Matrix',  a1:'#4ade80',a2:'#22c55e',a3:'#86efac'},
+  {n:'Космос',a1:'#818cf8',a2:'#f472b6',a3:'#34d399'},
+  {n:'Океан',a1:'#06b6d4',a2:'#3b82f6',a3:'#8b5cf6'},
+  {n:'Лес',a1:'#22c55e',a2:'#06b6d4',a3:'#84cc16'},
+  {n:'Закат',a1:'#f97316',a2:'#ef4444',a3:'#eab308'},
+  {n:'Золото',a1:'#f59e0b',a2:'#f97316',a3:'#fbbf24'},
+  {n:'Неон',a1:'#a3e635',a2:'#22d3ee',a3:'#f0abfc'},
+  {n:'Роза',a1:'#fb7185',a2:'#f43f5e',a3:'#fda4af'},
+  {n:'Аврора',a1:'#a78bfa',a2:'#34d399',a3:'#60a5fa'},
+  {n:'Конфета',a1:'#e879f9',a2:'#f472b6',a3:'#c084fc'},
+  {n:'Матрица',a1:'#4ade80',a2:'#22c55e',a3:'#86efac'},
 ];
 
-/* ââ STATE ââ */
+/* ===== СОСТОЯНИЕ ===== */
 let S={
-  theme:'dark',lang:'ru',currency:'â½',balance:0,
+  theme:'dark',lang:'ru',currency:'руб',balance:0,
   transactions:[],trackerData:{},accentIdx:0,wallpaper:null,
   habits:{move:0,water:0,read:0,sleep:0},
   doneTodos:[],gratitude:[],notifs:{water:false,eve:false},
   streak:0,todayMood:null,totalDone:0,
   calLog:{},calGoal:2000,
-  notes:[],
-  diary:[],
+  notes:[],diary:[],
 };
 
-/* ââ LANGS ââ */
-const LANGS=[{c:'ru',n:'Ð ÑÑÑÐºÐ¸Ð¹'},{c:'en',n:'English'},{c:'de',n:'Deutsch'},{c:'fr',n:'FranÃ§ais'},{c:'es',n:'EspaÃ±ol'},{c:'zh',n:'ä¸­æ'},{c:'ja',n:'æ¥æ¬èª'},{c:'uk',n:'Ð£ÐºÑÐ°ÑÐ½ÑÑÐºÐ°'},{c:'tr',n:'TÃ¼rkÃ§e'},{c:'pl',n:'Polski'},{c:'ko',n:'íêµ­ì´'},{c:'ar',n:'Ø§ÙØ¹Ø±Ø¨ÙØ©'},{c:'it',n:'Italiano'},{c:'pt',n:'PortuguÃªs'},{c:'vi',n:'Tiáº¿ng Viá»t'}];
-
-/* ââââââââââââââââââââââââââââââââââââââââââ
-   FOOD DATABASE â calories per 100g
-   ââââââââââââââââââââââââââââââââââââââââââ */
-const FOOD_DB = [
-  // Ð¤Ð Ð£ÐÐ¢Ð«
-  {n:'Ð¯Ð±Ð»Ð¾ÐºÐ¾',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:52,prot:0.3,fat:0.2,carb:13.8},
-  {n:'ÐÐ°Ð½Ð°Ð½',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:89,prot:1.1,fat:0.3,carb:22.8},
-  {n:'ÐÐ¿ÐµÐ»ÑÑÐ¸Ð½',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:47,prot:0.9,fat:0.1,carb:11.8},
-  {n:'ÐÐ¸Ð½Ð¾Ð³ÑÐ°Ð´',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:67,prot:0.6,fat:0.2,carb:17.2},
-  {n:'ÐÐ»ÑÐ±Ð½Ð¸ÐºÐ°',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:32,prot:0.7,fat:0.3,carb:7.7},
-  {n:'ÐÑÐ±ÑÐ·',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:30,prot:0.6,fat:0.2,carb:7.6},
-  {n:'ÐÐ°Ð½Ð³Ð¾',e:'ð¥­',c:'Ð¤ÑÑÐºÑÑ',kcal:60,prot:0.8,fat:0.4,carb:15.0},
-  {n:'ÐÑÑÑÐ°',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:57,prot:0.4,fat:0.1,carb:15.0},
-  {n:'ÐÐµÑÑÐ¸Ðº',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:39,prot:0.9,fat:0.3,carb:9.5},
-  {n:'ÐÐ¸ÑÐ½Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:50,prot:1.0,fat:0.3,carb:12.2},
-  {n:'ÐÐ½Ð°Ð½Ð°Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:50,prot:0.5,fat:0.1,carb:13.1},
-  {n:'ÐÐ¸Ð²Ð¸',e:'ð¥',c:'Ð¤ÑÑÐºÑÑ',kcal:61,prot:1.1,fat:0.5,carb:14.7},
-  {n:'ÐÐ¸Ð¼Ð¾Ð½',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:29,prot:1.1,fat:0.3,carb:9.3},
-  {n:'ÐÑÐ½Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:34,prot:0.8,fat:0.2,carb:8.2},
-  {n:'ÐÐ±ÑÐ¸ÐºÐ¾Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:48,prot:1.4,fat:0.4,carb:11.1},
-  {n:'Ð¡Ð»Ð¸Ð²Ð°',e:'ð«',c:'Ð¤ÑÑÐºÑÑ',kcal:46,prot:0.7,fat:0.3,carb:11.4},
-  {n:'Ð§ÐµÑÐ½Ð¸ÐºÐ°',e:'ð«',c:'Ð¤ÑÑÐºÑÑ',kcal:57,prot:0.7,fat:0.3,carb:14.5},
-  {n:'ÐÐ°Ð»Ð¸Ð½Ð°',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:52,prot:1.2,fat:0.7,carb:11.9},
-  {n:'ÐÐ²Ð¾ÐºÐ°Ð´Ð¾',e:'ð¥',c:'Ð¤ÑÑÐºÑÑ',kcal:160,prot:2.0,fat:14.7,carb:8.5},
-  {n:'ÐÑÐ°Ð½Ð°Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:83,prot:1.7,fat:1.2,carb:18.7},
-  {n:'Ð¥ÑÑÐ¼Ð°',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:70,prot:0.5,fat:0.4,carb:18.6},
-  {n:'ÐÐ½Ð¶Ð¸Ñ',e:'ð',c:'Ð¤ÑÑÐºÑÑ',kcal:74,prot:0.8,fat:0.3,carb:19.2},
-  {n:'ÐÐ°Ð¿Ð°Ð¹Ñ',e:'ð¥­',c:'Ð¤ÑÑÐºÑÑ',kcal:43,prot:0.5,fat:0.3,carb:11.0},
-  // ÐÐÐÐ©Ð
-  {n:'ÐÐ¾ÑÐºÐ¾Ð²Ñ',e:'ð¥',c:'ÐÐ²Ð¾ÑÐ¸',kcal:41,prot:0.9,fat:0.2,carb:9.6},
-  {n:'ÐÐ°ÑÑÐ¾ÑÐµÐ»Ñ',e:'ð¥',c:'ÐÐ²Ð¾ÑÐ¸',kcal:77,prot:2.0,fat:0.1,carb:17.5},
-  {n:'ÐÐ¾Ð¼Ð¸Ð´Ð¾Ñ',e:'ð',c:'ÐÐ²Ð¾ÑÐ¸',kcal:18,prot:0.9,fat:0.2,carb:3.9},
-  {n:'ÐÐ³ÑÑÐµÑ',e:'ð¥',c:'ÐÐ²Ð¾ÑÐ¸',kcal:15,prot:0.7,fat:0.1,carb:3.6},
-  {n:'ÐÐµÑÐµÑ Ð±Ð¾Ð»Ð³Ð°ÑÑÐºÐ¸Ð¹',e:'ð«',c:'ÐÐ²Ð¾ÑÐ¸',kcal:31,prot:1.0,fat:0.3,carb:6.0},
-  {n:'ÐÐ°Ð¿ÑÑÑÐ°',e:'ð¥¬',c:'ÐÐ²Ð¾ÑÐ¸',kcal:25,prot:1.3,fat:0.1,carb:5.8},
-  {n:'ÐÑÐº',e:'ð§',c:'ÐÐ²Ð¾ÑÐ¸',kcal:40,prot:1.1,fat:0.1,carb:9.3},
-  {n:'Ð§ÐµÑÐ½Ð¾Ðº',e:'ð§',c:'ÐÐ²Ð¾ÑÐ¸',kcal:149,prot:6.4,fat:0.5,carb:33.1},
-  {n:'ÐÑÐ¾ÐºÐºÐ¾Ð»Ð¸',e:'ð¥¦',c:'ÐÐ²Ð¾ÑÐ¸',kcal:34,prot:2.8,fat:0.4,carb:6.6},
-  {n:'Ð¨Ð¿Ð¸Ð½Ð°Ñ',e:'ð¥¬',c:'ÐÐ²Ð¾ÑÐ¸',kcal:23,prot:2.9,fat:0.4,carb:3.6},
-  {n:'ÐÑÐºÑÑÑÐ·Ð°',e:'ð½',c:'ÐÐ²Ð¾ÑÐ¸',kcal:86,prot:3.3,fat:1.4,carb:19.0},
-  {n:'Ð¡Ð²ÑÐºÐ»Ð°',e:'ð ',c:'ÐÐ²Ð¾ÑÐ¸',kcal:43,prot:1.6,fat:0.1,carb:9.6},
-  {n:'Ð¢ÑÐºÐ²Ð°',e:'ð',c:'ÐÐ²Ð¾ÑÐ¸',kcal:26,prot:1.0,fat:0.1,carb:6.5},
-  {n:'ÐÐ°Ð±Ð°ÑÐ¾Ðº',e:'ð¥',c:'ÐÐ²Ð¾ÑÐ¸',kcal:17,prot:1.2,fat:0.3,carb:3.1},
-  {n:'ÐÐ°ÐºÐ»Ð°Ð¶Ð°Ð½',e:'ð',c:'ÐÐ²Ð¾ÑÐ¸',kcal:25,prot:1.0,fat:0.2,carb:5.9},
-  {n:'Ð ÐµÐ´Ð¸Ñ',e:'ð¶ï¸',c:'ÐÐ²Ð¾ÑÐ¸',kcal:16,prot:0.7,fat:0.1,carb:3.4},
-  {n:'Ð¡ÐµÐ»ÑÐ´ÐµÑÐµÐ¹',e:'ð¥¬',c:'ÐÐ²Ð¾ÑÐ¸',kcal:14,prot:0.7,fat:0.1,carb:3.0},
-  {n:'Ð¦Ð²ÐµÑÐ½Ð°Ñ ÐºÐ°Ð¿ÑÑÑÐ°',e:'ð¥¦',c:'ÐÐ²Ð¾ÑÐ¸',kcal:25,prot:1.9,fat:0.3,carb:5.0},
-  {n:'ÐÐ¾ÑÐ¾Ñ',e:'ð«',c:'ÐÐ²Ð¾ÑÐ¸',kcal:81,prot:5.4,fat:0.4,carb:14.5},
-  {n:'Ð¤Ð°ÑÐ¾Ð»Ñ',e:'ð«',c:'ÐÐ²Ð¾ÑÐ¸',kcal:347,prot:21.0,fat:2.3,carb:60.0},
-  {n:'ÐÑÑ',e:'ð«',c:'ÐÐ²Ð¾ÑÐ¸',kcal:364,prot:19.3,fat:6.0,carb:60.7},
-  {n:'Ð§ÐµÑÐµÐ²Ð¸ÑÐ°',e:'ð«',c:'ÐÐ²Ð¾ÑÐ¸',kcal:353,prot:24.0,fat:1.8,carb:63.0},
-  // ÐÐÐÐÐ Ð ÐÐ Ð£ÐÐ«
-  {n:'Ð Ð¸Ñ Ð²Ð°ÑÑÐ½ÑÐ¹',e:'ð',c:'ÐÐ»Ð°ÐºÐ¸',kcal:130,prot:2.7,fat:0.3,carb:28.2},
-  {n:'ÐÐ²ÑÑÐ½Ð°Ñ ÐºÐ°ÑÐ°',e:'ð¥£',c:'ÐÐ»Ð°ÐºÐ¸',kcal:68,prot:2.5,fat:1.5,carb:12.0},
-  {n:'ÐÑÐµÑÐºÐ° Ð²Ð°ÑÑÐ½Ð°Ñ',e:'ð²',c:'ÐÐ»Ð°ÐºÐ¸',kcal:92,prot:3.4,fat:0.6,carb:19.9},
-  {n:'ÐÑÐµÐ½Ð¾',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:348,prot:11.5,fat:3.3,carb:72.0},
-  {n:'ÐÐµÑÐ»Ð¾Ð²ÐºÐ°',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:324,prot:9.3,fat:1.1,carb:73.7},
-  {n:'ÐÐ°Ð½Ð½Ð°Ñ ÐºÑÑÐ¿Ð°',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:333,prot:10.3,fat:1.0,carb:73.3},
-  {n:'ÐÐ°ÐºÐ°ÑÐ¾Ð½Ñ Ð²Ð°ÑÑÐ½ÑÐµ',e:'ð',c:'ÐÐ»Ð°ÐºÐ¸',kcal:157,prot:5.5,fat:0.9,carb:30.9},
-  {n:'Ð¥Ð»ÐµÐ± Ð±ÐµÐ»ÑÐ¹',e:'ð',c:'ÐÐ»Ð°ÐºÐ¸',kcal:265,prot:7.8,fat:3.3,carb:49.0},
-  {n:'Ð¥Ð»ÐµÐ± ÑÐ¶Ð°Ð½Ð¾Ð¹',e:'ð',c:'ÐÐ»Ð°ÐºÐ¸',kcal:214,prot:6.6,fat:1.2,carb:44.9},
-  {n:'ÐÑÐºÑÑÑÐ·Ð½ÑÐµ ÑÐ»Ð¾Ð¿ÑÑ',e:'ð¥£',c:'ÐÐ»Ð°ÐºÐ¸',kcal:357,prot:8.3,fat:0.9,carb:84.0},
-  {n:'ÐÑÑÐ»Ð¸',e:'ð¥£',c:'ÐÐ»Ð°ÐºÐ¸',kcal:368,prot:11.0,fat:6.0,carb:73.0},
-  {n:'ÐÑÐ»Ð³ÑÑ',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:342,prot:12.3,fat:1.3,carb:75.9},
-  {n:'ÐÐ¸Ð½Ð¾Ð° Ð²Ð°ÑÑÐ½Ð°Ñ',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:120,prot:4.4,fat:1.9,carb:21.3},
-  {n:'ÐÑÑ-ÐºÑÑ',e:'ð¾',c:'ÐÐ»Ð°ÐºÐ¸',kcal:112,prot:3.8,fat:0.2,carb:23.2},
-  // ÐÐ¯Ð¡Ð Ð Ð Ð«ÐÐ
-  {n:'ÐÑÑÐ¸Ð½Ð°Ñ Ð³ÑÑÐ´ÐºÐ°',e:'ð',c:'ÐÑÑÐ¾',kcal:165,prot:31.0,fat:3.6,carb:0.0},
-  {n:'ÐÐ¾Ð²ÑÐ´Ð¸Ð½Ð°',e:'ð¥©',c:'ÐÑÑÐ¾',kcal:250,prot:26.0,fat:17.0,carb:0.0},
-  {n:'Ð¡Ð²Ð¸Ð½Ð¸Ð½Ð°',e:'ð¥©',c:'ÐÑÑÐ¾',kcal:242,prot:16.0,fat:21.5,carb:0.0},
-  {n:'ÐÐ¾ÑÐ¾ÑÑ',e:'ð',c:'ÐÑÑÐ¾',kcal:208,prot:20.4,fat:13.4,carb:0.0},
-  {n:'Ð¢ÑÐ½ÐµÑ',e:'ð',c:'ÐÑÑÐ¾',kcal:130,prot:29.9,fat:0.5,carb:0.0},
-  {n:'Ð¯Ð¹ÑÐ¾',e:'ð¥',c:'ÐÑÑÐ¾',kcal:143,prot:12.6,fat:9.5,carb:0.7},
-  {n:'Ð¢ÑÐµÑÐºÐ°',e:'ð',c:'ÐÑÑÐ¾',kcal:82,prot:17.8,fat:0.7,carb:0.0},
-  {n:'Ð¡ÑÐ¼Ð³Ð°',e:'ð',c:'ÐÑÑÐ¾',kcal:142,prot:19.8,fat:6.3,carb:0.0},
-  {n:'ÐÑÐ¾Ð»Ð¸Ðº',e:'ð¥©',c:'ÐÑÑÐ¾',kcal:183,prot:21.2,fat:11.0,carb:0.0},
-  {n:'ÐÐ½Ð´ÐµÐ¹ÐºÐ°',e:'ð',c:'ÐÑÑÐ¾',kcal:189,prot:28.6,fat:7.7,carb:0.0},
-  {n:'Ð£ÑÐºÐ°',e:'ð',c:'ÐÑÑÐ¾',kcal:337,prot:18.5,fat:28.0,carb:0.0},
-  {n:'ÐÐµÑÐµÐ½Ñ Ð³Ð¾Ð²ÑÐ¶ÑÑ',e:'ð¥©',c:'ÐÑÑÐ¾',kcal:125,prot:17.4,fat:3.7,carb:5.3},
-  {n:'ÐÐ¾Ð»Ð±Ð°ÑÐ° Ð²Ð°ÑÑÐ½Ð°Ñ',e:'ð­',c:'ÐÑÑÐ¾',kcal:257,prot:13.7,fat:22.8,carb:1.5},
-  {n:'Ð¡Ð¾ÑÐ¸ÑÐºÐ¸',e:'ð­',c:'ÐÑÑÐ¾',kcal:288,prot:11.8,fat:25.3,carb:1.6},
-  // ÐÐÐÐÐ§ÐÐ«Ð
-  {n:'ÐÐ¾Ð»Ð¾ÐºÐ¾ 3.2%',e:'ð¥',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:60,prot:2.9,fat:3.2,carb:4.7},
-  {n:'Ð¢Ð²Ð¾ÑÐ¾Ð³ 5%',e:'ð§',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:121,prot:17.2,fat:5.0,carb:1.8},
-  {n:'Ð¡Ð¼ÐµÑÐ°Ð½Ð° 20%',e:'ð«',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:206,prot:2.8,fat:20.0,carb:3.2},
-  {n:'ÐÐµÑÐ¸Ñ',e:'ð¥',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:41,prot:2.8,fat:1.0,carb:4.7},
-  {n:'ÐÐ¾Ð³ÑÑÑ Ð½Ð°ÑÑÑÐ°Ð»ÑÐ½ÑÐ¹',e:'ð¥',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:61,prot:5.0,fat:3.2,carb:3.5},
-  {n:'Ð¡ÑÑ ÑÐ²ÑÑÐ´ÑÐ¹',e:'ð§',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:360,prot:24.0,fat:29.5,carb:0.4},
-  {n:'ÐÐ°ÑÐ»Ð¾ ÑÐ»Ð¸Ð²Ð¾ÑÐ½Ð¾Ðµ',e:'ð§',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:717,prot:0.9,fat:81.1,carb:0.1},
-  {n:'ÐÐ¾ÑÐ¾Ð¶ÐµÐ½Ð¾Ðµ ÑÐ»Ð¸Ð²Ð¾ÑÐ½Ð¾Ðµ',e:'ð¦',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:207,prot:3.7,fat:11.0,carb:23.6},
-  {n:'Ð¡ÑÑÐ¾Ðº Ð³Ð»Ð°Ð·Ð¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐ¹',e:'ð§',c:'ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ',kcal:340,prot:8.5,fat:27.8,carb:14.3},
-  // ÐÐ ÐÐ¥Ð
-  {n:'ÐÑÐµÑÐºÐ¸Ð¹ Ð¾ÑÐµÑ',e:'ð°',c:'ÐÑÐµÑÐ¸',kcal:654,prot:15.2,fat:65.2,carb:13.7},
-  {n:'ÐÐ¸Ð½Ð´Ð°Ð»Ñ',e:'ð°',c:'ÐÑÐµÑÐ¸',kcal:579,prot:21.2,fat:49.9,carb:21.6},
-  {n:'ÐÐµÑÑÑ',e:'ð°',c:'ÐÑÐµÑÐ¸',kcal:553,prot:18.2,fat:43.9,carb:30.2},
-  {n:'ÐÑÐ°ÑÐ¸Ñ',e:'ð¥',c:'ÐÑÐµÑÐ¸',kcal:567,prot:25.8,fat:49.2,carb:16.1},
-  {n:'Ð¤ÑÐ½Ð´ÑÐº',e:'ð°',c:'ÐÑÐµÑÐ¸',kcal:628,prot:15.0,fat:60.8,carb:16.7},
-  {n:'Ð¤Ð¸ÑÑÐ°ÑÐºÐ¸',e:'ð°',c:'ÐÑÐµÑÐ¸',kcal:562,prot:20.6,fat:45.4,carb:27.2},
-  {n:'Ð¡ÐµÐ¼ÐµÐ½Ð° Ð¿Ð¾Ð´ÑÐ¾Ð»Ð½ÐµÑÐ½Ð¸ÐºÐ°',e:'ð»',c:'ÐÑÐµÑÐ¸',kcal:584,prot:20.8,fat:51.5,carb:20.0},
-  {n:'Ð¡ÐµÐ¼ÐµÐ½Ð° ÑÑÐºÐ²Ñ',e:'ð',c:'ÐÑÐµÑÐ¸',kcal:559,prot:30.2,fat:49.1,carb:10.7},
-  {n:'ÐÑÐ½Ð¶ÑÑ',e:'ð¾',c:'ÐÑÐµÑÐ¸',kcal:573,prot:17.7,fat:49.7,carb:23.5},
-  // Ð¡ÐÐÐÐÐÐ
-  {n:'Ð¨Ð¾ÐºÐ¾Ð»Ð°Ð´ Ð¼Ð¾Ð»Ð¾ÑÐ½ÑÐ¹',e:'ð«',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:535,prot:6.9,fat:29.7,carb:59.5},
-  {n:'Ð¨Ð¾ÐºÐ¾Ð»Ð°Ð´ ÑÑÐ¼Ð½ÑÐ¹',e:'ð«',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:598,prot:5.3,fat:38.3,carb:57.9},
-  {n:'ÐÐ¸ÑÑÐ°',e:'ð',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:266,prot:11.4,fat:10.4,carb:32.9},
-  {n:'Ð¢Ð¾ÑÑ',e:'ð',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:344,prot:4.9,fat:16.6,carb:49.0},
-  {n:'ÐÐµÑÐµÐ½ÑÐµ',e:'ðª',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:476,prot:6.3,fat:23.6,carb:63.4},
-  {n:'ÐÐ°ÑÐ°Ð¼ÐµÐ»Ñ',e:'ð¬',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:382,prot:3.5,fat:0.4,carb:93.0},
-  {n:'ÐÑÐ´',e:'ð¯',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:304,prot:0.3,fat:0.0,carb:82.4},
-  {n:'ÐÐ°ÑÐµÐ½ÑÐµ',e:'ð',c:'Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ',kcal:258,prot:0.3,fat:0.1,carb:68.2},
-  // ÐÐÐÐÐ¢ÐÐ
-  {n:'ÐÐ¾ÑÐµ ÑÑÑÐ½ÑÐ¹',e:'â',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:2,prot:0.3,fat:0.0,carb:0.0},
-  {n:'ÐÐ¾ÑÐµ Ñ Ð¼Ð¾Ð»Ð¾ÐºÐ¾Ð¼',e:'â',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:30,prot:1.5,fat:1.5,carb:3.0},
-  {n:'Ð§Ð°Ð¹ Ð±ÐµÐ· ÑÐ°ÑÐ°ÑÐ°',e:'ðµ',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:1,prot:0.0,fat:0.0,carb:0.3},
-  {n:'ÐÐ¿ÐµÐ»ÑÑÐ¸Ð½Ð¾Ð²ÑÐ¹ ÑÐ¾Ðº',e:'ð',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:45,prot:0.7,fat:0.2,carb:10.4},
-  {n:'Ð¯Ð±Ð»Ð¾ÑÐ½ÑÐ¹ ÑÐ¾Ðº',e:'ð',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:46,prot:0.1,fat:0.1,carb:11.3},
-  {n:'ÐÐ¾Ð»Ð°',e:'ð¥¤',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:42,prot:0.0,fat:0.0,carb:10.6},
-  {n:'ÐÐ¸Ð²Ð¾',e:'ðº',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:43,prot:0.5,fat:0.0,carb:3.6},
-  {n:'ÐÐ¸Ð½Ð¾ ÐºÑÐ°ÑÐ½Ð¾Ðµ',e:'ð·',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:85,prot:0.1,fat:0.0,carb:2.6},
-  {n:'Ð¡Ð¼ÑÐ·Ð¸ Ð±Ð°Ð½Ð°Ð½Ð¾Ð²ÑÐ¹',e:'ð¥¤',c:'ÐÐ°Ð¿Ð¸ÑÐºÐ¸',kcal:95,prot:1.5,fat:0.5,carb:22.0},
-  // Ð¤ÐÐ¡Ð¢Ð¤Ð£Ð
-  {n:'ÐÑÑÐ³ÐµÑ',e:'ð',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:295,prot:17.0,fat:14.0,carb:24.0},
-  {n:'ÐÐ°ÑÑÐ¾ÑÐºÐ° ÑÑÐ¸',e:'ð',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:312,prot:3.4,fat:15.0,carb:41.4},
-  {n:'Ð¥Ð¾Ñ-Ð´Ð¾Ð³',e:'ð­',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:290,prot:10.4,fat:17.0,carb:24.0},
-  {n:'Ð¨Ð°ÑÑÐ¼Ð°',e:'ð¯',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:218,prot:14.5,fat:9.8,carb:19.3},
-  {n:'Ð Ð¾Ð»Ð»Ñ',e:'ð£',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:180,prot:6.8,fat:4.5,carb:28.0},
-  {n:'Ð¡ÑÑÐ¸',e:'ð±',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:150,prot:9.0,fat:2.5,carb:25.0},
-  {n:'Ð§Ð¸Ð¿ÑÑ',e:'ð¥',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:536,prot:7.0,fat:35.0,carb:52.0},
-  {n:'ÐÐ¾Ð¿ÐºÐ¾ÑÐ½',e:'ð¿',c:'Ð¤Ð°ÑÑÑÑÐ´',kcal:375,prot:11.0,fat:18.5,carb:45.0},
-  // ÐÐÐ¢ÐÐÐ«Ð ÐÐÐ®ÐÐ
-  {n:'ÐÐ¾ÑÑ',e:'ð²',c:'ÐÐ»ÑÐ´Ð°',kcal:55,prot:3.0,fat:2.0,carb:7.0},
-  {n:'ÐÐµÐ»ÑÐ¼ÐµÐ½Ð¸',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:275,prot:13.5,fat:12.5,carb:26.0},
-  {n:'ÐÐ»Ð¸Ð½Ñ',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:233,prot:6.1,fat:12.3,carb:26.0},
-  {n:'ÐÐ¾ÑÐ»ÐµÑÑ',e:'ð',c:'ÐÐ»ÑÐ´Ð°',kcal:248,prot:15.4,fat:18.0,carb:5.5},
-  {n:'ÐÐ°ÑÐµÐ½Ð°Ñ ÐºÐ°ÑÑÐ¾ÑÐºÐ°',e:'ð',c:'ÐÐ»ÑÐ´Ð°',kcal:204,prot:2.8,fat:9.5,carb:28.2},
-  {n:'ÐÐ°ÑÐ° Ð½Ð° Ð¼Ð¾Ð»Ð¾ÐºÐµ',e:'ð¥£',c:'ÐÐ»ÑÐ´Ð°',kcal:100,prot:3.5,fat:2.5,carb:17.0},
-  {n:'Ð¯Ð¸ÑÐ½Ð¸ÑÐ°',e:'ð³',c:'ÐÐ»ÑÐ´Ð°',kcal:185,prot:13.6,fat:14.1,carb:1.2},
-  {n:'ÐÐ°ÑÑÐ½ÑÐµ ÑÐ¹ÑÐ°',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:155,prot:13.0,fat:11.0,carb:1.1},
-  {n:'ÐÐ»Ð¾Ð²',e:'ð',c:'ÐÐ»ÑÐ´Ð°',kcal:200,prot:6.0,fat:7.5,carb:28.0},
-  {n:'ÐÐºÑÐ¾ÑÐºÐ°',e:'ð²',c:'ÐÐ»ÑÐ´Ð°',kcal:50,prot:2.5,fat:1.5,carb:6.5},
-  {n:'Ð¡Ð°Ð»Ð°Ñ Ð¾Ð»Ð¸Ð²ÑÐµ',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:197,prot:6.4,fat:16.0,carb:8.2},
-  {n:'ÐÑÐµÑÐµÑÐºÐ¸Ð¹ ÑÐ°Ð»Ð°Ñ',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:82,prot:3.0,fat:5.5,carb:6.0},
-  {n:'Ð¦ÐµÐ·Ð°ÑÑ',e:'ð¥',c:'ÐÐ»ÑÐ´Ð°',kcal:167,prot:12.0,fat:10.5,carb:7.5},
+/* ===== ЯЗЫКИ ===== */
+const LANGS=[
+  {c:'ru',n:'Русский'},{c:'en',n:'English'},{c:'de',n:'Deutsch'},
+  {c:'fr',n:'Français'},{c:'es',n:'Español'},{c:'zh',n:'Китайский'},
+  {c:'ja',n:'Японский'},{c:'uk',n:'Украинский'},{c:'tr',n:'Türkçe'},
+  {c:'pl',n:'Polski'},{c:'ko',n:'Корейский'},{c:'ar',n:'Арабский'},
+  {c:'it',n:'Italiano'},{c:'pt',n:'Português'},{c:'vi',n:'Вьетнамский'},
+  {c:'hi',n:'Хинди'},{c:'nl',n:'Nederlands'},{c:'sv',n:'Шведский'},
+  {c:'no',n:'Норвежский'},{c:'fi',n:'Финский'},{c:'cs',n:'Чешский'},
+  {c:'ro',n:'Румынский'},{c:'hu',n:'Венгерский'},
 ];
 
-const FOOD_CATS=['ÐÑÐµ','Ð¤ÑÑÐºÑÑ','ÐÐ²Ð¾ÑÐ¸','ÐÐ»Ð°ÐºÐ¸','ÐÑÑÐ¾','ÐÐ¾Ð»Ð¾ÑÐ½ÑÐµ','ÐÑÐµÑÐ¸','Ð¡Ð»Ð°Ð´ÐºÐ¾Ðµ','ÐÐ°Ð¿Ð¸ÑÐºÐ¸','Ð¤Ð°ÑÑÑÑÐ´','ÐÐ»ÑÐ´Ð°'];
+/* ===== БАЗА ПРОДУКТОВ ===== */
+const FOOD_DB=[
+  {n:'Яблоко',e:'🍎',c:'Фрукты',kcal:52,prot:0.3,fat:0.2,carb:13.8},
+  {n:'Банан',e:'🍌',c:'Фрукты',kcal:89,prot:1.1,fat:0.3,carb:22.8},
+  {n:'Апельсин',e:'🍊',c:'Фрукты',kcal:47,prot:0.9,fat:0.1,carb:11.8},
+  {n:'Виноград',e:'🍇',c:'Фрукты',kcal:67,prot:0.6,fat:0.2,carb:17.2},
+  {n:'Клубника',e:'🍓',c:'Фрукты',kcal:32,prot:0.7,fat:0.3,carb:7.7},
+  {n:'Арбуз',e:'🍉',c:'Фрукты',kcal:30,prot:0.6,fat:0.2,carb:7.6},
+  {n:'Манго',e:'🥭',c:'Фрукты',kcal:60,prot:0.8,fat:0.4,carb:15.0},
+  {n:'Груша',e:'🍐',c:'Фрукты',kcal:57,prot:0.4,fat:0.1,carb:15.0},
+  {n:'Персик',e:'🍑',c:'Фрукты',kcal:39,prot:0.9,fat:0.3,carb:9.5},
+  {n:'Вишня',e:'🍒',c:'Фрукты',kcal:50,prot:1.0,fat:0.3,carb:12.2},
+  {n:'Ананас',e:'🍍',c:'Фрукты',kcal:50,prot:0.5,fat:0.1,carb:13.1},
+  {n:'Киви',e:'🥝',c:'Фрукты',kcal:61,prot:1.1,fat:0.5,carb:14.7},
+  {n:'Лимон',e:'🍋',c:'Фрукты',kcal:29,prot:1.1,fat:0.3,carb:9.3},
+  {n:'Дыня',e:'🍈',c:'Фрукты',kcal:34,prot:0.8,fat:0.2,carb:8.2},
+  {n:'Абрикос',e:'🍑',c:'Фрукты',kcal:48,prot:1.4,fat:0.4,carb:11.1},
+  {n:'Слива',e:'🫐',c:'Фрукты',kcal:46,prot:0.7,fat:0.3,carb:11.4},
+  {n:'Черника',e:'🫐',c:'Фрукты',kcal:57,prot:0.7,fat:0.3,carb:14.5},
+  {n:'Малина',e:'🍓',c:'Фрукты',kcal:52,prot:1.2,fat:0.7,carb:11.9},
+  {n:'Авокадо',e:'🥑',c:'Фрукты',kcal:160,prot:2.0,fat:14.7,carb:8.5},
+  {n:'Гранат',e:'🍎',c:'Фрукты',kcal:83,prot:1.7,fat:1.2,carb:18.7},
+  {n:'Хурма',e:'🍊',c:'Фрукты',kcal:70,prot:0.5,fat:0.4,carb:18.6},
+  {n:'Черешня',e:'🍒',c:'Фрукты',kcal:50,prot:1.1,fat:0.4,carb:12.0},
+  {n:'Морковь',e:'🥕',c:'Овощи',kcal:41,prot:0.9,fat:0.2,carb:9.6},
+  {n:'Картофель',e:'🥔',c:'Овощи',kcal:77,prot:2.0,fat:0.1,carb:17.5},
+  {n:'Помидор',e:'🍅',c:'Овощи',kcal:18,prot:0.9,fat:0.2,carb:3.9},
+  {n:'Огурец',e:'🥒',c:'Овощи',kcal:15,prot:0.7,fat:0.1,carb:3.6},
+  {n:'Перец болгарский',e:'🫑',c:'Овощи',kcal:31,prot:1.0,fat:0.3,carb:6.0},
+  {n:'Капуста белокочанная',e:'🥬',c:'Овощи',kcal:25,prot:1.3,fat:0.1,carb:5.8},
+  {n:'Лук репчатый',e:'🧅',c:'Овощи',kcal:40,prot:1.1,fat:0.1,carb:9.3},
+  {n:'Чеснок',e:'🧄',c:'Овощи',kcal:149,prot:6.4,fat:0.5,carb:33.1},
+  {n:'Брокколи',e:'🥦',c:'Овощи',kcal:34,prot:2.8,fat:0.4,carb:6.6},
+  {n:'Шпинат',e:'🥬',c:'Овощи',kcal:23,prot:2.9,fat:0.4,carb:3.6},
+  {n:'Кукуруза',e:'🌽',c:'Овощи',kcal:86,prot:3.3,fat:1.4,carb:19.0},
+  {n:'Свёкла',e:'🍠',c:'Овощи',kcal:43,prot:1.6,fat:0.1,carb:9.6},
+  {n:'Тыква',e:'🎃',c:'Овощи',kcal:26,prot:1.0,fat:0.1,carb:6.5},
+  {n:'Кабачок',e:'🥒',c:'Овощи',kcal:17,prot:1.2,fat:0.3,carb:3.1},
+  {n:'Баклажан',e:'🍆',c:'Овощи',kcal:25,prot:1.0,fat:0.2,carb:5.9},
+  {n:'Цветная капуста',e:'🥦',c:'Овощи',kcal:25,prot:1.9,fat:0.3,carb:5.0},
+  {n:'Зелёный горошек',e:'🫛',c:'Овощи',kcal:81,prot:5.4,fat:0.4,carb:14.5},
+  {n:'Рис варёный',e:'🍚',c:'Злаки',kcal:130,prot:2.7,fat:0.3,carb:28.2},
+  {n:'Овсяная каша',e:'🥣',c:'Злаки',kcal:68,prot:2.5,fat:1.5,carb:12.0},
+  {n:'Гречка варёная',e:'🍲',c:'Злаки',kcal:92,prot:3.4,fat:0.6,carb:19.9},
+  {n:'Перловка варёная',e:'🌾',c:'Злаки',kcal:109,prot:3.1,fat:0.4,carb:22.0},
+  {n:'Пшено варёное',e:'🌾',c:'Злаки',kcal:90,prot:3.1,fat:0.5,carb:19.0},
+  {n:'Манная каша',e:'🥣',c:'Злаки',kcal:100,prot:3.2,fat:1.0,carb:18.0},
+  {n:'Макароны варёные',e:'🍝',c:'Злаки',kcal:157,prot:5.5,fat:0.9,carb:30.9},
+  {n:'Хлеб белый',e:'🍞',c:'Злаки',kcal:265,prot:7.8,fat:3.3,carb:49.0},
+  {n:'Хлеб ржаной',e:'🍞',c:'Злаки',kcal:214,prot:6.6,fat:1.2,carb:44.9},
+  {n:'Кукурузные хлопья',e:'🥣',c:'Злаки',kcal:357,prot:8.3,fat:0.9,carb:84.0},
+  {n:'Мюсли',e:'🥣',c:'Злаки',kcal:368,prot:11.0,fat:6.0,carb:73.0},
+  {n:'Булгур варёный',e:'🌾',c:'Злаки',kcal:83,prot:3.1,fat:0.2,carb:19.0},
+  {n:'Киноа варёная',e:'🌾',c:'Злаки',kcal:120,prot:4.4,fat:1.9,carb:21.3},
+  {n:'Кус-кус варёный',e:'🌾',c:'Злаки',kcal:112,prot:3.8,fat:0.2,carb:23.2},
+  {n:'Чечевица варёная',e:'🫘',c:'Бобовые',kcal:116,prot:9.0,fat:0.4,carb:20.0},
+  {n:'Фасоль красная',e:'🫘',c:'Бобовые',kcal:127,prot:8.7,fat:0.5,carb:23.0},
+  {n:'Нут варёный',e:'🫘',c:'Бобовые',kcal:164,prot:8.9,fat:2.6,carb:27.0},
+  {n:'Горох варёный',e:'🫛',c:'Бобовые',kcal:118,prot:8.3,fat:0.4,carb:21.0},
+  {n:'Тофу',e:'🫘',c:'Бобовые',kcal:76,prot:8.0,fat:4.8,carb:1.9},
+  {n:'Куриная грудка варёная',e:'🍗',c:'Мясо',kcal:165,prot:31.0,fat:3.6,carb:0.0},
+  {n:'Куриное бедро',e:'🍗',c:'Мясо',kcal:219,prot:26.0,fat:13.0,carb:0.0},
+  {n:'Говядина варёная',e:'🥩',c:'Мясо',kcal:250,prot:26.0,fat:17.0,carb:0.0},
+  {n:'Свинина',e:'🥩',c:'Мясо',kcal:242,prot:16.0,fat:21.5,carb:0.0},
+  {n:'Индейка грудка',e:'🍗',c:'Мясо',kcal:157,prot:30.0,fat:3.0,carb:0.0},
+  {n:'Кролик',e:'🥩',c:'Мясо',kcal:183,prot:21.2,fat:11.0,carb:0.0},
+  {n:'Колбаса варёная',e:'🌭',c:'Мясо',kcal:257,prot:13.7,fat:22.8,carb:1.5},
+  {n:'Сосиски',e:'🌭',c:'Мясо',kcal:288,prot:11.8,fat:25.3,carb:1.6},
+  {n:'Бекон',e:'🥓',c:'Мясо',kcal:541,prot:37.0,fat:45.0,carb:0.0},
+  {n:'Лосось',e:'🐟',c:'Рыба',kcal:208,prot:20.4,fat:13.4,carb:0.0},
+  {n:'Тунец',e:'🐟',c:'Рыба',kcal:130,prot:29.9,fat:0.5,carb:0.0},
+  {n:'Треска',e:'🐟',c:'Рыба',kcal:82,prot:17.8,fat:0.7,carb:0.0},
+  {n:'Минтай',e:'🐟',c:'Рыба',kcal:72,prot:15.9,fat:0.9,carb:0.0},
+  {n:'Скумбрия',e:'🐟',c:'Рыба',kcal:191,prot:18.5,fat:13.0,carb:0.0},
+  {n:'Сельдь',e:'🐟',c:'Рыба',kcal:218,prot:17.7,fat:15.8,carb:0.0},
+  {n:'Креветки варёные',e:'🦐',c:'Рыба',kcal:84,prot:18.0,fat:0.9,carb:0.9},
+  {n:'Кальмар',e:'🦑',c:'Рыба',kcal:92,prot:18.0,fat:1.4,carb:2.0},
+  {n:'Яйцо куриное',e:'🥚',c:'Яйца',kcal:143,prot:12.6,fat:9.5,carb:0.7},
+  {n:'Яичный белок',e:'🥚',c:'Яйца',kcal:52,prot:10.9,fat:0.2,carb:0.7},
+  {n:'Яичный желток',e:'🥚',c:'Яйца',kcal:322,prot:15.9,fat:26.5,carb:3.6},
+  {n:'Яичница',e:'🍳',c:'Яйца',kcal:185,prot:13.6,fat:14.1,carb:1.2},
+  {n:'Молоко 2.5%',e:'🥛',c:'Молочные',kcal:52,prot:2.8,fat:2.5,carb:4.7},
+  {n:'Кефир 1%',e:'🥛',c:'Молочные',kcal:40,prot:3.4,fat:1.0,carb:4.0},
+  {n:'Творог 5%',e:'🧀',c:'Молочные',kcal:121,prot:17.2,fat:5.0,carb:1.8},
+  {n:'Творог обезжиренный',e:'🧀',c:'Молочные',kcal:71,prot:18.0,fat:0.6,carb:1.8},
+  {n:'Сметана 20%',e:'🫙',c:'Молочные',kcal:206,prot:2.8,fat:20.0,carb:3.2},
+  {n:'Йогурт натуральный',e:'🥛',c:'Молочные',kcal:61,prot:5.0,fat:3.2,carb:3.5},
+  {n:'Сыр твёрдый',e:'🧀',c:'Молочные',kcal:360,prot:24.0,fat:29.5,carb:0.4},
+  {n:'Сыр моцарелла',e:'🧀',c:'Молочные',kcal:280,prot:22.0,fat:17.0,carb:2.2},
+  {n:'Масло сливочное',e:'🧈',c:'Молочные',kcal:717,prot:0.9,fat:81.1,carb:0.1},
+  {n:'Мороженое',e:'🍦',c:'Молочные',kcal:207,prot:3.7,fat:11.0,carb:23.6},
+  {n:'Грецкий орех',e:'🌰',c:'Орехи',kcal:654,prot:15.2,fat:65.2,carb:13.7},
+  {n:'Миндаль',e:'🌰',c:'Орехи',kcal:579,prot:21.2,fat:49.9,carb:21.6},
+  {n:'Кешью',e:'🌰',c:'Орехи',kcal:553,prot:18.2,fat:43.9,carb:30.2},
+  {n:'Арахис',e:'🥜',c:'Орехи',kcal:567,prot:25.8,fat:49.2,carb:16.1},
+  {n:'Фундук',e:'🌰',c:'Орехи',kcal:628,prot:15.0,fat:60.8,carb:16.7},
+  {n:'Фисташки',e:'🌰',c:'Орехи',kcal:562,prot:20.6,fat:45.4,carb:27.2},
+  {n:'Семена подсолнечника',e:'🌻',c:'Орехи',kcal:584,prot:20.8,fat:51.5,carb:20.0},
+  {n:'Семена тыквы',e:'🌰',c:'Орехи',kcal:559,prot:30.2,fat:49.1,carb:10.7},
+  {n:'Семена льна',e:'🌾',c:'Орехи',kcal:534,prot:18.3,fat:42.2,carb:28.9},
+  {n:'Шоколад молочный',e:'🍫',c:'Сладкое',kcal:535,prot:6.9,fat:29.7,carb:59.5},
+  {n:'Шоколад тёмный',e:'🍫',c:'Сладкое',kcal:598,prot:5.3,fat:38.3,carb:57.9},
+  {n:'Мёд',e:'🍯',c:'Сладкое',kcal:304,prot:0.3,fat:0.0,carb:82.4},
+  {n:'Варенье',e:'🍓',c:'Сладкое',kcal:258,prot:0.3,fat:0.1,carb:68.2},
+  {n:'Торт',e:'🎂',c:'Сладкое',kcal:344,prot:4.9,fat:16.6,carb:49.0},
+  {n:'Печенье',e:'🍪',c:'Сладкое',kcal:476,prot:6.3,fat:23.6,carb:63.4},
+  {n:'Карамель',e:'🍬',c:'Сладкое',kcal:382,prot:3.5,fat:0.4,carb:93.0},
+  {n:'Зефир',e:'🍡',c:'Сладкое',kcal:304,prot:0.8,fat:0.1,carb:78.0},
+  {n:'Халва',e:'🍫',c:'Сладкое',kcal:516,prot:12.7,fat:29.7,carb:54.0},
+  {n:'Кофе чёрный',e:'☕',c:'Напитки',kcal:2,prot:0.3,fat:0.0,carb:0.0},
+  {n:'Кофе с молоком',e:'☕',c:'Напитки',kcal:30,prot:1.5,fat:1.5,carb:3.0},
+  {n:'Чай без сахара',e:'🍵',c:'Напитки',kcal:1,prot:0.0,fat:0.0,carb:0.3},
+  {n:'Апельсиновый сок',e:'🍊',c:'Напитки',kcal:45,prot:0.7,fat:0.2,carb:10.4},
+  {n:'Яблочный сок',e:'🍎',c:'Напитки',kcal:46,prot:0.1,fat:0.1,carb:11.3},
+  {n:'Кола',e:'🥤',c:'Напитки',kcal:42,prot:0.0,fat:0.0,carb:10.6},
+  {n:'Пиво',e:'🍺',c:'Напитки',kcal:43,prot:0.5,fat:0.0,carb:3.6},
+  {n:'Вино красное',e:'🍷',c:'Напитки',kcal:85,prot:0.1,fat:0.0,carb:2.6},
+  {n:'Бургер',e:'🍔',c:'Фастфуд',kcal:295,prot:17.0,fat:14.0,carb:24.0},
+  {n:'Картошка фри',e:'🍟',c:'Фастфуд',kcal:312,prot:3.4,fat:15.0,carb:41.4},
+  {n:'Хот-дог',e:'🌭',c:'Фастфуд',kcal:290,prot:10.4,fat:17.0,carb:24.0},
+  {n:'Шаурма',e:'🌯',c:'Фастфуд',kcal:218,prot:14.5,fat:9.8,carb:19.3},
+  {n:'Пицца маргарита',e:'🍕',c:'Фастфуд',kcal:266,prot:11.4,fat:10.4,carb:32.9},
+  {n:'Роллы',e:'🍣',c:'Фастфуд',kcal:180,prot:6.8,fat:4.5,carb:28.0},
+  {n:'Суши',e:'🍱',c:'Фастфуд',kcal:150,prot:9.0,fat:2.5,carb:25.0},
+  {n:'Чипсы',e:'🥔',c:'Фастфуд',kcal:536,prot:7.0,fat:35.0,carb:52.0},
+  {n:'Борщ',e:'🍲',c:'Блюда',kcal:55,prot:3.0,fat:2.0,carb:7.0},
+  {n:'Пельмени',e:'🥟',c:'Блюда',kcal:275,prot:13.5,fat:12.5,carb:26.0},
+  {n:'Блины',e:'🥞',c:'Блюда',kcal:233,prot:6.1,fat:12.3,carb:26.0},
+  {n:'Котлеты',e:'🍖',c:'Блюда',kcal:248,prot:15.4,fat:18.0,carb:5.5},
+  {n:'Жареная картошка',e:'🍟',c:'Блюда',kcal:204,prot:2.8,fat:9.5,carb:28.2},
+  {n:'Яичница',e:'🍳',c:'Блюда',kcal:185,prot:13.6,fat:14.1,carb:1.2},
+  {n:'Плов',e:'🍚',c:'Блюда',kcal:200,prot:6.0,fat:7.5,carb:28.0},
+  {n:'Салат оливье',e:'🥗',c:'Блюда',kcal:197,prot:6.4,fat:16.0,carb:8.2},
+  {n:'Греческий салат',e:'🥗',c:'Блюда',kcal:82,prot:3.0,fat:5.5,carb:6.0},
+  {n:'Цезарь с курицей',e:'🥗',c:'Блюда',kcal:167,prot:12.0,fat:10.5,carb:7.5},
+  {n:'Щи',e:'🍲',c:'Блюда',kcal:32,prot:2.2,fat:1.2,carb:3.5},
+  {n:'Окрошка',e:'🍲',c:'Блюда',kcal:50,prot:2.5,fat:1.5,carb:6.5},
+  {n:'Масло оливковое',e:'🫒',c:'Жиры',kcal:884,prot:0.0,fat:100.0,carb:0.0},
+  {n:'Масло подсолнечное',e:'🌻',c:'Жиры',kcal:884,prot:0.0,fat:100.0,carb:0.0},
+  {n:'Майонез',e:'🫙',c:'Жиры',kcal:680,prot:2.6,fat:74.0,carb:2.6},
+];
 
-/* ââ MOOD CONTENT ââ */
+const FOOD_CATS=['Все','Фрукты','Овощи','Злаки','Бобовые','Мясо','Рыба','Яйца','Молочные','Орехи','Сладкое','Напитки','Фастфуд','Блюда','Жиры'];
+
+/* ===== ТЕКСТЫ ДЛЯ ЧАТА НАСТРОЕНИЯ ===== */
 const MOOD_INIT={
-  sad:['ÐÑÐ¸Ð²ÐµÑ ð Ð¯ ÑÐ»ÑÑÑ ÑÐµÐ±Ñ. Ð Ð°ÑÑÐºÐ°Ð¶Ð¸, ÑÑÐ¾ ÑÐ»ÑÑÐ¸Ð»Ð¾ÑÑ?','ÐÑÑÑÑÐ¸ÑÑ â ÑÑÐ¾ Ð½Ð¾ÑÐ¼Ð°Ð»ÑÐ½Ð¾. Ð¢Ð²Ð¾Ð¸ ÑÑÐ²ÑÑÐ²Ð° Ð²Ð°Ð¶Ð½Ñ Ð¸ Ð½Ð°ÑÑÐ¾ÑÑÐ¸Ðµ.','Ð¢Ñ Ð½Ðµ Ð¾Ð´Ð¸Ð½ Ð² ÑÑÐ¾Ð¼. ÐÐ½Ð¾Ð³Ð´Ð° Ð¿ÑÐ¾ÑÑÐ¾ Ð²ÑÐ³Ð¾Ð²Ð¾ÑÐ¸ÑÑÑÑ ÑÐ¶Ðµ Ð¿Ð¾Ð¼Ð¾Ð³Ð°ÐµÑ.'],
-  bored:['Ð, ÑÐºÑÐºÐ° â Ð²ÑÐ°Ð³ ÑÐ²Ð¾ÑÑÐµÑÑÐ²Ð°! Ð¡ÐµÐ¹ÑÐ°Ñ ÑÑÐ¾ Ð¸ÑÐ¿ÑÐ°Ð²Ð¸Ð¼ ð¨','ÐÐ¾Ð·Ð³ Ð¸ÑÐµÑ Ð½Ð¾Ð²Ð¸Ð·Ð½Ñ â Ð´Ð°Ð²Ð°Ð¹ Ð½Ð°Ð¹Ð´ÑÐ¼ ÐµÑ Ð²Ð¼ÐµÑÑÐµ!','Ð¡ÐºÑÐºÐ° = ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ðµ Ð²ÑÐµÐ¼Ñ. Ð­ÑÐ¾ ÑÐµÐ´ÐºÐ¾ÑÑÑ, Ð¸ÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ ÐµÑ!'],
-  tired:['Ð¡Ð»ÑÑÑ ÑÐµÐ±Ñ. Ð£ÑÑÐ°Ð»Ð¾ÑÑÑ â ÑÑÐ¾ ÑÐ¸Ð³Ð½Ð°Ð», Ð½Ðµ ÑÐ»Ð°Ð±Ð¾ÑÑÑ ð¤','Ð¢Ñ ÑÐ°Ð±Ð¾ÑÐ°Ð» Ð¼Ð½Ð¾Ð³Ð¾. Ð¢Ð²Ð¾Ñ ÑÐµÐ»Ð¾ Ð¿ÑÐ¾ÑÐ¸Ñ Ð¾ÑÐ´ÑÑÐ° â ÑÐ»ÑÑÐ°Ð¹ ÐµÐ³Ð¾.','ÐÑÑÐ°Ð½Ð¾Ð²Ð¸ÑÑ. ÐÑÐ¾ÑÑÐ¾ Ð¿Ð¾Ð´ÑÑÐ¸. ÐÑÑ Ð¿Ð¾Ð´Ð¾Ð¶Ð´ÑÑ Ð¼Ð¸Ð½ÑÑÑ.'],
-  anxious:['Ð¢ÑÐµÐ²Ð¾Ð³Ð° â ÑÑÐ¾ Ð½Ðµ Ð²ÑÐ°Ð³, ÑÑÐ¾ ÑÐ¸Ð³Ð½Ð°Ð». Ð Ð°Ð·Ð±ÐµÑÑÐ¼ÑÑ Ð²Ð¼ÐµÑÑÐµ ð¤','ÐÑÑÐ¼Ð¾ ÑÐµÐ¹ÑÐ°Ñ: 5 Ð²ÐµÑÐµÐ¹ ÐºÐ¾ÑÐ¾ÑÑÐµ ÑÑ Ð²Ð¸Ð´Ð¸ÑÑ, 4 ÐºÐ¾ÑÐ¾ÑÑÐµ ÑÐ»ÑÑÐ¸ÑÑ.','Ð¡Ð´ÐµÐ»Ð°Ð¹ Ð³Ð»ÑÐ±Ð¾ÐºÐ¸Ð¹ Ð²Ð´Ð¾Ñ Ð½Ð° 4 ÑÑÑÑÐ°, Ð·Ð°Ð´ÐµÑÐ¶Ð¸ Ð½Ð° 4, Ð²ÑÐ´Ð¾ÑÐ½Ð¸ Ð½Ð° 6.'],
-  angry:['ÐÐ»Ð¾ÑÑÑ â ÑÑÐ¾ ÑÐ½ÐµÑÐ³Ð¸Ñ. ÐÐ°Ð¶Ð½Ð¾ Ð½Ð°Ð¿ÑÐ°Ð²Ð¸ÑÑ ÐµÑ Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½Ð¾ â¡','ÐÑÐ´Ð¾ÑÐ½Ð¸. ÐÐ»Ð¾ÑÑÑ Ð³Ð¾Ð²Ð¾ÑÐ¸Ñ Ð³ÑÐ¾Ð¼ÐºÐ¾, Ð½Ð¾ Ð½Ðµ Ð²ÑÐµÐ³Ð´Ð° Ð¿ÑÐ°Ð²Ð´Ñ.','Ð§ÑÐ¾ Ð¸Ð¼ÐµÐ½Ð½Ð¾ ÑÐµÐ±Ñ ÑÐ°Ðº Ð·Ð°Ð´ÐµÐ»Ð¾? ÐÐ½Ð¾Ð³Ð´Ð° Ð·Ð° Ð·Ð»Ð¾ÑÑÑÑ Ð¿ÑÑÑÐµÑÑÑ Ð±Ð¾Ð»Ñ.'],
-  happy:['Ð­ÑÐ¾ ÐºÐ°Ð¹Ñ! Ð Ð°ÑÑÐºÐ°Ð¶Ð¸ ÑÑÐ¾ Ð¿ÑÐ¾Ð¸ÑÑÐ¾Ð´Ð¸Ñ â ÑÐ¾ÑÑ ÑÐ°Ð´Ð¾Ð²Ð°ÑÑÑÑ Ð²Ð¼ÐµÑÑÐµ ð','ÐÑÐ»Ð¸ÑÐ½Ð¾Ðµ Ð½Ð°ÑÑÑÐ¾ÐµÐ½Ð¸Ðµ â Ð»ÑÑÑÐµÐµ Ð²ÑÐµÐ¼Ñ Ð´Ð»Ñ Ð½Ð¾Ð²ÑÑ Ð½Ð°ÑÐ¸Ð½Ð°Ð½Ð¸Ð¹!','ÐÐ°Ð¿Ð¾Ð¼Ð½Ð¸ ÑÑÐ¾Ñ Ð¼Ð¾Ð¼ÐµÐ½Ñ. ÐÑÐºÐ²Ð°Ð»ÑÐ½Ð¾ ÑÑÐ¾ÑÐ¾Ð³ÑÐ°ÑÐ¸ÑÑÐ¹ ÐµÐ³Ð¾ Ð² Ð¿Ð°Ð¼ÑÑÐ¸ ð¸'],
+  sad:['Привет! Я слышу тебя. Расскажи, что случилось?','Грустить — это нормально. Твои чувства важны и настоящие.','Ты не один в этом. Иногда просто выговориться уже помогает.','Позволь себе быть в этом. Я здесь и слушаю.','Всё проходит, и это тоже пройдёт. Держись.','Даже самый длинный туннель имеет выход.','Ты справился со всем, что было до этого. Справишься и сейчас.','Выпей тёплого чая и укутайся в плед. Забота о себе важна.','Что именно сейчас приносит тебе боль? Поговорим об этом.','Твоя боль настоящая. Это признак живого человека.','Завтра будет новый день. Новый шанс.','Ты достаточно силён, даже когда чувствуешь себя слабым.','Позвони кому-то близкому прямо сейчас.','Это пройдёт. Обещаю.','Я верю в тебя.'],
+  bored:['Скука — враг творчества! Сейчас это исправим.','Мозг ищет новизны — давай найдём её вместе!','Скука — это свободное время. Это редкость, используй её!','Самое время начать что-то, что давно откладывал.','Позвони другу прямо сейчас — без причины. Просто так.','Скука — признак умного человека, серьёзно.','Иди на улицу и найди что-нибудь необычное.','Напиши список 10 мест, куда хочешь поехать.','Попробуй новый рецепт из продуктов, что уже есть дома.','Начни учить новый язык — приложения делают это весёлым.','Решай головоломку или судоку.','Сделай что-то руками — собери, слепи, нарисуй.','Прочитай первую главу книги, которую давно откладывал.','Устрой себе танцевальную вечеринку дома прямо сейчас.','Нарисуй свой день — даже каракули это творчество.'],
+  tired:['Слышу тебя. Усталость — это сигнал, не слабость.','Ты работал много. Твоё тело просит отдыха — слушай его.','Остановись. Просто подыши. Всё подождёт минуту.','Разреши себе ничего не делать. Это тоже продуктивность.','Стакан воды и закрыть глаза на 5 минут — маленькое чудо.','Когда отдохнёшь — всё будет яснее. Это всегда так.','Ты уже сделал достаточно на сегодня. Останови себя.','20 минут сна перезагружает лучше кофе.','Выключи все экраны на час — тишина восстанавливает.','Тихая прогулка без наушников возвращает силы.','Ты заслуживаешь отдыха. Без чувства вины.','Усталость часто прячет более глубокие потребности.','Что сейчас отнимает у тебя больше всего сил?','Большие цели требуют правильного восстановления.','Отдыхай — это продуктивность, а не лень.'],
+  anxious:['Тревога — это сигнал, не враг. Разберёмся вместе.','Прямо сейчас: 5 вещей которые ты видишь, 4 которые слышишь.','Глубокий вдох на 4 счёта, задержка на 4, выдох на 6.','Ты в безопасности прямо сейчас. Здесь и сейчас — всё хорошо.','Тревога лжёт о будущем. Сосредоточься на настоящем.','90% наших тревог никогда не случаются.','Запиши тревогу на бумаге — вытащи её из головы.','Ты справлялся с тревогой раньше. Справишься и сейчас.','10 приседаний или умыться холодной водой — переключи канал.','Тревога — это энергия без направления. Дай ей выход.','Позвони тому, кому доверяешь. Это реально помогает.','Сосредоточься на том, что ты контролируешь прямо сейчас.','Тревога временна. Ты — постоянен.','Дыши. Медленно. Ещё медленнее. Вот так.','Ты справляешься. Я здесь.'],
+  angry:['Злость — это нормальная эмоция. Важно что ты с ней делаешь.','Выдохни. Злость говорит громко, но не всегда правду.','За злостью часто прячется боль. Что именно задело тебя?','Физическая нагрузка — лучший выход. Попробуй 20 отжиманий.','Прежде чем ответить — подожди 10 секунд. Это меняет всё.','Ты имеешь право злиться. Но ты — больше, чем эта эмоция.','Запиши всё что чувствуешь — честно. Только для себя.','Злость сигнализирует о нарушенной границе. Что пересекли?','Прогулка на свежем воздухе — лучшее лекарство от гнева.','Ты контролируешь свои действия, даже когда не контролируешь чувства.','Через час это будет ощущаться иначе.','Что тебе нужно прямо сейчас?','Разреши себе злиться — и одновременно выбирай как поступать.','Злость сжигает тебя изнутри сильнее, чем того, на кого она направлена.','Ты справишься с этим.'],
+  happy:['Это кайф! Расскажи что происходит — хочу радоваться вместе!','Отличное настроение — лучшее время для новых начинаний!','Запомни этот момент. Буквально сфотографируй его в памяти.','Поделись радостью с кем-нибудь — она удваивается.','Используй этот заряд: сделай что-то, что давно откладывал!','Ты заслужил это хорошее настроение. Наслаждайся.','Запиши этот момент в дневник — будущий ты будет благодарен.','Позвони тому, кому хочешь сказать что-то хорошее.','Хорошее настроение — повод сделать что-то доброе для другого.','Начни что-то, о чём давно мечтал. Сейчас самое время.','Это твой момент. Живи им полностью.','Кайфуй по полной! Жизнь слишком коротка, чтобы не замечать хорошее.','Ты делаешь жизнь лучше просто своим присутствием.','Радость заразительна — поделись ею с миром.','Запомни: ты умеешь быть счастливым.'],
 };
 const MOOD_REP={
-  sad:['Ð­ÑÐ¾ Ð·Ð²ÑÑÐ¸Ñ ÑÑÐ¶ÐµÐ»Ð¾. Ð¢Ñ ÑÐ¿ÑÐ°Ð²Ð»ÑÐµÑÑÑÑ Ð»ÑÑÑÐµ, ÑÐµÐ¼ Ð´ÑÐ¼Ð°ÐµÑÑ ð','Ð¯ Ð¿Ð¾Ð½Ð¸Ð¼Ð°Ñ. ÐÐ½Ð°Ð¹ â ÑÑ Ð½Ðµ Ð¾Ð´Ð¸Ð½ Ð² ÑÑÐ¾Ð¼.','Ð­ÑÐ¾ Ð¿ÑÐ¾Ð¹Ð´ÑÑ. ÐÐµ ÑÐ¾ÑÐ¾Ð¿Ð¸ ÑÐµÐ±Ñ ð±'],
-  bored:['ÐÑÐ»Ð¸ÑÐ½ÑÐ¹ Ð¼Ð¾Ð¼ÐµÐ½Ñ Ð¿Ð¾Ð¿ÑÐ¾Ð±Ð¾Ð²Ð°ÑÑ ÑÑÐ¾-ÑÐ¾ Ð½Ð¾Ð²Ð¾Ðµ! ð¯','ÐÐ°Ð³Ð»ÑÐ½Ð¸ Ð² Â«Ð§ÑÐ¾ Ð´ÐµÐ»Ð°ÑÑÂ» â ÑÐ°Ð¼ ÑÐ¾ÑÐ½Ð¾ ÐµÑÑÑ Ð¸Ð´ÐµÑ â¨','Ð§ÑÐ¾ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ ÑÐ°Ð· ÑÐµÐ±Ñ Ð¿Ð¾-Ð½Ð°ÑÑÐ¾ÑÑÐµÐ¼Ñ ÑÐ²Ð»ÐµÐºÐ°Ð»Ð¾?'],
-  tired:['ÐÐ»Ð°Ð²Ð½Ð¾Ðµ â Ð½Ðµ Ð¸Ð³Ð½Ð¾ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ ÑÑÑÐ°Ð»Ð¾ÑÑÑ. ÐÑÐ´Ð¾ÑÐ½Ð¸ ð','ÐÐ°Ð¹ ÑÐµÐ±Ðµ Ð¿ÑÐ°Ð²Ð¾ Ð±ÑÑÑ ÑÑÑÐ°Ð»ÑÐ¼. Ð­ÑÐ¾ ÑÐµÑÑÐ½Ð¾.','ÐÐ¾Ð³Ð´Ð° Ð¾ÑÐ´Ð¾ÑÐ½ÑÑÑ â Ð²ÑÑ Ð²ÑÑÐ°Ð½ÐµÑ Ð½Ð° Ð¼ÐµÑÑÐ¾.'],
-  anxious:['Ð¢Ñ ÑÐ¿ÑÐ°Ð²Ð»ÑÐµÑÑÑÑ. Ð¯ Ð·Ð´ÐµÑÑ ð¤','ÐÑÑÐ¸. ÐÐµÐ´Ð»ÐµÐ½Ð½Ð¾. Ð¢Ñ Ð² Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾ÑÑÐ¸.','Ð­ÑÐ¾ Ð¿ÑÐ¾Ð¹Ð´ÑÑ. Ð¢ÑÐµÐ²Ð¾Ð³Ð° â Ð²ÑÐµÐ¼ÐµÐ½Ð½Ð°.'],
-  angry:['ÐÐ»Ð¾ÑÑÑ â Ð½Ð¾ÑÐ¼Ð°Ð»ÑÐ½Ð°Ñ ÑÐ¼Ð¾ÑÐ¸Ñ. ÐÐ°Ð¶Ð½Ð¾ ÑÑÐ¾ ÑÑ Ñ Ð½ÐµÐ¹ Ð´ÐµÐ»Ð°ÐµÑÑ.','ÐÑÐ´Ð¾ÑÐ½Ð¸. Ð¢Ñ Ð±Ð¾Ð»ÑÑÐµ, ÑÐµÐ¼ ÑÑÐ° ÑÐ¼Ð¾ÑÐ¸Ñ.','Ð§ÑÐ¾ Ð¸Ð¼ÐµÐ½Ð½Ð¾ Ð·Ð°Ð´ÐµÐ»Ð¾ ÑÐµÐ±Ñ ÑÐ°Ðº ÑÐ¸Ð»ÑÐ½Ð¾?'],
-  happy:['Ð­ÑÐ¾ Ð·Ð´Ð¾ÑÐ¾Ð²Ð¾! ÐÐ°ÑÐ»Ð°Ð¶Ð´Ð°Ð¹ÑÑ ÐºÐ°Ð¶Ð´Ð¾Ð¹ ÑÐµÐºÑÐ½Ð´Ð¾Ð¹ ð','Ð¢Ð°ÐºÐ¾Ðµ Ð½Ð°ÑÑÑÐ¾ÐµÐ½Ð¸Ðµ Ð·Ð°ÑÐ°Ð·Ð½Ð¾ â Ð¿Ð¾Ð´ÐµÐ»Ð¸ÑÑ Ð¸Ð¼!','ÐÐ°Ð¿Ð¾Ð¼Ð½Ð¸ ÑÑÐ¾Ñ Ð¼Ð¾Ð¼ÐµÐ½Ñ. ÐÐ½ Ð½Ð°ÑÑÐ¾ÑÑÐ¸Ð¹.'],
+  sad:['Это звучит тяжело. Ты справляешься лучше, чем думаешь.','Я понимаю. Знай — ты не один в этом.','Это пройдёт. Не торопи себя.','Ты молодец, что говоришь об этом вслух.','Твоя боль настоящая. Я это вижу. Держись.'],
+  bored:['Отличный момент попробовать что-то новое!','Загляни в раздел "Что делать" — там точно есть идея.','Что последний раз тебя по-настоящему увлекало?','Начни что-нибудь маленькое — это разгоняет скуку.','Скука — начало всех великих идей. Задумайся!'],
+  tired:['Главное — не игнорировать усталость. Отдохни.','Дай себе право быть усталым. Это честно.','Когда отдохнёшь — всё встанет на место.','Ты сделал всё что мог. Этого достаточно.','Тело умнее нас. Слушай его.'],
+  anxious:['Ты справляешься. Я здесь.','Дыши. Медленно. Ты в безопасности.','Это пройдёт. Тревога — временна.','Сосредоточься на том, что под контролем.','Назови 3 вещи, которые точно хорошо прямо сейчас.'],
+  angry:['Злость — нормальная эмоция. Важно что ты с ней делаешь.','Выдохни. Ты больше, чем эта эмоция.','Что именно задело тебя так сильно?','Ты контролируешь свои действия — всегда.','Через час это будет ощущаться иначе.'],
+  happy:['Это здорово! Наслаждайся каждой секундой!','Такое настроение заразно — поделись им!','Запомни этот момент. Он настоящий.','Используй этот заряд на что-то важное!','Ты это заслужил. Кайфуй!'],
 };
+
 const AFFIRMATIONS=[
-  {e:'ð',t:'Ð¯ Ð´Ð¾ÑÑÐ¾Ð¸Ð½ ÑÐ¾ÑÐ¾ÑÐµÐ³Ð¾. ÐÑÐµÐ³Ð´Ð° Ð¸ Ð² Ð»ÑÐ±ÑÑ Ð¾Ð±ÑÑÐ¾ÑÑÐµÐ»ÑÑÑÐ²Ð°Ñ.'},
-  {e:'ðª',t:'ÐÐ°Ð¶Ð´ÑÐ¹ Ð´ÐµÐ½Ñ Ñ ÑÑÐ°Ð½Ð¾Ð²Ð»ÑÑÑ Ð»ÑÑÑÐµ, ÑÐµÐ¼ Ð²ÑÐµÑÐ°.'},
-  {e:'ð±',t:'Ð¯ ÑÐ°ÑÑÑ ÑÐµÑÐµÐ· ÑÑÑÐ´Ð½Ð¾ÑÑÐ¸, Ð° Ð½Ðµ Ð²Ð¾Ð¿ÑÐµÐºÐ¸ Ð¸Ð¼.'},
-  {e:'â¨',t:'ÐÐ¾Ð¸ Ð¼ÑÑÐ»Ð¸ ÑÐ¾Ð·Ð´Ð°ÑÑ Ð¼Ð¾Ñ ÑÐµÐ°Ð»ÑÐ½Ð¾ÑÑÑ. Ð¯ Ð²ÑÐ±Ð¸ÑÐ°Ñ Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð².'},
-  {e:'ð¯',t:'Ð£ Ð¼ÐµÐ½Ñ ÐµÑÑÑ Ð²ÑÑ Ð½ÐµÐ¾Ð±ÑÐ¾Ð´Ð¸Ð¼Ð¾Ðµ, ÑÑÐ¾Ð±Ñ Ð´Ð¾ÑÑÐ¸ÑÑ ÑÐ²Ð¾Ð¸Ñ ÑÐµÐ»ÐµÐ¹.'},
-  {e:'ð',t:'Ð¯ Ð¿ÑÐ¸Ð½Ð¸Ð¼Ð°Ñ ÑÐµÐ±Ñ ÑÐµÐ»Ð¸ÐºÐ¾Ð¼ â ÑÐ¾ Ð²ÑÐµÐ¼Ð¸ Ð½ÐµÑÐ¾Ð²ÐµÑÑÐµÐ½ÑÑÐ²Ð°Ð¼Ð¸.'},
-  {e:'ð¥',t:'Ð¯ Ð¿Ð¾Ð»Ð¾Ð½ ÑÐ½ÐµÑÐ³Ð¸Ð¸ Ð¸ Ð³Ð¾ÑÐ¾Ð² Ðº Ð½Ð¾Ð²ÑÐ¼ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑÑÐ¼.'},
-  {e:'ð§',t:'Ð¯ Ð² Ð³Ð°ÑÐ¼Ð¾Ð½Ð¸Ð¸ Ñ ÑÐ¾Ð±Ð¾Ð¹ Ð¸ Ð¾ÐºÑÑÐ¶Ð°ÑÑÐ¸Ð¼ Ð¼Ð¸ÑÐ¾Ð¼.'},
+  {e:'🌟',t:'Я достоин хорошего. Всегда и в любых обстоятельствах.'},
+  {e:'💪',t:'Каждый день я становлюсь лучше, чем вчера.'},
+  {e:'🌱',t:'Я расту через трудности, а не вопреки им.'},
+  {e:'✨',t:'Мои мысли создают мою реальность. Я выбираю позитив.'},
+  {e:'🎯',t:'У меня есть всё необходимое, чтобы достичь своих целей.'},
+  {e:'💙',t:'Я принимаю себя целиком — со всеми несовершенствами.'},
+  {e:'🔥',t:'Я полон энергии и готов к новым возможностям.'},
+  {e:'🧘',t:'Я в гармонии с собой и окружающим миром.'},
 ];
+
 const TODO_ALL=[
-  {i:'ð¨',t:'ÐÐ°ÑÐ¸ÑÑÐ¹ ÑÑÐ¾-Ð½Ð¸Ð±ÑÐ´Ñ â Ð½Ðµ Ð²Ð°Ð¶Ð½Ð¾ ÐºÐ°Ðº, Ð¿ÑÐ¾ÑÑÐ¾ Ð´Ð»Ñ ÑÐ´Ð¾Ð²Ð¾Ð»ÑÑÑÐ²Ð¸Ñ',c:'Ð¢Ð²Ð¾ÑÑÐµÑÑÐ²Ð¾'},
-  {i:'ð',t:'ÐÑÐºÑÐ¾Ð¹ ÐºÐ½Ð¸Ð³Ñ, ÐºÐ¾ÑÐ¾ÑÑÑ Ð´Ð°Ð²Ð½Ð¾ ÑÐ¾ÑÐµÐ» Ð¿ÑÐ¾ÑÐ¸ÑÐ°ÑÑ',c:'Ð¡Ð°Ð¼Ð¾ÑÐ°Ð·Ð²Ð¸ÑÐ¸Ðµ'},
-  {i:'ð¿',t:'ÐÑÐ¹Ð´Ð¸ Ð½Ð° Ð¿ÑÐ¾Ð³ÑÐ»ÐºÑ Ð±ÐµÐ· ÑÐµÐ»ÐµÑÐ¾Ð½Ð° Ð½Ð° 20 Ð¼Ð¸Ð½ÑÑ',c:'ÐÑÐ¸ÑÐ¾Ð´Ð°'},
-  {i:'ð§',t:'ÐÐ¾Ð¼ÐµÐ´Ð¸ÑÐ¸ÑÑÐ¹ 10 Ð¼Ð¸Ð½ÑÑ â Ð¿ÑÐ¾ÑÑÐ¾ Ð´ÑÑÐ¸ Ð¸ Ð½Ð°Ð±Ð»ÑÐ´Ð°Ð¹',c:'ÐÑÐ´ÑÑ'},
-  {i:'âï¸',t:'ÐÐ°Ð¿Ð¸ÑÐ¸ Ð¿Ð¸ÑÑÐ¼Ð¾ ÑÐµÐ±Ðµ ÑÐµÑÐµÐ· Ð³Ð¾Ð´ â ÑÐµÐ³Ð¾ ÑÑ ÑÐ¾ÑÐµÑÑ?',c:'Ð¡Ð°Ð¼Ð¾ÑÐ°Ð·Ð²Ð¸ÑÐ¸Ðµ'},
-  {i:'ð³',t:'ÐÑÐ¸Ð³Ð¾ÑÐ¾Ð²Ñ ÑÑÐ¾-ÑÐ¾ Ð½Ð¾Ð²Ð¾Ðµ Ð¿Ð¾ Ð½ÐµÐ·Ð½Ð°ÐºÐ¾Ð¼Ð¾Ð¼Ñ ÑÐµÑÐµÐ¿ÑÑ',c:'ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ'},
-  {i:'ð',t:'ÐÐ°Ð¿Ð¸ÑÐ¸ ÑÐ¾Ð¾Ð±ÑÐµÐ½Ð¸Ðµ Ð´ÑÑÐ³Ñ, Ñ ÐºÐ¾ÑÐ¾ÑÑÐ¼ Ð´Ð°Ð²Ð½Ð¾ Ð½Ðµ Ð¾Ð±ÑÐ°Ð»ÑÑ',c:'ÐÐ±ÑÐµÐ½Ð¸Ðµ'},
-  {i:'ð',t:'Ð¡Ð´ÐµÐ»Ð°Ð¹ 30-Ð¼Ð¸Ð½ÑÑÐ½ÑÑ ÑÑÐµÐ½Ð¸ÑÐ¾Ð²ÐºÑ Ð´Ð¾Ð¼Ð°',c:'ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ'},
-  {i:'ð',t:'ÐÐ°Ð¿Ð¸ÑÐ¸ 5 Ð²ÐµÑÐµÐ¹, Ð·Ð° ÐºÐ¾ÑÐ¾ÑÑÐµ ÑÑ Ð±Ð»Ð°Ð³Ð¾Ð´Ð°ÑÐµÐ½ ÑÐµÐ³Ð¾Ð´Ð½Ñ',c:'Ð¡Ð°Ð¼Ð¾ÑÐ°Ð·Ð²Ð¸ÑÐ¸Ðµ'},
-  {i:'ð¤',t:'ÐÐ¾Ð¹ Ð»ÑÐ±Ð¸Ð¼ÑÐµ Ð¿ÐµÑÐ½Ð¸ Ð²ÑÐ»ÑÑ ÐºÐ°Ðº Ð¼Ð¾Ð¶Ð½Ð¾ Ð³ÑÐ¾Ð¼ÑÐµ',c:'Ð¢Ð²Ð¾ÑÑÐµÑÑÐ²Ð¾'},
-  {i:'ð',t:'ÐÐ¾ÑÐ°Ð½ÑÑÐ¹ Ð´Ð¾Ð¼Ð° Ð¿Ð¾Ð´ Ð»ÑÐ±Ð¸Ð¼ÑÑ Ð¼ÑÐ·ÑÐºÑ 5 Ð¼Ð¸Ð½ÑÑ',c:'ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ'},
-  {i:'ð',t:'ÐÑÐ¸Ð¼Ð¸ Ð²Ð°Ð½Ð½Ñ Ñ Ð¿ÐµÐ½Ð¾Ð¹ Ð¸ ÑÐ°ÑÑÐ»Ð°Ð±ÑÑÑ',c:'ÐÑÐ´ÑÑ'},
-  {i:'ð¤¸',t:'Ð Ð°ÑÑÑÐ½Ð¸ÑÑ â 10 Ð¼Ð¸Ð½ÑÑ ÑÑÑÐµÑÑÐ¸Ð½Ð³Ð° Ð¸Ð·Ð¼ÐµÐ½ÑÑ Ð´ÐµÐ½Ñ',c:'ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ'},
-  {i:'ðµ',t:'ÐÐ°Ð²Ð°ÑÐ¸ ÑÐ°Ð¹ Ð¸ Ð²ÑÐ¿ÐµÐ¹ ÐµÐ³Ð¾ Ð¼ÐµÐ´Ð»ÐµÐ½Ð½Ð¾, Ð±ÐµÐ· ÑÐ¿ÐµÑÐºÐ¸',c:'ÐÑÐ´ÑÑ'},
-  {i:'ð§',t:'ÐÑÐ¿ÐµÐºÐ¸ Ð¿ÐµÑÐµÐ½ÑÐµ Ð¸Ð»Ð¸ ÐºÐµÐºÑ â Ð¿Ð¾ÑÐ°Ð´ÑÐ¹ ÑÐµÐ±Ñ',c:'ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ'},
-  {i:'ð',t:'ÐÑÐ¸Ð³Ð¾ÑÐ¾Ð²Ñ Ð¿Ð¸ÑÑÑ Ñ Ð½ÑÐ»Ñ â ÑÑÐ¾ Ð¿ÑÐ¾ÑÐµ ÑÐµÐ¼ ÐºÐ°Ð¶ÐµÑÑÑ',c:'ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ'},
-  {i:'ð¥',t:'ÐÑÐ¸Ð´ÑÐ¼Ð°Ð¹ Ð¸ Ð¿ÑÐ¸Ð³Ð¾ÑÐ¾Ð²Ñ ÑÐ²Ð¾Ð¹ Ð°Ð²ÑÐ¾ÑÑÐºÐ¸Ð¹ ÑÐ°Ð»Ð°Ñ',c:'ÐÑÐ»Ð¸Ð½Ð°ÑÐ¸Ñ'},
-  {i:'ðª',t:'Ð¡ÑÐ¾Ð´Ð¸ Ð½Ð° Ð¼ÐµÑÐ¾Ð¿ÑÐ¸ÑÑÐ¸Ðµ Ð² ÑÐ²Ð¾ÑÐ¼ Ð³Ð¾ÑÐ¾Ð´Ðµ',c:'ÐÐ±ÑÐµÐ½Ð¸Ðµ'},
-  {i:'ðï¸',t:'Ð¡Ð´ÐµÐ»Ð°Ð¹ 100 Ð¿ÑÐ¸ÑÐµÐ´Ð°Ð½Ð¸Ð¹ Ð² ÑÐµÑÐµÐ½Ð¸Ðµ Ð´Ð½Ñ â Ð¿Ð¾ 10 ÐºÐ°Ð¶Ð´ÑÐ¹ ÑÐ°Ñ',c:'ÐÐºÑÐ¸Ð²Ð½Ð¾ÑÑÑ'},
-  {i:'âï¸',t:'ÐÐ°ÑÐ½Ð¸ Ð²ÐµÑÑÐ¸ Ð´Ð½ÐµÐ²Ð½Ð¸Ðº â Ð¾Ð´Ð½Ð° Ð·Ð°Ð¿Ð¸ÑÑ Ð¼ÐµÐ½ÑÐµÑ Ð¼Ð½Ð¾Ð³Ð¾Ðµ',c:'Ð¡Ð°Ð¼Ð¾ÑÐ°Ð·Ð²Ð¸ÑÐ¸Ðµ'},
+  {i:'🎨',t:'Нарисуй что-нибудь — не важно как, просто для удовольствия',c:'Творчество'},
+  {i:'📚',t:'Открой книгу, которую давно хотел прочитать',c:'Саморазвитие'},
+  {i:'🎵',t:'Сделай плейлист из любимых песен для разных настроений',c:'Творчество'},
+  {i:'🌿',t:'Выйди на прогулку без телефона на 20 минут',c:'Природа'},
+  {i:'🧘',t:'Помедитируй 10 минут — просто дыши и наблюдай',c:'Отдых'},
+  {i:'✍️',t:'Напиши письмо себе через год — чего ты хочешь?',c:'Саморазвитие'},
+  {i:'🍳',t:'Приготовь что-то новое по незнакомому рецепту',c:'Кулинария'},
+  {i:'📷',t:'Сфотографируй 10 красивых вещей вокруг прямо сейчас',c:'Творчество'},
+  {i:'🎮',t:'Поиграй в любимую игру без чувства вины',c:'Отдых'},
+  {i:'💌',t:'Напиши сообщение другу, с которым давно не общался',c:'Общение'},
+  {i:'🧩',t:'Реши головоломку или кроссворд',c:'Саморазвитие'},
+  {i:'🎬',t:'Посмотри фильм, который давно откладывал',c:'Отдых'},
+  {i:'🌱',t:'Полей цветы или посади что-нибудь новое',c:'Природа'},
+  {i:'🏃',t:'Сделай 30-минутную тренировку дома',c:'Активность'},
+  {i:'📝',t:'Запиши 5 вещей, за которые ты благодарен сегодня',c:'Саморазвитие'},
+  {i:'🧹',t:'Убери один маленький угол — это даст энергию',c:'Отдых'},
+  {i:'🎤',t:'Пой любимые песни вслух как можно громче',c:'Творчество'},
+  {i:'💃',t:'Потанцуй дома под любимую музыку 5 минут',c:'Активность'},
+  {i:'🎯',t:'Выучи новое слово на иностранном языке',c:'Саморазвитие'},
+  {i:'🛁',t:'Прими ванну с пеной и расслабься',c:'Отдых'},
+  {i:'🌍',t:'Исследуй новое место на карте',c:'Саморазвитие'},
+  {i:'🎧',t:'Послушай подкаст о чём-то совершенно новом для тебя',c:'Саморазвитие'},
+  {i:'🤸',t:'Растянись — 10 минут стретчинга изменят день',c:'Активность'},
+  {i:'🍵',t:'Завари чай и выпей его медленно, без спешки',c:'Отдых'},
+  {i:'🌙',t:'Устрой ранний вечер — свечи, тишина, книга',c:'Отдых'},
+  {i:'🎸',t:'Изучи 3 аккорда на гитаре или любом инструменте',c:'Творчество'},
+  {i:'📦',t:'Разбери старые вещи и отдай ненужное',c:'Отдых'},
+  {i:'🌠',t:'Выйди ночью и посмотри на звёзды',c:'Природа'},
+  {i:'🧠',t:'Пройди онлайн-курс по чему-нибудь интересному',c:'Саморазвитие'},
+  {i:'🖊️',t:'Напиши короткое стихотворение о своём дне',c:'Творчество'},
+  {i:'🎭',t:'Посмотри короткий стендап — смех лечит',c:'Отдых'},
+  {i:'🚴',t:'Прокатись на велосипеде или самокате',c:'Активность'},
+  {i:'🌈',t:'Собери коллаж из картинок и вырезок',c:'Творчество'},
+  {i:'📊',t:'Составь план на следующую неделю',c:'Саморазвитие'},
+  {i:'🎁',t:'Сделай подарок кому-нибудь просто так',c:'Общение'},
+  {i:'🏊',t:'Сходи поплавать или займись контрастным душем',c:'Активность'},
+  {i:'🗺️',t:'Исследуй новый район своего города пешком',c:'Природа'},
+  {i:'📰',t:'Прочитай статью на интересную тебе тему',c:'Саморазвитие'},
+  {i:'🤝',t:'Сделай что-то доброе для другого человека',c:'Общение'},
+  {i:'🌻',t:'Выйди и найди что-то прекрасное в природе',c:'Природа'},
+  {i:'🧁',t:'Испеки печенье или кекс — порадуй себя',c:'Кулинария'},
+  {i:'🍕',t:'Приготовь пиццу с нуля — это проще чем кажется',c:'Кулинария'},
+  {i:'🥗',t:'Придумай и приготовь свой авторский салат',c:'Кулинария'},
+  {i:'🍜',t:'Освой рецепт домашнего супа',c:'Кулинария'},
+  {i:'☕',t:'Освой новый способ заваривания кофе',c:'Кулинария'},
+  {i:'🌮',t:'Сделай мексиканское блюдо — тако или начос',c:'Кулинария'},
+  {i:'🎪',t:'Сходи на мероприятие в своём городе',c:'Общение'},
+  {i:'🔭',t:'Найди созвездия на ночном небе',c:'Природа'},
+  {i:'✏️',t:'Начни вести дневник — одна запись меняет многое',c:'Саморазвитие'},
+  {i:'🏋️',t:'Сделай 100 приседаний за день — по 10 каждый час',c:'Активность'},
+  {i:'📸',t:'Устрой фотосессию самому себе или природе',c:'Творчество'},
+  {i:'🌊',t:'Послушай звуки природы 20 минут с закрытыми глазами',c:'Отдых'},
+  {i:'💡',t:'Запиши 10 идей — даже самых странных',c:'Саморазвитие'},
+  {i:'📖',t:'Прочитай биографию человека, которым восхищаешься',c:'Саморазвитие'},
+  {i:'🧗',t:'Сходи в скалодром — первый раз незабываемо',c:'Активность'},
 ];
+
 const FIN_TIPS=[
-  'ð¡ ÐÑÐ°Ð²Ð¸Ð»Ð¾ 50-30-20: 50% Ð½Ð° Ð½ÑÐ¶Ð´Ñ, 30% Ð½Ð° Ð¶ÐµÐ»Ð°Ð½Ð¸Ñ, 20% Ð½Ð° ÑÐ±ÐµÑÐµÐ¶ÐµÐ½Ð¸Ñ.',
-  'ð ÐÑÐºÐ»Ð°Ð´ÑÐ²Ð°Ð¹ ÑÐ¾ÑÑ Ð±Ñ 1% Ð¾Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ð´Ð¾ÑÐ¾Ð´Ð° â ÑÑÐ¾ ÑÐ¶Ðµ Ð¿ÑÐ¸Ð²ÑÑÐºÐ°.',
-  'ð¯ Ð¡ÑÐ°Ð²Ñ ÑÐ¸Ð½Ð°Ð½ÑÐ¾Ð²ÑÑ ÑÐµÐ»Ñ Ð½Ð° Ð¼ÐµÑÑÑ. ÐÐ¾Ð½ÐºÑÐµÑÐ½Ð¾ Ð¸ Ñ ÑÑÐ¼Ð¼Ð¾Ð¹.',
-  'ð ÐÐµÑÐµÐ´ ÐºÑÑÐ¿Ð½Ð¾Ð¹ Ð¿Ð¾ÐºÑÐ¿ÐºÐ¾Ð¹ Ð¿Ð¾Ð´Ð¾Ð¶Ð´Ð¸ 24 ÑÐ°ÑÐ° â ÑÐ°ÑÑÐ¾ Ð¶ÐµÐ»Ð°Ð½Ð¸Ðµ Ð¿ÑÐ¾ÑÐ¾Ð´Ð¸Ñ.',
-  'ð° Ð§ÑÐµÐ·Ð²ÑÑÐ°Ð¹Ð½ÑÐ¹ ÑÐ¾Ð½Ð´ = 3-6 Ð·Ð°ÑÐ¿Ð»Ð°Ñ Ð² Ð½Ð°Ð´ÑÐ¶Ð½Ð¾Ð¼ Ð¼ÐµÑÑÐµ.',
+  'Правило 50-30-20: 50% на нужды, 30% на желания, 20% на сбережения.',
+  'Откладывай хотя бы 1% от каждого дохода — это уже привычка.',
+  'Кофе каждый день стоит дорого в год. Иногда стоит считать мелочи.',
+  'Ставь финансовую цель на месяц. Конкретно и с суммой.',
+  'Перед крупной покупкой подожди 24 часа — часто желание проходит.',
+  'Записывай каждый расход неделю. Результат удивит тебя.',
+  'Чрезвычайный фонд = 3-6 зарплат в надёжном месте.',
+  'Маленькие ежедневные расходы суммируются в большие суммы за год.',
+  'Пересмотри все подписки — наверняка есть ненужные.',
 ];
-const QUOTES=['ÐÐ¸Ð·Ð½Ñ ÑÐ»Ð¸ÑÐºÐ¾Ð¼ ÐºÐ¾ÑÐ¾ÑÐºÐ°, ÑÑÐ¾Ð±Ñ Ð¶Ð¸ÑÑ ÑÑÐ¶Ð¾Ð¹ Ð¶Ð¸Ð·Ð½ÑÑ. â Ð¡ÑÐ¸Ð² ÐÐ¶Ð¾Ð±Ñ','ÐÑÑÑÐ¸Ð¹ ÑÐ¿Ð¾ÑÐ¾Ð± Ð¿ÑÐµÐ´ÑÐºÐ°Ð·Ð°ÑÑ Ð±ÑÐ´ÑÑÐµÐµ â ÑÐ¾Ð·Ð´Ð°ÑÑ ÐµÐ³Ð¾. â ÐÐ¸ÑÐµÑ ÐÑÑÐºÐµÑ','ÐÑÐ´Ñ ÑÐµÐ¼ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸ÐµÐ¼, ÐºÐ¾ÑÐ¾ÑÐ¾Ðµ ÑÐ¾ÑÐµÑÑ Ð²Ð¸Ð´ÐµÑÑ Ð² Ð¼Ð¸ÑÐµ. â ÐÐ°Ð½Ð´Ð¸','ÐÐ°ÑÐ½Ð¸ Ð³Ð´Ðµ ÑÑ ÐµÑÑÑ. ÐÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ ÑÑÐ¾ Ð¸Ð¼ÐµÐµÑÑ. ÐÐµÐ»Ð°Ð¹ ÑÑÐ¾ Ð¼Ð¾Ð¶ÐµÑÑ.','ÐÐ°Ð¶Ð´ÑÐ¹ Ð´ÐµÐ½Ñ â Ð½Ð¾Ð²Ð°Ñ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑÑ. ÐÐµ ÑÐ¿ÑÑÐºÐ°Ð¹ ÐµÑ.','Ð¡ÑÐ°ÑÑÑÐµ â ÑÑÐ¾ Ð½Ðµ Ð¼ÐµÑÑÐ¾ Ð½Ð°Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ, Ð° ÑÐ¿Ð¾ÑÐ¾Ð± Ð¿ÑÑÐµÑÐµÑÑÐ²Ð¸Ñ.','ÐÐµÐ»Ð°Ð¹ ÑÐµÐ³Ð¾Ð´Ð½Ñ ÑÐ¾, Ð·Ð° ÑÑÐ¾ Ð±ÑÐ´ÐµÑÑ Ð±Ð»Ð°Ð³Ð¾Ð´Ð°ÑÐµÐ½ Ð·Ð°Ð²ÑÑÐ°.'];
-const BUDGET_CATS=[{e:'ð',n:'ÐÐ´Ð°',limit:200},{e:'ð',n:'Ð¢ÑÐ°Ð½ÑÐ¿Ð¾ÑÑ',limit:80},{e:'ð',n:'ÐÐ¾ÐºÑÐ¿ÐºÐ¸',limit:150},{e:'ð®',n:'Ð Ð°Ð·Ð²Ð»ÐµÑÐµÐ½Ð¸Ñ',limit:60},{e:'ð¥',n:'ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ',limit:100},{e:'ð±',n:'ÐÐ¾Ð´Ð¿Ð¸ÑÐºÐ¸',limit:30}];
-const EMOJIS=['ð','ð','ð¥°','ð','ð¢','ð´','ð¡','ð¤©','ð','ð¥³','ð°','ð¤','ð','ð¤','ð','ð¤','ð','ð¥¹','ð©','ð','ðª','ð','â¨','ð¥','ð¯','ð','ð','ð«','â­','ð'];
-const MONTHS_RU=['Ð¯Ð½Ð²Ð°ÑÑ','Ð¤ÐµÐ²ÑÐ°Ð»Ñ','ÐÐ°ÑÑ','ÐÐ¿ÑÐµÐ»Ñ','ÐÐ°Ð¹','ÐÑÐ½Ñ','ÐÑÐ»Ñ','ÐÐ²Ð³ÑÑÑ','Ð¡ÐµÐ½ÑÑÐ±ÑÑ','ÐÐºÑÑÐ±ÑÑ','ÐÐ¾ÑÐ±ÑÑ','ÐÐµÐºÐ°Ð±ÑÑ'];
 
-/* ââ DIARY THEMES ââ */
+const QUOTES=[
+  'Жизнь слишком коротка, чтобы жить чужой жизнью.',
+  'Лучший способ предсказать будущее — создать его.',
+  'Будь тем изменением, которое хочешь видеть в мире.',
+  'Начни где ты есть. Используй что имеешь. Делай что можешь.',
+  'Каждый день — новая возможность. Не упускай её.',
+  'Счастье — это не место назначения, а способ путешествия.',
+  'Делай сегодня то, за что будешь благодарен завтра.',
+  'Настоящий момент всегда будет.',
+  'Маленькие шаги каждый день ведут к большим результатам.',
+  'Ты сильнее, чем думаешь.',
+];
+
+const BUDGET_CATS=[
+  {e:'🍔',n:'Еда',limit:200},{e:'🚌',n:'Транспорт',limit:80},
+  {e:'🛍',n:'Покупки',limit:150},{e:'🎮',n:'Развлечения',limit:60},
+  {e:'🏥',n:'Здоровье',limit:100},{e:'📱',n:'Подписки',limit:30},
+];
+const EMOJIS=['😊','😎','🥰','😂','😢','😴','😡','🤩','😌','🥳','😰','🤗','😇','🤔','😏','😤','🙃','🥹','😩','😔','💪','🌟','✨','🔥','💯','🎉','🌈','💫','⭐','🌙'];
+const MONTHS_RU=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+
 const DIARY_THEMES=[
-  {id:'default',name:'ÐÐ¾ ÑÐ¼Ð¾Ð»ÑÐ°Ð½Ð¸Ñ',bg:'linear-gradient(135deg,rgba(129,140,248,.08),rgba(244,114,182,.05))',border:'rgba(129,140,248,.2)',dot:'linear-gradient(135deg,#818cf8,#f472b6)'},
-  {id:'cherry',name:'ÐÐ¸ÑÐ½Ñ',bg:'linear-gradient(135deg,rgba(244,114,182,.12),rgba(248,113,113,.08))',border:'rgba(244,114,182,.25)',dot:'linear-gradient(135deg,#f472b6,#ef4444)'},
-  {id:'ocean',name:'ÐÐºÐµÐ°Ð½',bg:'linear-gradient(135deg,rgba(6,182,212,.12),rgba(59,130,246,.08))',border:'rgba(6,182,212,.25)',dot:'linear-gradient(135deg,#06b6d4,#3b82f6)'},
-  {id:'forest',name:'ÐÐµÑ',bg:'linear-gradient(135deg,rgba(52,211,153,.12),rgba(132,204,22,.08))',border:'rgba(52,211,153,.25)',dot:'linear-gradient(135deg,#34d399,#84cc16)'},
-  {id:'sunset',name:'ÐÐ°ÐºÐ°Ñ',bg:'linear-gradient(135deg,rgba(249,115,22,.12),rgba(234,179,8,.08))',border:'rgba(249,115,22,.25)',dot:'linear-gradient(135deg,#f97316,#eab308)'},
-  {id:'purple',name:'Ð¡Ð¸ÑÐµÐ½Ñ',bg:'linear-gradient(135deg,rgba(167,139,250,.12),rgba(192,132,252,.08))',border:'rgba(167,139,250,.25)',dot:'linear-gradient(135deg,#a78bfa,#c084fc)'},
-  {id:'night',name:'ÐÐ¾ÑÑ',bg:'linear-gradient(135deg,rgba(30,41,59,.6),rgba(15,23,42,.8))',border:'rgba(100,116,139,.25)',dot:'linear-gradient(135deg,#64748b,#94a3b8)'},
-  {id:'rose',name:'Ð Ð¾Ð·Ð°',bg:'linear-gradient(135deg,rgba(251,113,133,.12),rgba(253,164,175,.08))',border:'rgba(251,113,133,.25)',dot:'linear-gradient(135deg,#fb7185,#fda4af)'},
+  {id:'default',n:'Фиолет',bg:'linear-gradient(135deg,rgba(129,140,248,.08),rgba(244,114,182,.05))',border:'rgba(129,140,248,.2)',dot:'linear-gradient(135deg,#818cf8,#f472b6)'},
+  {id:'cherry',n:'Вишня',bg:'linear-gradient(135deg,rgba(244,114,182,.12),rgba(248,113,113,.08))',border:'rgba(244,114,182,.25)',dot:'linear-gradient(135deg,#f472b6,#ef4444)'},
+  {id:'ocean',n:'Океан',bg:'linear-gradient(135deg,rgba(6,182,212,.12),rgba(59,130,246,.08))',border:'rgba(6,182,212,.25)',dot:'linear-gradient(135deg,#06b6d4,#3b82f6)'},
+  {id:'forest',n:'Лес',bg:'linear-gradient(135deg,rgba(52,211,153,.12),rgba(132,204,22,.08))',border:'rgba(52,211,153,.25)',dot:'linear-gradient(135deg,#34d399,#84cc16)'},
+  {id:'sunset',n:'Закат',bg:'linear-gradient(135deg,rgba(249,115,22,.12),rgba(234,179,8,.08))',border:'rgba(249,115,22,.25)',dot:'linear-gradient(135deg,#f97316,#eab308)'},
+  {id:'purple',n:'Сирень',bg:'linear-gradient(135deg,rgba(167,139,250,.12),rgba(192,132,252,.08))',border:'rgba(167,139,250,.25)',dot:'linear-gradient(135deg,#a78bfa,#c084fc)'},
+  {id:'night',n:'Ночь',bg:'linear-gradient(135deg,rgba(30,41,59,.6),rgba(15,23,42,.8))',border:'rgba(100,116,139,.25)',dot:'linear-gradient(135deg,#64748b,#94a3b8)'},
+  {id:'rose',n:'Роза',bg:'linear-gradient(135deg,rgba(251,113,133,.12),rgba(253,164,175,.08))',border:'rgba(251,113,133,.25)',dot:'linear-gradient(135deg,#fb7185,#fda4af)'},
 ];
 
-/* ââ NOTE TAGS ââ */
-const NOTE_TAG_COLORS={
-  general:'rgba(129,140,248,.2)',shopping:'rgba(52,211,153,.2)',
-  tasks:'rgba(6,182,212,.2)',ideas:'rgba(234,179,8,.2)',
-  work:'rgba(244,114,182,.2)',health:'rgba(248,113,113,.2)'
-};
-const NOTE_TAG_NAMES={general:'ð ÐÐ±ÑÐµÐµ',shopping:'ð ÐÐ¾ÐºÑÐ¿ÐºÐ¸',tasks:'â ÐÐ°Ð´Ð°ÑÐ¸',ideas:'ð¡ ÐÐ´ÐµÐ¸',work:'ð¼ Ð Ð°Ð±Ð¾ÑÐ°',health:'â¤ï¸ ÐÐ´Ð¾ÑÐ¾Ð²ÑÐµ'};
+const NOTE_TAG_COLORS={general:'rgba(129,140,248,.2)',shopping:'rgba(52,211,153,.2)',tasks:'rgba(6,182,212,.2)',ideas:'rgba(234,179,8,.2)',work:'rgba(244,114,182,.2)',health:'rgba(248,113,113,.2)'};
+const NOTE_TAG_NAMES={general:'Общее',shopping:'Покупки',tasks:'Задачи',ideas:'Идеи',work:'Работа',health:'Здоровье'};
 
-/* ââ PERSIST ââ */
+/* ===== СОХРАНЕНИЕ ===== */
 function save(){try{localStorage.setItem('zf4',JSON.stringify(S));}catch(e){}}
-function load(){try{const d=localStorage.getItem('zf4');if(d)Object.assign(S,JSON.parse(d));// migrate old key
-  if(!d){const old=localStorage.getItem('zf3');if(old)try{Object.assign(S,JSON.parse(old));}catch(e){}}}catch(e){}}
-
-/* ââ TOAST ââ */
+function load(){try{const d=localStorage.getItem('zf4');if(d)Object.assign(S,JSON.parse(d));}catch(e){}}
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
 
-/* ââ ACCENT ââ */
+/* ===== АКЦЕНТЫ ===== */
 function applyAccent(idx){
-  S.accentIdx=idx;
-  const a=ACCENTS[idx];const r=document.documentElement.style;
+  S.accentIdx=idx;const a=ACCENTS[idx];const r=document.documentElement.style;
   r.setProperty('--a1',a.a1);r.setProperty('--a2',a.a2);r.setProperty('--a3',a.a3);
   document.querySelectorAll('.accent-sw').forEach((el,i)=>el.classList.toggle('active',i===idx));
 }
@@ -1079,36 +1149,40 @@ function buildAccentGrid(){
   const g=document.getElementById('accent-grid');g.innerHTML='';
   ACCENTS.forEach((a,i)=>{
     const b=document.createElement('button');b.className='accent-sw'+(i===S.accentIdx?' active':'');
-    b.style.background=`linear-gradient(135deg,${a.a1},${a.a2})`;b.title=a.n;
-    b.onclick=()=>{applyAccent(i);save();toast('Ð¦Ð²ÐµÑ: '+a.n)};g.appendChild(b);
+    b.style.background='linear-gradient(135deg,'+a.a1+','+a.a2+')';b.title=a.n;
+    b.onclick=()=>{applyAccent(i);save();toast('Цвет: '+a.n)};g.appendChild(b);
   });
 }
 
-/* ââ THEME ââ */
+/* ===== ТЕМА ===== */
 function setTheme(t){S.theme=t;document.body.classList.toggle('theme-light',t==='light');document.getElementById('tb-dark').classList.toggle('active',t==='dark');document.getElementById('tb-light').classList.toggle('active',t==='light');save();}
 
-/* ââ WALLPAPER ââ */
-function setWall(inp){const file=inp.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{S.wallpaper=e.target.result;applyWall();save();const p=document.getElementById('wall-prev');p.src=e.target.result;p.style.display='block';toast('ÐÐ±Ð¾Ð¸ ÑÑÑÐ°Ð½Ð¾Ð²Ð»ÐµÐ½Ñ ð¼')};r.readAsDataURL(file);}
-function applyWall(){const wpEl=document.getElementById('wp-img'),ovEl=document.getElementById('wp-ov');if(S.wallpaper){wpEl.style.backgroundImage=`url(${S.wallpaper})`;ovEl.style.opacity='.7';}else{wpEl.style.backgroundImage='none';ovEl.style.opacity='0';}}
-function removeWall(){S.wallpaper=null;applyWall();const p=document.getElementById('wall-prev');p.src='';p.style.display='none';document.getElementById('wp-inp').value='';save();toast('ÐÐ±Ð¾Ð¸ ÑÐ±ÑÐ°Ð½Ñ');}
+/* ===== ОБОИ ===== */
+function setWall(inp){const file=inp.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{S.wallpaper=e.target.result;applyWall();save();const p=document.getElementById('wall-prev');p.src=e.target.result;p.style.display='block';toast('Обои установлены');};r.readAsDataURL(file);}
+function applyWall(){const w=document.getElementById('wp-img'),o=document.getElementById('wp-ov');if(S.wallpaper){w.style.backgroundImage='url('+S.wallpaper+')';o.style.opacity='.7';}else{w.style.backgroundImage='none';o.style.opacity='0';}}
+function removeWall(){S.wallpaper=null;applyWall();const p=document.getElementById('wall-prev');p.src='';p.style.display='none';document.getElementById('wp-inp').value='';save();toast('Обои убраны');}
 
-/* ââ LANG ââ */
+/* ===== ЯЗЫК ===== */
 function buildLangSel(){const sel=document.getElementById('lang-sel');sel.innerHTML='';LANGS.forEach(l=>{const o=document.createElement('option');o.value=l.c;o.textContent=l.n;if(l.c===S.lang)o.selected=true;sel.appendChild(o);});}
 function setLang(c){S.lang=c;save();}
 
-/* ââ CLOCK ââ */
+/* ===== ЧАСЫ ===== */
 function tick(){
-  const now=new Date();const h=String(now.getHours()).padStart(2,'0'),m=String(now.getMinutes()).padStart(2,'0');
+  const now=new Date();
+  const h=String(now.getHours()).padStart(2,'0'),m=String(now.getMinutes()).padStart(2,'0');
   document.getElementById('clock').textContent=h+':'+m;
-  const days=['ÐÐ¾ÑÐºÑÐµÑÐµÐ½ÑÐµ','ÐÐ¾Ð½ÐµÐ´ÐµÐ»ÑÐ½Ð¸Ðº','ÐÑÐ¾ÑÐ½Ð¸Ðº','Ð¡ÑÐµÐ´Ð°','Ð§ÐµÑÐ²ÐµÑÐ³','ÐÑÑÐ½Ð¸ÑÐ°','Ð¡ÑÐ±Ð±Ð¾ÑÐ°'];
-  const months=['ÑÐ½Ð²Ð°ÑÑ','ÑÐµÐ²ÑÐ°Ð»Ñ','Ð¼Ð°ÑÑÐ°','Ð°Ð¿ÑÐµÐ»Ñ','Ð¼Ð°Ñ','Ð¸ÑÐ½Ñ','Ð¸ÑÐ»Ñ','Ð°Ð²Ð³ÑÑÑÐ°','ÑÐµÐ½ÑÑÐ±ÑÑ','Ð¾ÐºÑÑÐ±ÑÑ','Ð½Ð¾ÑÐ±ÑÑ','Ð´ÐµÐºÐ°Ð±ÑÑ'];
-  document.getElementById('date-str').textContent=`${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`;
-  const hr=now.getHours();let gk='ÐÐ¾Ð±ÑÑÐ¹ Ð´ÐµÐ½Ñ âï¸';
-  if(hr>=5&&hr<12)gk='ÐÐ¾Ð±ÑÐ¾Ðµ ÑÑÑÐ¾ ð';else if(hr>=18&&hr<23)gk='ÐÐ¾Ð±ÑÑÐ¹ Ð²ÐµÑÐµÑ ð';else if(hr<5||hr>=23)gk='ÐÐ¾Ð±ÑÐ¾Ð¹ Ð½Ð¾ÑÐ¸ ð';
+  const days=['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+  const months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  document.getElementById('date-str').textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()];
+  const hr=now.getHours();
+  let gk='Добрый день';
+  if(hr>=5&&hr<12)gk='Доброе утро';
+  else if(hr>=18&&hr<23)gk='Добрый вечер';
+  else if(hr<5||hr>=23)gk='Доброй ночи';
   document.getElementById('greeting').textContent=gk;
 }
 
-/* ââ NAV ââ */
+/* ===== НАВИГАЦИЯ ===== */
 function goPage(id,btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
@@ -1120,73 +1194,121 @@ function goPage(id,btn){
   if(id==='cal')renderCalLog();
 }
 
-/* ââ HOME ââ */
+/* ===== ГЛАВНАЯ ===== */
 function refreshHome(){
-  document.getElementById('stat-bal').textContent=S.currency+Math.abs(S.balance).toLocaleString();
+  document.getElementById('stat-bal').textContent=S.currency+' '+Math.abs(S.balance).toLocaleString();
   document.getElementById('stat-days').textContent=Object.keys(S.trackerData).length;
   document.getElementById('stat-todo').textContent=S.totalDone||0;
-  const todayKcal=getTodayKcal();
-  document.getElementById('stat-cal').textContent=todayKcal;
+  document.getElementById('stat-cal').textContent=getTodayKcal();
   document.getElementById('home-quote').textContent=QUOTES[new Date().getDate()%QUOTES.length];
   document.getElementById('streak-count').textContent=S.streak||0;
   updateRingUI();
 }
 function quickMood(idx,btn){
-  S.todayMood=idx;document.querySelectorAll('.mq-btn').forEach((b,i)=>b.classList.toggle('picked',i===idx));
-  const labels=['ÐÑÐ»Ð¸ÑÐ½Ð¾ ð','ÐÐ¾ÑÐ¼Ð°Ð»ÑÐ½Ð¾ ð','ÐÐ»Ð¾ÑÐ¾ ð','Ð­Ð½ÐµÑÐ³Ð¸Ñ ð¥','Ð£ÑÑÐ°Ð» ð´'];
-  toast(labels[idx]+' â Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð¾');save();
+  S.todayMood=idx;
+  document.querySelectorAll('.mq-btn').forEach((b,i)=>b.classList.toggle('picked',i===idx));
+  const labels=['Отлично','Нормально','Плохо','Энергия','Устал'];
+  toast(labels[idx]+' — записано');save();
 }
 
-/* ââ HABITS ââ */
+/* ===== КОЛЬЦА ПРИВЫЧЕК ===== */
 const RING_MAX={move:3,water:8,read:2,sleep:8};
-function addRing(type){if(!S.habits)S.habits={move:0,water:0,read:0,sleep:0};S.habits[type]=Math.min(S.habits[type]+1,RING_MAX[type]);updateRingUI();save();const names={move:'ÐÐ²Ð¸Ð¶ÐµÐ½Ð¸Ðµ',water:'ÐÐ¾Ð´Ð°',read:'Ð§ÑÐµÐ½Ð¸Ðµ',sleep:'Ð¡Ð¾Ð½'};toast(names[type]+' +1 â');}
+function addRing(type){if(!S.habits)S.habits={move:0,water:0,read:0,sleep:0};S.habits[type]=Math.min(S.habits[type]+1,RING_MAX[type]);updateRingUI();save();const names={move:'Движение',water:'Вода',read:'Чтение',sleep:'Сон'};toast(names[type]+' +1');}
 function updateRingUI(){if(!S.habits)return;const total=175.9;['move','water','read','sleep'].forEach(r=>{const el=document.getElementById('ring-'+r);if(!el)return;const pct=Math.min((S.habits[r]||0)/RING_MAX[r],1);el.style.strokeDashoffset=total*(1-pct);});}
 
-/* ââ MOOD ââ */
+/* ===== ЧАТ НАСТРОЕНИЯ ===== */
 let curMood='sad';
-function switchMood(m){curMood=m;document.querySelectorAll('.mood-tab').forEach((el,i)=>{el.classList.toggle('active',['sad','bored','tired','anxious','angry','happy'][i]===m);});renderChat();}
-function renderChat(){const area=document.getElementById('chat-area');area.innerHTML='';MOOD_INIT[curMood].forEach((msg,i)=>{setTimeout(()=>{const d=document.createElement('div');d.className='msg bot';d.textContent=msg;area.appendChild(d);area.scrollTop=area.scrollHeight;},i*370);});}
-function sendMsg(){const inp=document.getElementById('chat-inp');const val=inp.value.trim();if(!val)return;const area=document.getElementById('chat-area');const ud=document.createElement('div');ud.className='msg user';ud.textContent=val;area.appendChild(ud);inp.value='';area.scrollTop=area.scrollHeight;setTimeout(()=>{const reps=MOOD_REP[curMood];const bd=document.createElement('div');bd.className='msg bot';bd.textContent=reps[Math.floor(Math.random()*reps.length)];area.appendChild(bd);area.scrollTop=area.scrollHeight;},750);}
-function buildAffirm(){const wrap=document.getElementById('affirm-scroll');if(!wrap)return;wrap.innerHTML='';[...AFFIRMATIONS].sort(()=>Math.random()-.5).slice(0,5).forEach(a=>{const d=document.createElement('div');d.className='affirm-card';d.innerHTML=`<div class="affirm-emoji">${a.e}</div><div class="affirm-text">${a.t}</div>`;wrap.appendChild(d);});}
+function switchMood(m,btn){
+  curMood=m;
+  document.querySelectorAll('.mood-tab').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  renderChat();
+}
+function renderChat(){
+  const area=document.getElementById('chat-area');area.innerHTML='';
+  MOOD_INIT[curMood].slice(0,3).forEach((msg,i)=>{
+    setTimeout(()=>{const d=document.createElement('div');d.className='msg bot';d.textContent=msg;area.appendChild(d);area.scrollTop=area.scrollHeight;},i*370);
+  });
+}
+function sendMsg(){
+  const inp=document.getElementById('chat-inp');const val=inp.value.trim();if(!val)return;
+  const area=document.getElementById('chat-area');
+  const ud=document.createElement('div');ud.className='msg user';ud.textContent=val;area.appendChild(ud);
+  inp.value='';area.scrollTop=area.scrollHeight;
+  setTimeout(()=>{
+    const reps=MOOD_REP[curMood];
+    const bd=document.createElement('div');bd.className='msg bot';
+    bd.textContent=reps[Math.floor(Math.random()*reps.length)];
+    area.appendChild(bd);area.scrollTop=area.scrollHeight;
+    setTimeout(()=>{
+      const pool=MOOD_INIT[curMood];
+      const bd2=document.createElement('div');bd2.className='msg bot';
+      bd2.textContent=pool[Math.floor(Math.random()*pool.length)];
+      area.appendChild(bd2);area.scrollTop=area.scrollHeight;
+    },1100);
+  },750);
+}
+function buildAffirm(){
+  const wrap=document.getElementById('affirm-scroll');if(!wrap)return;wrap.innerHTML='';
+  [...AFFIRMATIONS].sort(()=>Math.random()-.5).slice(0,5).forEach(a=>{
+    const d=document.createElement('div');d.className='affirm-card';
+    d.innerHTML='<div class="affirm-emoji">'+a.e+'</div><div class="affirm-text">'+a.t+'</div>';
+    wrap.appendChild(d);
+  });
+}
 let breathing=false,breathTimer=null;
-const BREATH_PHASES=[{d:4,l:'ÐÐ´Ð¾Ñ...'},{d:7,l:'ÐÐ°Ð´ÐµÑÐ¶Ð¸...'},{d:8,l:'ÐÑÐ´Ð¾Ñ...'}];
-function toggleBreath(){const btn=document.getElementById('breath-btn'),st=document.getElementById('breath-status');if(breathing){clearTimeout(breathTimer);breathing=false;btn.classList.remove('breathing');btn.textContent='ð« ÐÐ°ÑÐ°ÑÑ Ð´ÑÑÐ°Ð½Ð¸Ðµ 4-7-8';st.textContent='';return;}breathing=true;btn.classList.add('breathing');function doPhase(p){const ph=BREATH_PHASES[p%3];st.textContent=ph.l;btn.textContent='ð« '+ph.l+' '+ph.d+'Ñ';breathTimer=setTimeout(()=>{if(breathing)doPhase(p+1);},ph.d*1000);}doPhase(0);}
-function saveGrat(){const inp=document.getElementById('grat-inp');const val=inp.value.trim();if(!val)return;if(!S.gratitude)S.gratitude=[];S.gratitude.unshift({text:val,date:new Date().toLocaleDateString('ru-RU')});inp.value='';renderGrat();save();toast('ÐÐ»Ð°Ð³Ð¾Ð´Ð°ÑÐ½Ð¾ÑÑÑ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð° â¨');}
-function renderGrat(){const list=document.getElementById('grat-list');if(!list)return;list.innerHTML='';(S.gratitude||[]).slice(0,5).forEach(g=>{const d=document.createElement('div');d.style.cssText='padding:10px 13px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:13px;font-weight:700;color:var(--text)';d.innerHTML=`<span style="font-size:10px;color:var(--text2);font-weight:800">${g.date}</span><br>${g.text}`;list.appendChild(d);});}
+const BREATH_PHASES=[{d:4,l:'Вдох...'},{d:7,l:'Задержи...'},{d:8,l:'Выдох...'}];
+function toggleBreath(){
+  const btn=document.getElementById('breath-btn'),st=document.getElementById('breath-status');
+  if(breathing){clearTimeout(breathTimer);breathing=false;btn.classList.remove('breathing');btn.textContent='Начать дыхание 4-7-8';st.textContent='';return;}
+  breathing=true;btn.classList.add('breathing');
+  function doPhase(p){const ph=BREATH_PHASES[p%3];st.textContent=ph.l;btn.textContent=ph.l+' '+ph.d+' сек';breathTimer=setTimeout(()=>{if(breathing)doPhase(p+1);},ph.d*1000);}
+  doPhase(0);
+}
+function saveGrat(){
+  const inp=document.getElementById('grat-inp');const val=inp.value.trim();if(!val)return;
+  if(!S.gratitude)S.gratitude=[];
+  S.gratitude.unshift({text:val,date:new Date().toLocaleDateString('ru-RU')});
+  inp.value='';renderGrat();save();toast('Благодарность записана');
+}
+function renderGrat(){
+  const list=document.getElementById('grat-list');if(!list)return;list.innerHTML='';
+  (S.gratitude||[]).slice(0,5).forEach(g=>{
+    const d=document.createElement('div');
+    d.style.cssText='padding:10px 13px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:13px;font-weight:700;color:var(--text)';
+    d.innerHTML='<span style="font-size:10px;color:var(--text2);font-weight:800">'+g.date+'</span><br>'+g.text;
+    list.appendChild(d);
+  });
+}
 
-/* ââââââââââââââââââââââââââââââââââ
-   CALORIES
-ââââââââââââââââââââââââââââââââââ */
-let selectedFood=null, calFilterCat='ÐÑÐµ';
-
-function todayCalKey(){const n=new Date();return `${n.getFullYear()}-${n.getMonth()+1}-${n.getDate()}`;}
+/* ===== КАЛОРИИ ===== */
+let selectedFood=null,calFilterCat='Все';
+function todayCalKey(){const n=new Date();return n.getFullYear()+'-'+(n.getMonth()+1)+'-'+n.getDate();}
 function getTodayKcal(){const k=todayCalKey();if(!S.calLog||!S.calLog[k])return 0;return Math.round(S.calLog[k].reduce((s,i)=>s+i.kcal,0));}
-
 function buildCalCats(){
   const wrap=document.getElementById('cal-cats-scroll');if(!wrap)return;wrap.innerHTML='';
   FOOD_CATS.forEach(c=>{
     const b=document.createElement('button');b.className='cal-cat-btn'+(c===calFilterCat?' active':'');
-    b.textContent=c;b.onclick=()=>{calFilterCat=c;document.querySelectorAll('.cal-cat-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');calSearch(document.getElementById('cal-search').value);};
+    b.textContent=c;
+    b.onclick=()=>{calFilterCat=c;document.querySelectorAll('.cal-cat-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');calSearch(document.getElementById('cal-search').value);};
     wrap.appendChild(b);
   });
 }
-
 function calSearch(q){
   const box=document.getElementById('cal-suggestions');
-  if(!q&&calFilterCat==='ÐÑÐµ'){box.style.display='none';return;}
+  if(!q&&calFilterCat==='Все'){box.style.display='none';return;}
   let results=FOOD_DB;
-  if(calFilterCat!=='ÐÑÐµ')results=results.filter(f=>f.c===calFilterCat);
+  if(calFilterCat!=='Все')results=results.filter(f=>f.c===calFilterCat);
   if(q)results=results.filter(f=>f.n.toLowerCase().includes(q.toLowerCase())||f.c.toLowerCase().includes(q.toLowerCase()));
   if(!results.length){box.style.display='none';return;}
   box.style.display='block';box.innerHTML='';
-  results.slice(0,12).forEach(f=>{
+  results.slice(0,15).forEach(f=>{
     const d=document.createElement('div');d.className='cal-sugg-item';
-    d.innerHTML=`<div><div class="cal-sugg-name">${f.e} ${f.n}</div><div class="cal-sugg-cat">${f.c}</div></div><div class="cal-sugg-kcal">${f.kcal} ÐºÐºÐ°Ð»</div>`;
+    d.innerHTML='<div><div class="cal-sugg-name">'+f.e+' '+f.n+'</div><div class="cal-sugg-cat">'+f.c+'</div></div><div class="cal-sugg-kcal">'+f.kcal+' ккал</div>';
     d.onclick=()=>{openCalModal(f);box.style.display='none';document.getElementById('cal-search').value='';};
     box.appendChild(d);
   });
 }
-
 function openCalModal(food){
   selectedFood=food;
   document.getElementById('cal-modal-title').textContent=food.e+' '+food.n;
@@ -1205,16 +1327,16 @@ function updateFoodPreview(){
   const c=Math.round(selectedFood.carb*g/100*10)/10;
   const prev=document.getElementById('food-preview');
   prev.style.display='block';
-  prev.innerHTML=`<div style="margin-bottom:5px;font-size:15px;font-weight:900">${k} ÐºÐºÐ°Ð»</div><div style="font-size:12px;color:var(--text2)">Ð: ${p}Ð³ Â· Ð: ${fa}Ð³ Â· Ð£: ${c}Ð³</div>`;
+  prev.innerHTML='<strong>'+k+' ккал</strong><br><span style="font-size:12px;color:var(--text2)">Белки: '+p+'г  Жиры: '+fa+'г  Углеводы: '+c+'г</span>';
 }
 function addFoodToLog(){
   if(!selectedFood)return;
   const g=parseFloat(document.getElementById('cal-grams').value)||100;
   const k=todayCalKey();if(!S.calLog)S.calLog={};if(!S.calLog[k])S.calLog[k]=[];
   S.calLog[k].push({name:selectedFood.n,emoji:selectedFood.e,cat:selectedFood.c,grams:g,kcal:Math.round(selectedFood.kcal*g/100),prot:Math.round(selectedFood.prot*g/100*10)/10,fat:Math.round(selectedFood.fat*g/100*10)/10,carb:Math.round(selectedFood.carb*g/100*10)/10,time:new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})});
-  renderCalLog();closeCalModal();save();toast(selectedFood.e+' Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾ â');
+  renderCalLog();closeCalModal();save();toast(selectedFood.e+' добавлено');
 }
-function clearCalToday(){if(confirm('ÐÑÐ¸ÑÑÐ¸ÑÑ Ð¶ÑÑÐ½Ð°Ð» Ð·Ð° ÑÐµÐ³Ð¾Ð´Ð½Ñ?')){const k=todayCalKey();if(S.calLog)S.calLog[k]=[];renderCalLog();save();toast('ÐÑÑÐ½Ð°Ð» Ð¾ÑÐ¸ÑÐµÐ½');}}
+function clearCalToday(){if(confirm('Очистить журнал за сегодня?')){const k=todayCalKey();if(S.calLog)S.calLog[k]=[];renderCalLog();save();toast('Журнал очищен');}}
 function removeCalItem(k,idx){if(S.calLog&&S.calLog[k]){S.calLog[k].splice(idx,1);renderCalLog();save();}}
 function renderCalLog(){
   const k=todayCalKey();const items=(S.calLog&&S.calLog[k])||[];
@@ -1225,28 +1347,25 @@ function renderCalLog(){
   const goal=S.calGoal||2000;
   const pct=Math.min(total/goal*100,100);
   document.getElementById('cal-total').textContent=total;
-  document.getElementById('cal-prot').textContent=prot+'Ð³';
-  document.getElementById('cal-fat').textContent=fat+'Ð³';
-  document.getElementById('cal-carb').textContent=carb+'Ð³';
+  document.getElementById('cal-prot').textContent=prot+'г';
+  document.getElementById('cal-fat').textContent=fat+'г';
+  document.getElementById('cal-carb').textContent=carb+'г';
   document.getElementById('cal-progress').style.width=pct+'%';
-  document.getElementById('cal-goal-lbl').textContent=total+' / '+goal+' ÐºÐºÐ°Ð»';
+  document.getElementById('cal-goal-lbl').textContent=total+' / '+goal+' ккал';
   document.getElementById('cal-goal-pct').textContent=Math.round(pct)+'%';
-  document.getElementById('stat-cal').textContent=total;
+  const statEl=document.getElementById('stat-cal');if(statEl)statEl.textContent=total;
   const list=document.getElementById('cal-log-list');list.innerHTML='';
-  if(!items.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:20px;font-weight:800">ÐÐ¸ÑÐµÐ³Ð¾ Ð½Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾.<br>ÐÐ°Ð¹Ð´Ð¸ Ð¿ÑÐ¾Ð´ÑÐºÑ Ð²ÑÑÐµ ð</div>';return;}
+  if(!items.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:20px;font-weight:800">Ничего не добавлено.<br>Найди продукт выше.</div>';return;}
   items.forEach((item,i)=>{
     const d=document.createElement('div');d.className='cal-log-item';
-    d.innerHTML=`<div class="cal-log-left"><div class="cal-log-emoji">${item.emoji}</div><div><div class="cal-log-name">${item.name}</div><div class="cal-log-cat">${item.cat} Â· ${item.time}</div></div></div><div class="cal-log-right"><div class="cal-log-kcal g-text">${item.kcal} ÐºÐºÐ°Ð»</div><div class="cal-log-weight">${item.grams}Ð³</div></div><button class="cal-del-btn" onclick="removeCalItem('${k}',${i})">â</button>`;
+    d.innerHTML='<div class="cal-log-left"><div class="cal-log-emoji">'+item.emoji+'</div><div><div class="cal-log-name">'+item.name+'</div><div class="cal-log-cat">'+item.cat+' — '+item.time+'</div></div></div><div class="cal-log-right"><div class="cal-log-kcal g-text">'+item.kcal+' ккал</div><div class="cal-log-weight">'+item.grams+' г</div></div><button class="cal-del-btn" onclick="removeCalItem(\''+k+'\','+i+')">✕</button>';
     list.appendChild(d);
   });
 }
-function setCalGoal(v){S.calGoal=parseInt(v)||2000;document.getElementById('cal-goal-display').textContent=S.calGoal+' ÐºÐºÐ°Ð»';renderCalLog();save();}
+function setCalGoal(v){S.calGoal=parseInt(v)||2000;document.getElementById('cal-goal-display').textContent=S.calGoal+' ккал';renderCalLog();save();}
 
-/* ââââââââââââââââââââââââââââââââââ
-   NOTES
-ââââââââââââââââââââââââââââââââââ */
-let editingNoteId=null, notesFilter='all';
-
+/* ===== ЗАМЕТКИ ===== */
+let editingNoteId=null,notesFilter='all';
 function openNoteEditor(note){
   editingNoteId=note?note.id:null;
   document.getElementById('ne-title').value=note?note.title:'';
@@ -1259,64 +1378,54 @@ function openNoteEditor(note){
 function closeNoteEditor(){document.getElementById('note-editor').classList.remove('open');}
 function insertNoteText(t){const ta=document.getElementById('ne-body');const s=ta.selectionStart,e=ta.selectionEnd;const v=ta.value;ta.value=v.slice(0,s)+t+v.slice(e);ta.selectionStart=ta.selectionEnd=s+t.length;ta.focus();}
 function saveNote(){
-  const title=document.getElementById('ne-title').value.trim()||'ÐÐµÐ· Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ';
+  const title=document.getElementById('ne-title').value.trim()||'Без названия';
   const body=document.getElementById('ne-body').value.trim();
   const tag=document.getElementById('ne-tag').value;
   const pinned=document.getElementById('ne-pin').checked;
   if(!S.notes)S.notes=[];
   if(editingNoteId){
     const idx=S.notes.findIndex(n=>n.id===editingNoteId);
-    if(idx>=0)S.notes[idx]={...S.notes[idx],title,body,tag,pinned,updated:Date.now()};
+    if(idx>=0)Object.assign(S.notes[idx],{title,body,tag,pinned,updated:Date.now()});
   }else{
     S.notes.unshift({id:Date.now(),title,body,tag,pinned,created:Date.now(),updated:Date.now()});
   }
-  closeNoteEditor();renderNotes();save();toast('ÐÐ°Ð¼ÐµÑÐºÐ° ÑÐ¾ÑÑÐ°Ð½ÐµÐ½Ð° â');
+  closeNoteEditor();renderNotes();save();toast('Заметка сохранена');
 }
-function deleteNote(id){if(confirm('Ð£Ð´Ð°Ð»Ð¸ÑÑ Ð·Ð°Ð¼ÐµÑÐºÑ?')){S.notes=S.notes.filter(n=>n.id!==id);renderNotes();save();toast('ÐÐ°Ð¼ÐµÑÐºÐ° ÑÐ´Ð°Ð»ÐµÐ½Ð°');}}
-function togglePinNote(id){const n=S.notes.find(x=>x.id===id);if(n){n.pinned=!n.pinned;renderNotes();save();toast(n.pinned?'ÐÐ°ÐºÑÐµÐ¿Ð»ÐµÐ½Ð¾ ð':'ÐÑÐºÑÐµÐ¿Ð»ÐµÐ½Ð¾');}}
+function deleteNote(id){if(confirm('Удалить заметку?')){S.notes=S.notes.filter(n=>n.id!==id);renderNotes();save();toast('Заметка удалена');}}
+function togglePinNote(id){const n=S.notes.find(x=>x.id===id);if(n){n.pinned=!n.pinned;renderNotes();save();toast(n.pinned?'Закреплено':'Откреплено');}}
 function filterNotes(f,btn){notesFilter=f;document.querySelectorAll('#notes-filter button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderNotes();}
 function renderNotes(){
   const list=document.getElementById('notes-list');if(!list)return;list.innerHTML='';
   let notes=S.notes||[];
   if(notesFilter!=='all')notes=notes.filter(n=>n.tag===notesFilter);
   notes=[...notes.filter(n=>n.pinned),...notes.filter(n=>!n.pinned)];
-  if(!notes.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:24px;font-weight:800">ÐÐµÑ Ð·Ð°Ð¼ÐµÑÐ¾Ðº.<br>ÐÐ°Ð¶Ð¼Ð¸ Â«+ ÐÐ¾Ð²Ð°ÑÂ» ÑÑÐ¾Ð±Ñ ÑÐ¾Ð·Ð´Ð°ÑÑ ð</div>';return;}
+  if(!notes.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:24px;font-weight:800">Нет заметок.<br>Нажми + Новая чтобы создать.</div>';return;}
   notes.forEach((note,i)=>{
     const d=document.createElement('div');d.className='note-card glass'+(note.pinned?' pinned':'');
     d.style.animationDelay=i*0.05+'s';
     const tagColor=NOTE_TAG_COLORS[note.tag]||NOTE_TAG_COLORS.general;
-    const tagName=NOTE_TAG_NAMES[note.tag]||'ð ÐÐ±ÑÐµÐµ';
+    const tagName=NOTE_TAG_NAMES[note.tag]||'Общее';
     const date=new Date(note.updated||note.created).toLocaleDateString('ru-RU',{day:'numeric',month:'short'});
-    d.innerHTML=`<div class="note-card-actions"><button class="nca-btn" onclick="event.stopPropagation();togglePinNote(${note.id})" title="ÐÐ°ÐºÑÐµÐ¿Ð¸ÑÑ">${note.pinned?'ð':'ð'}</button><button class="nca-btn" onclick="event.stopPropagation();deleteNote(${note.id})" style="background:rgba(248,113,113,.15);color:#f87171">â</button></div><div class="note-card-title">${note.pinned?'ð ':''}<span style="background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">${note.title}</span></div><div class="note-card-preview">${note.body||'(Ð¿ÑÑÑÐ¾)'}</div><div class="note-card-meta"><span class="note-card-date">${date}</span><span class="note-card-tag" style="background:${tagColor};color:var(--text)">${tagName}</span></div>`;
+    d.innerHTML='<div class="note-card-actions"><button class="nca-btn" onclick="event.stopPropagation();togglePinNote('+note.id+')" title="Закрепить">'+(note.pinned?'📌':'📍')+'</button><button class="nca-btn" onclick="event.stopPropagation();deleteNote('+note.id+')" style="background:rgba(248,113,113,.15);color:#f87171">✕</button></div><div class="note-card-title"><span style="background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">'+(note.pinned?'📌 ':'')+note.title+'</span></div><div class="note-card-preview">'+(note.body||'(пусто)')+'</div><div class="note-card-meta"><span class="note-card-date">'+date+'</span><span class="note-card-tag" style="background:'+tagColor+';color:var(--text)">'+tagName+'</span></div>';
     d.onclick=()=>openNoteEditor(note);list.appendChild(d);
   });
 }
 
-/* ââââââââââââââââââââââââââââââââââ
-   DIARY
-ââââââââââââââââââââââââââââââââââ */
-let editingDiaryId=null, currentDiarTheme='default';
-let diarFoods=[];
-
+/* ===== ДНЕВНИК ===== */
+let editingDiaryId=null,currentDiarTheme='default',diarFoods=[];
 function buildDiarThemes(){
   const row=document.getElementById('diar-theme-row');if(!row)return;row.innerHTML='';
   DIARY_THEMES.forEach(t=>{
     const b=document.createElement('button');b.className='diar-theme-btn'+(t.id===currentDiarTheme?' active':'');
-    b.style.background=t.dot;b.title=t.name;
+    b.style.background=t.dot;b.title=t.n;
     b.onclick=()=>{currentDiarTheme=t.id;document.querySelectorAll('.diar-theme-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyDiarTheme(t);};
     row.appendChild(b);
   });
 }
-function applyDiarTheme(t){
-  const fields=document.getElementById('diar-fields');
-  // Remove old theme classes
-  DIARY_THEMES.forEach(x=>fields.classList.remove('diar-t-'+x.id));
-  fields.classList.add('diar-t-'+t.id);
-  fields.style.background=t.bg;
-}
+function applyDiarTheme(t){const fields=document.getElementById('diar-fields');fields.style.background=t.bg;}
 function openDiaryEditor(entry){
   editingDiaryId=entry?entry.id:null;
-  diarFoods=entry?[...entry.foods||[]]:[];
+  diarFoods=entry?[...(entry.foods||[])]:[];
   currentDiarTheme=entry?entry.theme||'default':'default';
   document.getElementById('diar-title').value=entry?entry.title:'';
   document.getElementById('diar-events').value=entry?entry.events:'';
@@ -1324,12 +1433,10 @@ function openDiaryEditor(entry){
   document.getElementById('diar-grat').value=entry?entry.grat:'';
   document.getElementById('diar-score').value=entry?entry.score||7:7;
   document.getElementById('diar-score-val').textContent=(entry?entry.score||7:7)+'/10';
-  // mood
-  document.querySelectorAll('.diar-mood-btn').forEach(b=>{b.classList.toggle('active',b.dataset.mood===(entry?entry.mood:'ð'));});
-  // date
-  const now=new Date();document.getElementById('diar-date-label').textContent=entry?entry.date:`${now.getDate()} ${MONTHS_RU[now.getMonth()].toLowerCase()} ${now.getFullYear()}`;
-  renderDiarFoods();
-  buildDiarThemes();
+  document.querySelectorAll('.diar-mood-btn').forEach(b=>b.classList.toggle('active',b.dataset.mood===(entry?entry.mood:null)));
+  const now=new Date();
+  document.getElementById('diar-date-label').textContent=entry?entry.date:(now.getDate()+' '+MONTHS_RU[now.getMonth()].toLowerCase()+' '+now.getFullYear());
+  renderDiarFoods();buildDiarThemes();
   const theme=DIARY_THEMES.find(t=>t.id===currentDiarTheme)||DIARY_THEMES[0];
   applyDiarTheme(theme);
   document.getElementById('diary-editor').classList.add('open');
@@ -1337,98 +1444,243 @@ function openDiaryEditor(entry){
 function closeDiaryEditor(){document.getElementById('diary-editor').classList.remove('open');}
 function selectDiarMood(btn){document.querySelectorAll('.diar-mood-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 function addDiarFood(){const inp=document.getElementById('diar-food-inp');const v=inp.value.trim();if(!v)return;diarFoods.push(v);inp.value='';renderDiarFoods();}
-function renderDiarFoods(){const list=document.getElementById('diar-food-list');list.innerHTML='';diarFoods.forEach((f,i)=>{const chip=document.createElement('div');chip.className='diar-food-chip';chip.textContent=f+' â';chip.onclick=()=>{diarFoods.splice(i,1);renderDiarFoods();};list.appendChild(chip);});}
+function renderDiarFoods(){
+  const list=document.getElementById('diar-food-list');list.innerHTML='';
+  diarFoods.forEach((f,i)=>{
+    const chip=document.createElement('div');chip.className='diar-food-chip';chip.textContent=f+' ✕';
+    chip.onclick=()=>{diarFoods.splice(i,1);renderDiarFoods();};list.appendChild(chip);
+  });
+}
 function saveDiaryEntry(){
-  const title=document.getElementById('diar-title').value.trim()||'ÐÐ°Ð¿Ð¸ÑÑ Ð´Ð½Ñ';
+  const title=document.getElementById('diar-title').value.trim()||'Запись дня';
   const events=document.getElementById('diar-events').value.trim();
   const thoughts=document.getElementById('diar-thoughts').value.trim();
   const grat=document.getElementById('diar-grat').value.trim();
   const score=parseInt(document.getElementById('diar-score').value)||7;
   const moodBtn=document.querySelector('.diar-mood-btn.active');
-  const mood=moodBtn?moodBtn.dataset.mood:'ð';
+  const mood=moodBtn?moodBtn.dataset.mood:'';
   const now=new Date();
-  const date=`${now.getDate()} ${MONTHS_RU[now.getMonth()].toLowerCase()} ${now.getFullYear()}`;
+  const date=now.getDate()+' '+MONTHS_RU[now.getMonth()].toLowerCase()+' '+now.getFullYear();
   if(!S.diary)S.diary=[];
   if(editingDiaryId){
     const idx=S.diary.findIndex(e=>e.id===editingDiaryId);
-    if(idx>=0)S.diary[idx]={...S.diary[idx],title,events,thoughts,grat,score,mood,foods:[...diarFoods],theme:currentDiarTheme};
+    if(idx>=0)Object.assign(S.diary[idx],{title,events,thoughts,grat,score,mood,foods:[...diarFoods],theme:currentDiarTheme});
   }else{
     S.diary.unshift({id:Date.now(),title,events,thoughts,grat,score,mood,foods:[...diarFoods],theme:currentDiarTheme,date});
   }
-  closeDiaryEditor();renderDiary();save();toast('ÐÐ°Ð¿Ð¸ÑÑ ÑÐ¾ÑÑÐ°Ð½ÐµÐ½Ð° ð');
+  closeDiaryEditor();renderDiary();save();toast('Запись сохранена');
 }
-function deleteDiaryEntry(id){if(confirm('Ð£Ð´Ð°Ð»Ð¸ÑÑ Ð·Ð°Ð¿Ð¸ÑÑ?')){S.diary=S.diary.filter(e=>e.id!==id);renderDiary();save();}}
+function deleteDiaryEntry(id){if(confirm('Удалить запись?')){S.diary=S.diary.filter(e=>e.id!==id);renderDiary();save();}}
 function renderDiary(){
   const list=document.getElementById('diary-list');if(!list)return;list.innerHTML='';
-  if(!S.diary||!S.diary.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:24px;font-weight:800">ÐÐµÑ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹.<br>ÐÐ°Ð¶Ð¼Ð¸ Â«+ ÐÐ°Ð¿Ð¸ÑÑÂ» ÑÑÐ¾Ð±Ñ Ð½Ð°ÑÐ°ÑÑ ð</div>';return;}
+  if(!S.diary||!S.diary.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:24px;font-weight:800">Нет записей.<br>Нажми + Запись чтобы начать.</div>';return;}
   S.diary.forEach((entry,i)=>{
     const theme=DIARY_THEMES.find(t=>t.id===(entry.theme||'default'))||DIARY_THEMES[0];
     const d=document.createElement('div');d.className='diary-entry-card';
-    d.style.cssText=`background:${theme.bg};border-color:${theme.border};animation-delay:${i*0.05}s`;
-    const preview=entry.events||entry.thoughts||'(Ð½ÐµÑ ÑÐµÐºÑÑÐ°)';
-    d.innerHTML=`<div class="dec-date">${entry.date}</div><div class="dec-title">${entry.mood} <span style="background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">${entry.title}</span></div><div class="dec-preview">${preview}</div><div class="dec-metas"><span class="dec-meta-pill">â­ ${entry.score}/10</span>${entry.foods&&entry.foods.length?`<span class="dec-meta-pill">ð½ ${entry.foods.length} Ð±Ð»ÑÐ´</span>`:''}<button onclick="event.stopPropagation();deleteDiaryEntry(${entry.id})" style="padding:4px 10px;border-radius:50px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.1);color:#f87171;font-family:var(--font-ui);font-size:9px;font-weight:900;cursor:pointer">Ð£Ð´Ð°Ð»Ð¸ÑÑ</button></div>`;
+    d.style.cssText='background:'+theme.bg+';border-color:'+theme.border+';animation-delay:'+i*0.05+'s';
+    const preview=entry.events||entry.thoughts||'(нет текста)';
+    d.innerHTML='<div class="dec-date">'+entry.date+'</div><div class="dec-title">'+(entry.mood||'')+'  <span style="background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">'+entry.title+'</span></div><div class="dec-preview">'+preview+'</div><div class="dec-metas"><span class="dec-meta-pill">'+entry.score+'/10</span>'+(entry.foods&&entry.foods.length?'<span class="dec-meta-pill">'+entry.foods.length+' блюд</span>':'')+'<button onclick="event.stopPropagation();deleteDiaryEntry('+entry.id+')" style="padding:4px 10px;border-radius:50px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.1);color:#f87171;font-family:var(--font-ui);font-size:9px;font-weight:900;cursor:pointer">Удалить</button></div>';
     d.onclick=()=>openDiaryEditor(entry);list.appendChild(d);
   });
 }
 
-/* ââ FINANCE ââ */
-function setCur(c){S.currency=c;['â½','$','â¬','â¸'].forEach((sym,i)=>{const ids=['cur-r','cur-d','cur-e','cur-t'];document.getElementById(ids[i]).classList.toggle('active',sym===c);});document.getElementById('fin-cur').textContent=c;renderTrans();refreshHome();save();}
+/* ===== ФИНАНСЫ ===== */
+function setCur(c){
+  S.currency=c;
+  ['руб','$','€','₸'].forEach((sym,i)=>{
+    const ids=['cur-r','cur-d','cur-e','cur-t'];
+    document.getElementById(ids[i]).classList.toggle('active',sym===c);
+  });
+  document.getElementById('fin-cur').textContent=c==='руб'?'₽':c;
+  renderTrans();refreshHome();save();
+}
 let finType='income';
 function openFin(t){finType=t;setFinType(t);document.getElementById('fin-modal').classList.add('open');document.getElementById('fin-amt').value='';document.getElementById('fin-dsc').value='';setTimeout(()=>document.getElementById('fin-amt').focus(),320);}
 function closeFin(){document.getElementById('fin-modal').classList.remove('open');}
 function setFinType(t){finType=t;document.getElementById('ftype-i').className='type-tab'+(t==='income'?' ti':'');document.getElementById('ftype-e').className='type-tab'+(t==='expense'?' te':'');}
-function addTrans(){const amt=parseFloat(document.getElementById('fin-amt').value);const cat=document.getElementById('fin-cat').value;const dsc=document.getElementById('fin-dsc').value||cat;if(!amt||isNaN(amt))return;S.transactions.unshift({type:finType,amount:amt,desc:dsc,cat,cur:S.currency,date:new Date().toLocaleDateString('ru-RU')});S.balance+=(finType==='income'?amt:-amt);renderTrans();buildBudgetCats();refreshHome();closeFin();save();toast(finType==='income'?'ÐÐ¾ÑÐ¾Ð´ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ð':'Ð Ð°ÑÑÐ¾Ð´ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ð´');}
-function renderTrans(){const list=document.getElementById('trans-list');document.getElementById('fin-bal').textContent=Math.abs(S.balance).toLocaleString();document.getElementById('fin-cur').textContent=S.currency;list.innerHTML='';if(!S.transactions.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:18px;font-weight:800">ÐÐµÑ ÑÑÐ°Ð½Ð·Ð°ÐºÑÐ¸Ð¹</div>';return;}S.transactions.slice(0,25).forEach(tr=>{const d=document.createElement('div');d.className='trans-item';d.innerHTML=`<div><div class="t-desc">${tr.desc}</div><div class="t-date">${tr.date}</div></div><div class="t-amt ${tr.type==='income'?'inc':'exp'}">${tr.type==='income'?'+':'-'}${tr.cur||S.currency}${tr.amount.toLocaleString()}</div>`;list.appendChild(d);});}
-function buildBudgetCats(){const wrap=document.getElementById('budget-cats');if(!wrap)return;wrap.innerHTML='';BUDGET_CATS.forEach(cat=>{const spent=S.transactions.filter(t=>t.type==='expense'&&(t.cat||'').includes(cat.n)).reduce((s,t)=>s+t.amount,0);const pct=Math.min(spent/cat.limit*100,100);const d=document.createElement('div');d.className='bcat';d.innerHTML=`<div class="bcat-icon">${cat.e}</div><div class="bcat-name">${cat.n}</div><div class="bcat-bar-wrap"><div class="bcat-bar" style="width:${pct}%"></div></div><div class="bcat-amt">${S.currency}${spent.toLocaleString()}</div>`;wrap.appendChild(d);});}
+function addTrans(){
+  const amt=parseFloat(document.getElementById('fin-amt').value);
+  const cat=document.getElementById('fin-cat').value;
+  const dsc=document.getElementById('fin-dsc').value||cat;
+  if(!amt||isNaN(amt))return;
+  S.transactions.unshift({type:finType,amount:amt,desc:dsc,cat,cur:S.currency,date:new Date().toLocaleDateString('ru-RU')});
+  S.balance+=(finType==='income'?amt:-amt);
+  renderTrans();buildBudgetCats();refreshHome();closeFin();save();
+  toast(finType==='income'?'Доход добавлен':'Расход добавлен');
+}
+function renderTrans(){
+  const list=document.getElementById('trans-list');
+  const cur=S.currency==='руб'?'₽':S.currency;
+  document.getElementById('fin-bal').textContent=Math.abs(S.balance).toLocaleString();
+  document.getElementById('fin-cur').textContent=cur;
+  list.innerHTML='';
+  if(!S.transactions.length){list.innerHTML='<div style="text-align:center;color:var(--text2);padding:18px;font-weight:800">Нет транзакций</div>';return;}
+  S.transactions.slice(0,25).forEach(tr=>{
+    const d=document.createElement('div');d.className='trans-item';
+    const tc=tr.cur==='руб'?'₽':tr.cur;
+    d.innerHTML='<div><div class="t-desc">'+tr.desc+'</div><div class="t-date">'+tr.date+'</div></div><div class="t-amt '+(tr.type==='income'?'inc':'exp')+'">'+(tr.type==='income'?'+':'-')+tc+tr.amount.toLocaleString()+'</div>';
+    list.appendChild(d);
+  });
+}
+function buildBudgetCats(){
+  const wrap=document.getElementById('budget-cats');if(!wrap)return;wrap.innerHTML='';
+  BUDGET_CATS.forEach(cat=>{
+    const spent=S.transactions.filter(t=>t.type==='expense'&&(t.cat||'').includes(cat.n)).reduce((s,t)=>s+t.amount,0);
+    const pct=Math.min(spent/cat.limit*100,100);
+    const d=document.createElement('div');d.className='bcat';
+    d.innerHTML='<div class="bcat-icon">'+cat.e+'</div><div class="bcat-name">'+cat.n+'</div><div class="bcat-bar-wrap"><div class="bcat-bar" style="width:'+pct+'%"></div></div><div class="bcat-amt">'+(S.currency==='руб'?'₽':S.currency)+spent.toLocaleString()+'</div>';
+    wrap.appendChild(d);
+  });
+}
 function buildFinTip(){const el=document.getElementById('fin-tip-text');if(!el)return;el.textContent=FIN_TIPS[Math.floor(Math.random()*FIN_TIPS.length)];}
 
-/* ââ TODO ââ */
+/* ===== ЧТО ДЕЛАТЬ ===== */
 let shuffled=[],todoIdx=0,currentFilter='all';
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 function filterTodo(cat,btn){currentFilter=cat;document.querySelectorAll('.tf-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');todoIdx=0;showTodo();}
-function showTodo(){const pool=currentFilter==='all'?TODO_ALL:TODO_ALL.filter(t=>t.c===currentFilter);if(todoIdx===0||todoIdx>=shuffled.length){shuffled=shuffle(pool);todoIdx=0;}const wrap=document.getElementById('todo-cards');wrap.innerHTML='';const batch=shuffled.slice(todoIdx,todoIdx+5);todoIdx+=5;batch.forEach((item,i)=>{const done=S.doneTodos&&S.doneTodos.includes(item.t);const d=document.createElement('div');d.className='todo-item'+(done?' done':'');d.style.animationDelay=i*0.06+'s';d.innerHTML=`<div class="todo-icon">${item.i}</div><div style="flex:1"><div class="todo-text">${item.t}</div><div class="todo-cat">${item.c}</div></div><div class="todo-check">${done?'â':''}</div>`;d.onclick=()=>toggleTodo(item.t,d);wrap.appendChild(d);});}
-function toggleTodo(text,el){if(!S.doneTodos)S.doneTodos=[];const idx=S.doneTodos.indexOf(text);if(idx>=0){S.doneTodos.splice(idx,1);el.classList.remove('done');el.querySelector('.todo-check').textContent='';if(S.totalDone>0)S.totalDone--;}else{S.doneTodos.push(text);el.classList.add('done');el.querySelector('.todo-check').textContent='â';S.totalDone=(S.totalDone||0)+1;toast('ÐÑÐ¿Ð¾Ð»Ð½ÐµÐ½Ð¾! +1 â');}save();}
+function showTodo(){
+  const pool=currentFilter==='all'?TODO_ALL:TODO_ALL.filter(t=>t.c===currentFilter);
+  if(todoIdx===0||todoIdx>=shuffled.length){shuffled=shuffle(pool);todoIdx=0;}
+  const wrap=document.getElementById('todo-cards');wrap.innerHTML='';
+  const batch=shuffled.slice(todoIdx,todoIdx+5);todoIdx+=5;
+  batch.forEach((item,i)=>{
+    const done=S.doneTodos&&S.doneTodos.includes(item.t);
+    const d=document.createElement('div');d.className='todo-item'+(done?' done':'');
+    d.style.animationDelay=i*0.06+'s';
+    d.innerHTML='<div class="todo-icon">'+item.i+'</div><div style="flex:1"><div class="todo-text">'+item.t+'</div><div class="todo-cat">'+item.c+'</div></div><div class="todo-check">'+(done?'✓':'')+'</div>';
+    d.onclick=()=>toggleTodo(item.t,d);wrap.appendChild(d);
+  });
+}
+function toggleTodo(text,el){
+  if(!S.doneTodos)S.doneTodos=[];
+  const idx=S.doneTodos.indexOf(text);
+  if(idx>=0){S.doneTodos.splice(idx,1);el.classList.remove('done');el.querySelector('.todo-check').textContent='';if(S.totalDone>0)S.totalDone--;}
+  else{S.doneTodos.push(text);el.classList.add('done');el.querySelector('.todo-check').textContent='✓';S.totalDone=(S.totalDone||0)+1;toast('Выполнено! +1');}
+  save();
+}
 
-/* ââ TIMER ââ */
+/* ===== ТАЙМЕР POMODORO ===== */
 let timerInt=null,timerSec=25*60,timerRunning=false;
-function toggleTimer(){const btn=document.getElementById('timer-start-btn');if(timerRunning){clearInterval(timerInt);timerRunning=false;btn.textContent='â¶ Ð¡ÑÐ°ÑÑ';}else{timerRunning=true;btn.textContent='â¸ ÐÐ°ÑÐ·Ð°';timerInt=setInterval(()=>{timerSec--;if(timerSec<=0){clearInterval(timerInt);timerRunning=false;btn.textContent='â¶ Ð¡ÑÐ°ÑÑ';timerSec=25*60;toast('â° Pomodoro Ð·Ð°Ð²ÐµÑÑÑÐ½!');}updateTimerUI();},1000);}}
-function resetTimer(){clearInterval(timerInt);timerRunning=false;timerSec=25*60;document.getElementById('timer-start-btn').textContent='â¶ Ð¡ÑÐ°ÑÑ';updateTimerUI();}
-function updateTimerUI(){const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById('timer-disp').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(document.getElementById('fm-time'))document.getElementById('fm-time').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
-function startFocus(task){document.getElementById('focus-mode').classList.add('open');document.getElementById('fm-task').textContent=task||'Ð¡Ð¾ÑÑÐµÐ´Ð¾ÑÐ¾ÑÑÑÑ Ð½Ð° Ð¾Ð´Ð½Ð¾Ð¹ Ð·Ð°Ð´Ð°ÑÐµ';if(!timerRunning)toggleTimer();}
+function toggleTimer(){
+  const btn=document.getElementById('timer-start-btn');
+  if(timerRunning){clearInterval(timerInt);timerRunning=false;btn.textContent='Старт';}
+  else{timerRunning=true;btn.textContent='Пауза';timerInt=setInterval(()=>{timerSec--;if(timerSec<=0){clearInterval(timerInt);timerRunning=false;btn.textContent='Старт';timerSec=25*60;toast('Pomodoro завершён!');}updateTimerUI();},1000);}
+}
+function resetTimer(){clearInterval(timerInt);timerRunning=false;timerSec=25*60;document.getElementById('timer-start-btn').textContent='Старт';updateTimerUI();}
+function updateTimerUI(){
+  const m=Math.floor(timerSec/60),s=timerSec%60;
+  const t=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  document.getElementById('timer-disp').textContent=t;
+  const fm=document.getElementById('fm-time');if(fm)fm.textContent=t;
+}
+function startFocus(){document.getElementById('focus-mode').classList.add('open');if(!timerRunning)toggleTimer();}
 function closeFocus(){document.getElementById('focus-mode').classList.remove('open');}
 
-/* ââ TRACKER ââ */
+/* ===== ТРЕКЕР ===== */
 let pendingDay=null;
-function todayKey(){const n=new Date();return `${n.getFullYear()}-${n.getMonth()+1}-${n.getDate()}`;}
-function buildGrid(){const grid=document.getElementById('tr-grid');if(!grid)return;grid.innerHTML='';const now=new Date();const y=now.getFullYear(),mo=now.getMonth();const dim=new Date(y,mo+1,0).getDate();document.getElementById('tr-month').textContent=MONTHS_RU[mo]+' '+y;for(let d=1;d<=dim;d++){const k=`${y}-${mo+1}-${d}`;const data=S.trackerData[k];const el=document.createElement('div');el.className='tracker-day'+(data?' filled':'');el.innerHTML=`<span class="day-num">${d}</span>${data?data.emoji:''}`;el.onclick=()=>openEP(k,el);grid.appendChild(el);}buildStreakBar();}
-function buildStreakBar(){const bar=document.getElementById('streak-bar');if(!bar)return;bar.innerHTML='';const now=new Date();for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const k=`${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;const data=S.trackerData[k];const el=document.createElement('div');el.className='streak-dot'+(data?' done':'');el.textContent=data?'â':String(d.getDate());bar.appendChild(el);}let s=0;const n=new Date();for(let i=0;i<30;i++){const dd=new Date(n);dd.setDate(dd.getDate()-i);const k=`${dd.getFullYear()}-${dd.getMonth()+1}-${dd.getDate()}`;if(S.trackerData[k])s++;else break;}S.streak=s;document.getElementById('streak-count').textContent=s;}
-function renderTrackerLog(){const log=document.getElementById('tr-log');if(!log)return;log.innerHTML='';const entries=Object.entries(S.trackerData).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,15);if(!entries.length){log.innerHTML='<div style="text-align:center;color:var(--text2);padding:14px;font-weight:800">ÐÐµÑ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ â Ð²ÑÐ±ÐµÑÐ¸ ÑÐ¼Ð¾Ð´Ð·Ð¸ Ð´Ð»Ñ Ð´Ð½Ñ</div>';return;}entries.forEach(([k,v])=>{const d=document.createElement('div');d.className='tlog-item';d.innerHTML=`<div class="tl-emoji">${v.emoji}</div><div><div class="tl-date">${k}${v.sleep?' Â· ð¤'+v.sleep+'Ñ':''} ${v.energy?' Â· â¡'+v.energy+'/10':''}</div><div class="tl-note">${v.note||'â'}</div></div>`;log.appendChild(d);});}
-function openEP(key,el){pendingDay=key;const ep=document.getElementById('ep-wrap');ep.innerHTML='';EMOJIS.forEach(em=>{const b=document.createElement('button');b.className='ep-e';b.textContent=em;b.onclick=()=>{if(!S.trackerData[key])S.trackerData[key]={emoji:em,note:''};else S.trackerData[key].emoji=em;el.innerHTML=`<span class="day-num">${key.split('-')[2]}</span>${em}`;el.classList.add('filled');ep.classList.remove('open');buildStreakBar();save();toast('ÐÐ°ÑÑÑÐ¾ÐµÐ½Ð¸Ðµ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð¾ '+em);};ep.appendChild(b);});ep.classList.add('open');const ex=S.trackerData[key];document.getElementById('tr-note').value=ex?ex.note:'';}
-function saveDay(){if(!pendingDay){const n=new Date();pendingDay=`${n.getFullYear()}-${n.getMonth()+1}-${n.getDate()}`;}const note=document.getElementById('tr-note').value;if(!S.trackerData[pendingDay])S.trackerData[pendingDay]={emoji:'ð',note};else S.trackerData[pendingDay].note=note;renderTrackerLog();buildGrid();document.getElementById('tr-note').value='';pendingDay=null;save();toast('ÐÐµÐ½Ñ ÑÐ¾ÑÑÐ°Ð½ÑÐ½ â');}
-function saveDayData(){const k=todayKey();const sleep=parseFloat(document.getElementById('sleep-slider').value);const energy=parseInt(document.getElementById('energy-slider').value);const water=parseInt(document.getElementById('water-slider').value);if(!S.trackerData[k])S.trackerData[k]={emoji:'ð',note:''};Object.assign(S.trackerData[k],{sleep,energy,water});renderTrackerLog();save();toast('ÐÐ°Ð½Ð½ÑÐµ Ð´Ð½Ñ ÑÐ¾ÑÑÐ°Ð½ÐµÐ½Ñ â');}
-function updateSlider(inp,valId,unit){const val=parseFloat(inp.value);document.getElementById(valId).textContent=val+unit;const pct=((val-parseFloat(inp.min))/(parseFloat(inp.max)-parseFloat(inp.min))*100).toFixed(1)+'%';inp.style.setProperty('--pct',pct);}
+function todayKey(){const n=new Date();return n.getFullYear()+'-'+(n.getMonth()+1)+'-'+n.getDate();}
+function buildGrid(){
+  const grid=document.getElementById('tr-grid');if(!grid)return;grid.innerHTML='';
+  const now=new Date();const y=now.getFullYear(),mo=now.getMonth();
+  const dim=new Date(y,mo+1,0).getDate();
+  document.getElementById('tr-month').textContent=MONTHS_RU[mo]+' '+y;
+  for(let d=1;d<=dim;d++){
+    const k=y+'-'+(mo+1)+'-'+d;
+    const data=S.trackerData[k];
+    const el=document.createElement('div');el.className='tracker-day'+(data?' filled':'');
+    el.innerHTML='<span class="day-num">'+d+'</span>'+(data?data.emoji:'');
+    el.onclick=()=>openEP(k,el);grid.appendChild(el);
+  }
+  buildStreakBar();
+}
+function buildStreakBar(){
+  const bar=document.getElementById('streak-bar');if(!bar)return;bar.innerHTML='';
+  const now=new Date();
+  for(let i=6;i>=0;i--){
+    const d=new Date(now);d.setDate(d.getDate()-i);
+    const k=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    const data=S.trackerData[k];
+    const el=document.createElement('div');el.className='streak-dot'+(data?' done':'');
+    el.textContent=data?'✓':String(d.getDate());bar.appendChild(el);
+  }
+  let s=0;const n=new Date();
+  for(let i=0;i<30;i++){
+    const dd=new Date(n);dd.setDate(dd.getDate()-i);
+    const k=dd.getFullYear()+'-'+(dd.getMonth()+1)+'-'+dd.getDate();
+    if(S.trackerData[k])s++;else break;
+  }
+  S.streak=s;document.getElementById('streak-count').textContent=s;
+}
+function renderTrackerLog(){
+  const log=document.getElementById('tr-log');if(!log)return;log.innerHTML='';
+  const entries=Object.entries(S.trackerData).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,15);
+  if(!entries.length){log.innerHTML='<div style="text-align:center;color:var(--text2);padding:14px;font-weight:800">Нет записей — выбери смайлик для дня</div>';return;}
+  entries.forEach(([k,v])=>{
+    const d=document.createElement('div');d.className='tlog-item';
+    d.innerHTML='<div class="tl-emoji">'+v.emoji+'</div><div><div class="tl-date">'+k+(v.sleep?' — Сон: '+v.sleep+'ч':'')+(v.energy?' — Энергия: '+v.energy+'/10':'')+'</div><div class="tl-note">'+(v.note||'—')+'</div></div>';
+    log.appendChild(d);
+  });
+}
+function openEP(key,el){
+  pendingDay=key;const ep=document.getElementById('ep-wrap');ep.innerHTML='';
+  EMOJIS.forEach(em=>{
+    const b=document.createElement('button');b.className='ep-e';b.textContent=em;
+    b.onclick=()=>{
+      if(!S.trackerData[key])S.trackerData[key]={emoji:em,note:''};
+      else S.trackerData[key].emoji=em;
+      el.innerHTML='<span class="day-num">'+key.split('-')[2]+'</span>'+em;
+      el.classList.add('filled');ep.classList.remove('open');buildStreakBar();save();toast('Настроение записано '+em);
+    };ep.appendChild(b);
+  });
+  ep.classList.add('open');
+  const ex=S.trackerData[key];document.getElementById('tr-note').value=ex?ex.note:'';
+}
+function saveDay(){
+  if(!pendingDay){const n=new Date();pendingDay=n.getFullYear()+'-'+(n.getMonth()+1)+'-'+n.getDate();}
+  const note=document.getElementById('tr-note').value;
+  if(!S.trackerData[pendingDay])S.trackerData[pendingDay]={emoji:'📅',note};
+  else S.trackerData[pendingDay].note=note;
+  renderTrackerLog();buildGrid();document.getElementById('tr-note').value='';pendingDay=null;save();toast('День сохранён');
+}
+function saveDayData(){
+  const k=todayKey();
+  const sleep=parseFloat(document.getElementById('sleep-slider').value);
+  const energy=parseInt(document.getElementById('energy-slider').value);
+  const water=parseInt(document.getElementById('water-slider').value);
+  if(!S.trackerData[k])S.trackerData[k]={emoji:'📅',note:''};
+  Object.assign(S.trackerData[k],{sleep,energy,water});
+  renderTrackerLog();save();toast('Данные дня сохранены');
+}
+function updateSlider(inp,valId,unit){
+  const val=parseFloat(inp.value);
+  document.getElementById(valId).textContent=val+unit;
+  const pct=((val-parseFloat(inp.min))/(parseFloat(inp.max)-parseFloat(inp.min))*100).toFixed(1)+'%';
+  inp.style.setProperty('--pct',pct);
+}
 
-document.addEventListener('click',e=>{const ep=document.getElementById('ep-wrap');if(ep.classList.contains('open')&&!ep.contains(e.target)&&!e.target.closest('.tracker-day'))ep.classList.remove('open');const sugg=document.getElementById('cal-suggestions');if(sugg&&!sugg.contains(e.target)&&!e.target.closest('#cal-search'))sugg.style.display='none';});
+/* ===== ЗАКРЫТИЕ ПО КЛИКУ ВНЕ ===== */
+document.addEventListener('click',e=>{
+  const ep=document.getElementById('ep-wrap');
+  if(ep.classList.contains('open')&&!ep.contains(e.target)&&!e.target.closest('.tracker-day'))ep.classList.remove('open');
+  const sugg=document.getElementById('cal-suggestions');
+  if(sugg&&!sugg.contains(e.target)&&!e.target.closest('#cal-search'))sugg.style.display='none';
+});
 
-/* ââ NOTIF ââ */
-function toggleNotif(type){if(!S.notifs)S.notifs={};S.notifs[type]=!S.notifs[type];document.getElementById('notif-'+type).classList.toggle('on',S.notifs[type]);save();toast(S.notifs[type]?'Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ðµ Ð²ÐºÐ»ÑÑÐµÐ½Ð¾ ð':'Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ðµ Ð²ÑÐºÐ»ÑÑÐµÐ½Ð¾');}
+/* ===== СБРОС ===== */
+function resetAll(){if(confirm('Сбросить все данные ZENFLOW? Это нельзя отменить.')){localStorage.removeItem('zf4');location.reload();}}
 
-/* ââ RESET ââ */
-function resetAll(){if(confirm('Ð¡Ð±ÑÐ¾ÑÐ¸ÑÑ Ð²ÑÐµ Ð´Ð°Ð½Ð½ÑÐµ ZENFLOW? Ð­ÑÐ¾ Ð½ÐµÐ»ÑÐ·Ñ Ð¾ÑÐ¼ÐµÐ½Ð¸ÑÑ.')){localStorage.removeItem('zf4');location.reload();}}
-
-/* ââ INIT ââ */
+/* ===== ИНИЦИАЛИЗАЦИЯ ===== */
 function init(){
   load();
   buildLangSel();setTheme(S.theme);applyAccent(S.accentIdx||0);buildAccentGrid();
-  setCur(S.currency);applyWall();tick();setInterval(tick,1000);
+  setCur(S.currency||'руб');applyWall();tick();setInterval(tick,1000);
   renderChat();renderTrans();buildBudgetCats();buildFinTip();showTodo();
   buildGrid();renderTrackerLog();buildAffirm();renderGrat();
   buildCalCats();renderCalLog();renderNotes();renderDiary();
   refreshHome();updateRingUI();
-  if(S.notifs){if(S.notifs.water)document.getElementById('notif-water').classList.add('on');if(S.notifs.eve)document.getElementById('notif-eve').classList.add('on');}
   if(S.wallpaper){const p=document.getElementById('wall-prev');p.src=S.wallpaper;p.style.display='block';}
   if(S.todayMood!=null)document.querySelectorAll('.mq-btn').forEach((b,i)=>b.classList.toggle('picked',i===S.todayMood));
-  if(S.calGoal){document.getElementById('cal-goal-inp').value=S.calGoal;document.getElementById('cal-goal-display').textContent=S.calGoal+' ÐºÐºÐ°Ð»';}
+  if(S.calGoal){document.getElementById('cal-goal-inp').value=S.calGoal;document.getElementById('cal-goal-display').textContent=S.calGoal+' ккал';}
   setTimeout(updateRingUI,300);
   document.getElementById('chat-inp').addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg();});
   document.getElementById('diar-food-inp').addEventListener('keydown',e=>{if(e.key==='Enter')addDiarFood();});
